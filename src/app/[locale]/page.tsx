@@ -15,7 +15,7 @@ import { Link } from "@/i18n/routing";
 import { motion } from "framer-motion";
 
 export default function Home() {
-  const { t, isRTL } = useLanguage();
+  const {t, isRTL } = useLanguage();
 
   return (
     <div className={cn(isRTL ? "font-cairo text-right" : "font-inter")}>
