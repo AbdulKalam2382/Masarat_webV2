@@ -51,7 +51,7 @@ export default function Partners() {
     <section className="py-24 bg-[#F8FAFC] border-b border-brand-border transition-colors duration-500">
       <div className="container max-w-7xl mx-auto px-6">
         <div className={cn("mb-16", isRTL ? "text-right" : "text-left")}>
-          <span className="text-xs font-bold uppercase tracking-[0.3em] text-brand-blue mb-4 block">
+          <span className="text-[14px] font-bold uppercase tracking-[0.2em] text-brand-blue mb-5 block">
             {isRTL ? "شركاء التقنية" : "Technology Partners"}
           </span>
           <h2 className="text-3xl md:text-5xl font-bold tracking-tighter font-outfit text-[#1B3A6B]">

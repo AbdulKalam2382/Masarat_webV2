@@ -80,6 +80,30 @@ export default function SolutionsPreview() {
   ];
 
   return (
+    <>
+    <section className="py-20 bg-[#F8FAFF] border-y border-[#E2EAF8]">
+      <div className="max-w-5xl mx-auto px-6 text-center">
+        <p className="text-[14px] font-bold tracking-[0.2em] uppercase text-[#1A56DB] mb-5 flex items-center justify-center gap-3">
+          <span className="w-7 h-[2px] bg-[#1A56DB] rounded-full" />
+          Our Capabilities
+          <span className="w-7 h-[2px] bg-[#1A56DB] rounded-full" />
+        </p>
+        <h2 className="text-4xl font-bold text-[#0D1B2A] tracking-tight mb-6 leading-tight">
+          Five integrated capabilities.<br />
+          <span className="font-light text-[#1A56DB]">One accountable partner.</span>
+        </h2>
+        <p className="text-[16px] text-[#64748B] leading-relaxed max-w-3xl mx-auto mb-4">
+          From enterprise digital transformation and AI-driven intelligence to cybersecurity, smart infrastructure, and mission-critical data center delivery — Masarat covers the full enterprise technology stack.
+        </p>
+        <p className="text-[16px] text-[#64748B] leading-relaxed max-w-3xl mx-auto mb-4">
+          Every engagement is delivered as an integrated solution — not isolated components — ensuring your technology environment works as one cohesive, high-performing system.
+        </p>
+        <p className="text-[16px] text-[#64748B] leading-relaxed max-w-3xl mx-auto">
+          In partnership with Hydrotek Engineering, we extend our delivery across both digital and physical infrastructure, providing a single point of accountability from design to long-term operations.
+        </p>
+      </div>
+    </section>
+
     <motion.section
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -144,5 +168,6 @@ export default function SolutionsPreview() {
         </div>
       </div>
     </motion.section>
+    </>
   );
 }

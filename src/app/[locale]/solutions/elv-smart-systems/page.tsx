@@ -1,7 +1,12 @@
 "use client";
 import SolutionDetailTemplate from "@/components/templates/SolutionDetailTemplate";
-import { Video, ShieldAlert, Cpu } from "lucide-react";
+import {
+  Video, ShieldAlert, Cpu,
+  Camera, DoorOpen, Flame, Building2,
+  Wifi, Monitor, Zap, Activity,
+} from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
+import CapabilityWheel from "@/components/ui/CapabilityWheel";
 
 export default function ElvSmartSystemsPage() {
   const { isRTL } = useLanguage();
@@ -33,6 +38,40 @@ export default function ElvSmartSystemsPage() {
         { title: "Integrated ELV Systems", description: "Low-voltage systems including CCTV, access control, and building security working as one." },
         { title: "Command & Control", description: "Centralised command and control platforms for seamless facility and smart environment management." }
       ]}
-    />
+    >
+      <section className="py-20 bg-[#F8FAFF] border-t border-[#E2EAF8]">
+        <div className="container max-w-5xl mx-auto px-6">
+          <div className="text-center mb-14">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#0D1B2A] tracking-tighter">
+              Our Capabilities at a Glance
+            </h2>
+          </div>
+          <CapabilityWheel
+            solutionName="ELV Smart Systems"
+            centerLabel={"ELV & Smart\nSystems"}
+            categories={[
+              {
+                name: "Physical Systems",
+                nodes: [
+                  { label: "CCTV & Surveillance", icon: Camera },
+                  { label: "Access Control", icon: DoorOpen },
+                  { label: "Fire & Life Safety", icon: Flame },
+                  { label: "BMS", icon: Building2 },
+                ],
+              },
+              {
+                name: "Smart Integration",
+                nodes: [
+                  { label: "Smart Buildings", icon: Wifi },
+                  { label: "Command Centers", icon: Monitor },
+                  { label: "Facility Automation", icon: Zap },
+                  { label: "Real-time Monitoring", icon: Activity },
+                ],
+              },
+            ]}
+          />
+        </div>
+      </section>
+    </SolutionDetailTemplate>
   );
 }

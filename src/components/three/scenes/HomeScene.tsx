@@ -4,10 +4,6 @@ import { useRef, useMemo, useEffect, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 
-const NODE_COLOR = "#1A56DB";
-const EDGE_COLOR = "#3B82F6";
-const MAX_DIST = 3.5;
-
 function useIsMobile() {
   const [mobile, setMobile] = useState(false);
   useEffect(() => {
@@ -32,31 +28,72 @@ function useMouse() {
   return mouse;
 }
 
-function Network({ nodeCount }: { nodeCount: number }) {
+const MAX_EDGES = 15;
+const CONNECT_DIST = 4.5;
+
+function ParticleField({ count }: { count: number }) {
   const groupRef = useRef<THREE.Group>(null);
   const meshRef = useRef<THREE.InstancedMesh>(null);
+  const lineGeomRef = useRef<THREE.BufferGeometry>(null);
   const mouse = useMouse();
   const dummy = useMemo(() => new THREE.Object3D(), []);
 
-  const { positions, edgePositions } = useMemo(() => {
-    const positions = Array.from({ length: nodeCount }, () =>
+  const { positions, velocities, edgePairs } = useMemo(() => {
+    const positions = Array.from({ length: count }, () =>
       new THREE.Vector3(
-        (Math.random() - 0.5) * 12,
-        (Math.random() - 0.5) * 8,
-        (Math.random() - 0.5) * 5
+        (Math.random() - 0.5) * 22,
+        (Math.random() - 0.5) * 14,
+        (Math.random() - 0.5) * 6
       )
     );
-    const edgePts: number[] = [];
-    for (let i = 0; i < positions.length; i++)
-      for (let j = i + 1; j < positions.length; j++)
-        if (positions[i].distanceTo(positions[j]) < MAX_DIST)
-          edgePts.push(...positions[i].toArray(), ...positions[j].toArray());
-    return { positions, edgePositions: new Float32Array(edgePts) };
-  }, [nodeCount]);
+    // Same length as positions — derived from the same count
+    const velocities = Array.from({ length: count }, () =>
+      new THREE.Vector3(
+        (Math.random() - 0.5) * 0.004,
+        (Math.random() - 0.5) * 0.004,
+        (Math.random() - 0.5) * 0.001
+      )
+    );
 
+    // Find closest pairs, keep only MAX_EDGES
+    const pairs: [number, number][] = [];
+    const dists: number[] = [];
+    for (let i = 0; i < positions.length; i++) {
+      for (let j = i + 1; j < positions.length; j++) {
+        const d = positions[i].distanceTo(positions[j]);
+        if (d < CONNECT_DIST) {
+          pairs.push([i, j]);
+          dists.push(d);
+        }
+      }
+    }
+    const sorted = pairs
+      .map((p, k) => ({ p, d: dists[k] }))
+      .sort((a, b) => a.d - b.d)
+      .slice(0, MAX_EDGES)
+      .map((x) => x.p);
+
+    return { positions, velocities, edgePairs: sorted };
+  }, [count]);
+
+  const currentPos = useRef(positions.map((p) => p.clone()));
+
+  // Build initial edge Float32Array
+  const edgeData = useMemo(() => {
+    const arr = new Float32Array(edgePairs.length * 6);
+    edgePairs.forEach(([i, j], k) => {
+      const pi = positions[i];
+      const pj = positions[j];
+      arr[k * 6 + 0] = pi.x; arr[k * 6 + 1] = pi.y; arr[k * 6 + 2] = pi.z;
+      arr[k * 6 + 3] = pj.x; arr[k * 6 + 4] = pj.y; arr[k * 6 + 5] = pj.z;
+    });
+    return arr;
+  }, [positions, edgePairs]);
+
+  // Initial instance setup
   useEffect(() => {
     if (!meshRef.current) return;
-    positions.forEach((pos, i) => {
+    currentPos.current.forEach((pos, i) => {
       dummy.position.copy(pos);
       dummy.updateMatrix();
       meshRef.current!.setMatrixAt(i, dummy.matrix);
@@ -65,24 +102,56 @@ function Network({ nodeCount }: { nodeCount: number }) {
   }, [positions, dummy]);
 
   useFrame(() => {
-    if (!groupRef.current) return;
-    groupRef.current.rotation.y += 0.0015;
-    groupRef.current.rotation.x += (mouse.current.y * 0.12 - groupRef.current.rotation.x) * 0.04;
-    groupRef.current.rotation.z += (-mouse.current.x * 0.05 - groupRef.current.rotation.z) * 0.04;
+    if (!groupRef.current || !meshRef.current) return;
+
+    // Very slow Y rotation + subtle mouse tilt (max ~8 degrees)
+    groupRef.current.rotation.y += 0.005;
+    const targetX = mouse.current.y * 0.14;
+    const targetZ = -mouse.current.x * 0.06;
+    groupRef.current.rotation.x += (targetX - groupRef.current.rotation.x) * 0.03;
+    groupRef.current.rotation.z += (targetZ - groupRef.current.rotation.z) * 0.03;
+
+    // Per-particle drift
+    const cp = currentPos.current;
+    cp.forEach((pos, i) => {
+      if (!velocities[i]) return;
+      pos.add(velocities[i]);
+      if (Math.abs(pos.x) > 11) velocities[i].x *= -1;
+      if (Math.abs(pos.y) > 7) velocities[i].y *= -1;
+      if (Math.abs(pos.z) > 3) velocities[i].z *= -1;
+      dummy.position.copy(pos);
+      dummy.updateMatrix();
+      meshRef.current!.setMatrixAt(i, dummy.matrix);
+    });
+    meshRef.current.instanceMatrix.needsUpdate = true;
+
+    // Update edge line positions
+    if (lineGeomRef.current) {
+      const attr = lineGeomRef.current.attributes.position as THREE.BufferAttribute;
+      const arr = attr.array as Float32Array;
+      edgePairs.forEach(([i, j], k) => {
+        const pi = cp[i];
+        const pj = cp[j];
+        arr[k * 6 + 0] = pi.x; arr[k * 6 + 1] = pi.y; arr[k * 6 + 2] = pi.z;
+        arr[k * 6 + 3] = pj.x; arr[k * 6 + 4] = pj.y; arr[k * 6 + 5] = pj.z;
+      });
+      attr.needsUpdate = true;
+    }
   });
 
   return (
     <group ref={groupRef}>
-      <instancedMesh ref={meshRef} args={[undefined, undefined, nodeCount]}>
-        <sphereGeometry args={[0.07, 8, 8]} />
-        <meshBasicMaterial color={NODE_COLOR} />
+      <instancedMesh ref={meshRef} args={[undefined, undefined, count]}>
+        <sphereGeometry args={[0.055, 8, 8]} />
+        <meshStandardMaterial color="#1A56DB" emissive="#3B82F6" emissiveIntensity={0.5} />
       </instancedMesh>
-      {edgePositions.length > 0 && (
+
+      {edgePairs.length > 0 && (
         <lineSegments>
-          <bufferGeometry>
-            <bufferAttribute attach="attributes-position" args={[edgePositions, 3]} />
+          <bufferGeometry ref={lineGeomRef}>
+            <bufferAttribute attach="attributes-position" args={[edgeData, 3]} />
           </bufferGeometry>
-          <lineBasicMaterial color={EDGE_COLOR} opacity={0.35} transparent />
+          <lineBasicMaterial color="#3B82F6" opacity={0.15} transparent />
         </lineSegments>
       )}
     </group>
@@ -92,10 +161,20 @@ function Network({ nodeCount }: { nodeCount: number }) {
 export default function HomeScene() {
   const isMobile = useIsMobile();
   return (
-    <Canvas camera={{ position: [0, 0, 10], fov: 60 }} gl={{ alpha: true, antialias: true }}
-      style={{ position: "absolute", inset: 0, width: "100%", height: "100%", pointerEvents: "none" }}
-      dpr={[1, 1.5]}>
-      <Network nodeCount={isMobile ? 12 : 28} />
+    <Canvas
+      camera={{ position: [0, 0, 13], fov: 60 }}
+      gl={{ alpha: true, antialias: true }}
+      style={{
+        position: "absolute",
+        inset: 0,
+        width: "100%",
+        height: "100%",
+        pointerEvents: "none",
+      }}
+      dpr={[1, 1.5]}
+    >
+      <ambientLight intensity={0.6} />
+      <ParticleField count={isMobile ? 20 : 60} />
     </Canvas>
   );
 }

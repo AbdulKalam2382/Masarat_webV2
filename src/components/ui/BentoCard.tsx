@@ -74,29 +74,25 @@ export default function BentoCard({ tag, title, description, number, className, 
           {bullets && bullets.length > 0 && (
             <ul className="mt-4 space-y-2">
               {bullets.map((bullet, i) => (
-                <li 
+                <li
                   key={i}
-                  className="flex items-start gap-2 text-[12px] leading-relaxed"
-                  style={{ 
-                    color: variant === 'blue' 
+                  className="flex items-start gap-2 text-[15px] leading-relaxed"
+                  style={{
+                    color: variant === 'blue'
                       ? 'rgba(255,255,255,0.7)'
                       : variant === 'dark'
-                      ? 'rgba(255,255,255,0.55)'
+                      ? 'rgba(255,255,255,0.6)'
                       : variant === 'gold'
                       ? 'rgba(120,80,0,0.75)'
                       : '#6B6B6B'
                   }}
                 >
-                  <span 
-                    className="mt-[5px] w-1 h-1 rounded-full flex-shrink-0"
+                  <span
+                    className="mt-[6px] w-2 h-2 rounded-full flex-shrink-0"
                     style={{
-                      background: variant === 'blue' 
-                        ? 'rgba(255,255,255,0.5)'
-                        : variant === 'dark'
-                        ? 'rgba(255,255,255,0.4)'
-                        : variant === 'gold'
-                        ? '#1A56DB'
-                        : '#2563EB'
+                      background: variant === 'blue' || variant === 'dark'
+                        ? 'rgba(255,255,255,0.6)'
+                        : '#94A3B8'
                     }}
                   />
                   {bullet}

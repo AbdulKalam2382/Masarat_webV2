@@ -55,7 +55,7 @@ export default function AboutVisionMission() {
             transition={{ duration: 0.8 }}
             className="space-y-8"
           >
-            <span className="text-[10px] font-black tracking-[0.3em] text-brand-blue-soft uppercase">
+            <span className="text-[14px] font-bold tracking-[0.2em] text-brand-blue-soft uppercase">
               {t('home.vision_eyebrow')}
             </span>
             
@@ -109,7 +109,7 @@ export default function AboutVisionMission() {
             transition={{ duration: 0.8 }}
             className="space-y-8"
           >
-            <span className="text-[10px] font-black tracking-[0.3em] text-brand-blue-soft uppercase">
+            <span className="text-[14px] font-bold tracking-[0.2em] text-brand-blue-soft uppercase">
               {t('home.mission_eyebrow')}
             </span>
             

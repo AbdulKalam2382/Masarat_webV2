@@ -27,33 +27,37 @@ export default function GSAPSetup() {
           if (index === 0) {
             gsap.set(section, { scale: 1, opacity: 1, willChange: 'transform' });
           } else if (section.classList.contains('animate-section')) {
-            // y+opacity slide for explicitly marked sections
+            // Play-once slide-in (no scrub) — prevents sections going blank on scroll back
             gsap.set(section, { willChange: 'transform' });
-            gsap.from(section, {
-              y: 60,
-              opacity: 0,
-              duration: 1,
-              ease: 'power3.out',
-              scrollTrigger: {
-                trigger: section,
-                start: 'top 85%',
-                end: 'top 20%',
-                scrub: 0.3,
-              },
-            });
+            gsap.fromTo(section,
+              { y: 60, opacity: 0 },
+              {
+                y: 0,
+                opacity: 1,
+                duration: 0.7,
+                ease: 'power3.out',
+                clearProps: 'all',
+                scrollTrigger: {
+                  trigger: section,
+                  start: 'top 85%',
+                  toggleActions: 'play none none none',
+                },
+              }
+            );
           } else {
+            // Scale only via GSAP — opacity handled by Framer Motion on each section
             gsap.set(section, { willChange: 'transform' });
             gsap.fromTo(
               section,
-              { scale: startScale, opacity: 0 },
+              { scale: startScale },
               {
                 scale: 1,
-                opacity: 1,
                 scrollTrigger: {
                   trigger: section,
                   start: "top 85%",
                   end: "top 30%",
                   scrub: 0.3,
+                  onLeaveBack: () => gsap.set(section, { scale: startScale }),
                 }
               }
             );

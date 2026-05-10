@@ -136,17 +136,22 @@ export default function SolutionsPage() {
       <Navbar />
       <main>
         {/* HERO SECTION */}
-        <section className="relative min-h-screen flex items-center pt-[100px] overflow-hidden bg-[#0D1B2A]">
-          <SceneWrapper scene="solutions" />
+        <section className="relative min-h-screen flex items-center pt-[100px] overflow-hidden">
+          <div className="absolute inset-0 z-0">
+            <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, #0D1B2A 0%, #0F2A4A 25%, #1A3A6B 60%, #1A56DB 100%)' }} />
+            <div className="absolute pointer-events-none" style={{ top: '-20%', left: '-10%', width: '60%', height: '140%', background: 'linear-gradient(135deg, rgba(255,255,255,0.04) 0%, transparent 50%)', transform: 'rotate(-15deg)' }} />
+            <div className="absolute pointer-events-none" style={{ top: '-30%', right: '-5%', width: '50%', height: '130%', background: 'linear-gradient(225deg, rgba(26,86,219,0.15) 0%, transparent 60%)', transform: 'rotate(10deg)' }} />
+            <div className="relative z-[1]"><SceneWrapper scene="solutions" /></div>
+          </div>
 
-          <div className="container max-w-7xl mx-auto px-6 relative z-10">
+          <div className="container max-w-7xl mx-auto px-6 relative z-[10]">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               className="max-w-4xl"
             >
-              <span className="section-kicker text-brand-blue mb-6 block">
+              <span className="section-kicker text-white mb-6 block">
                 {t("solutions.page_kicker")}
               </span>
               <h1 className="text-6xl md:text-8xl font-bold tracking-tighter mb-8 font-outfit uppercase text-white leading-[0.95]">
@@ -161,6 +166,62 @@ export default function SolutionsPage() {
 
         {/* Gradient transition: dark → light */}
         <div className="h-24 w-full bg-gradient-to-b from-[#0D1B2A] to-[#F8FAFF] pointer-events-none" />
+
+        {/* Full-width image banner */}
+        <div className="relative w-full overflow-hidden" style={{ height: 220 }}>
+          <img
+            src="https://images.unsplash.com/photo-1639322537228-f710d846310a?q=90&w=1920&auto=format&fit=crop"
+            alt="Solutions"
+            loading="lazy"
+            onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-[#0D1B2A]/65 flex items-center">
+            <div className="max-w-7xl mx-auto px-6 w-full">
+              <p className="text-white font-bold text-2xl md:text-3xl tracking-tight max-w-md leading-snug">
+                Integrated. Accountable. Delivered.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Explanation section */}
+        <section className="py-20 bg-white">
+          <div className="max-w-5xl mx-auto px-6">
+            <div className="max-w-3xl mb-16">
+              <p className="text-[14px] font-bold tracking-[0.2em] uppercase text-[#1A56DB] mb-5 flex items-center gap-3">
+                <span className="w-7 h-[2px] bg-[#1A56DB] rounded-full" />
+                What We Do
+              </p>
+              <h2 className="text-4xl font-bold text-[#0D1B2A] tracking-tight leading-tight mb-6" style={{ letterSpacing: "-0.03em" }}>
+                Five integrated capabilities.<br />
+                <span className="font-light text-[#64748B]">One accountable partner.</span>
+              </h2>
+              <p className="text-[17px] text-[#64748B] leading-relaxed mb-5">
+                Masarat operates across five integrated business lines that together cover the full enterprise technology stack. Each capability is designed to work alongside the others — not in isolation — ensuring that your digital platforms, intelligent systems, security environment, physical infrastructure, and data center facilities all function as one coherent, high-performing environment.
+              </p>
+              <p className="text-[17px] text-[#64748B] leading-relaxed mb-5">
+                Whether you are modernising your enterprise operations, deploying AI at scale, strengthening your security posture, building a smart facility, or delivering a new mission-critical data center — Masarat brings a single point of accountability across every phase of the engagement, from initial assessment through to long-term operations and support.
+              </p>
+              <p className="text-[17px] text-[#64748B] leading-relaxed">
+                Through our strategic partnership with Hydrotek Engineering, we extend this accountability across both digital and physical infrastructure — eliminating the coordination gaps that typically arise when multiple vendors are involved in complex, integrated projects.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-8 border-t border-[#E2EAF8]">
+              {[
+                { number: "01", title: "Integrated by Design", body: "Our capabilities are built to work together. A cybersecurity engagement considers your infrastructure. An AI deployment considers your data environment. Everything connects." },
+                { number: "02", title: "Delivered with Accountability", body: "One team. One contract. One point of accountability. From the first conversation to the final handover and beyond — Masarat owns the outcome." },
+                { number: "03", title: "Built for Kuwait", body: "Our solutions are grounded in deep knowledge of Kuwait's regulatory landscape, institutional culture, and the operational demands of its most critical sectors." },
+              ].map((item, i) => (
+                <div key={i} className="p-6 rounded-xl border border-[#E2EAF8] bg-[#F8FAFF] hover:border-[#1A56DB]/30 hover:bg-white transition-all duration-200">
+                  <span className="text-[11px] font-black tracking-[0.2em] uppercase text-[#1A56DB]/40 block mb-3">{item.number}</span>
+                  <h3 className="text-[17px] font-bold text-[#0D1B2A] tracking-tight mb-3">{item.title}</h3>
+                  <p className="text-[15px] text-[#64748B] leading-relaxed">{item.body}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
 
         {/* SOLUTIONS GRID */}
         <section ref={pinnedSectionRef} className="animate-section relative py-32 bg-brand-surface overflow-hidden">

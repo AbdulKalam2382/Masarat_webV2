@@ -1,7 +1,11 @@
 "use client";
 import SolutionDetailTemplate from "@/components/templates/SolutionDetailTemplate";
-import { Database, Cpu, Lightbulb } from "lucide-react";
+import {
+  Database, Cpu, Lightbulb,
+  Brain, TrendingUp, Bot, GitBranch, PieChart, GraduationCap,
+} from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
+import CapabilityWheel from "@/components/ui/CapabilityWheel";
 
 export default function AiDataPage() {
   const { isRTL } = useLanguage();
@@ -33,6 +37,40 @@ export default function AiDataPage() {
         { title: "Enterprise Data Platforms", description: "Scalable, governed data environments supporting advanced analytics and AI workloads." },
         { title: "Measurable Outcomes", description: "Data investments that translate into real operational and business results through actionable insights." }
       ]}
-    />
+    >
+      <section className="py-20 bg-[#F8FAFF] border-t border-[#E2EAF8]">
+        <div className="container max-w-5xl mx-auto px-6">
+          <div className="text-center mb-14">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#0D1B2A] tracking-tighter">
+              Our Capabilities at a Glance
+            </h2>
+          </div>
+          <CapabilityWheel
+            solutionName="AI Data"
+            centerLabel={"AI & Data\nIntelligence"}
+            categories={[
+              {
+                name: "AI Capabilities",
+                nodes: [
+                  { label: "AI Strategy", icon: Brain },
+                  { label: "Custom AI Solutions", icon: Cpu },
+                  { label: "Predictive Analytics", icon: TrendingUp },
+                  { label: "Automation", icon: Bot },
+                ],
+              },
+              {
+                name: "Data Foundation",
+                nodes: [
+                  { label: "Data Platforms", icon: Database },
+                  { label: "Data Integration", icon: GitBranch },
+                  { label: "Advanced Analytics", icon: PieChart },
+                  { label: "Training & Advisory", icon: GraduationCap },
+                ],
+              },
+            ]}
+          />
+        </div>
+      </section>
+    </SolutionDetailTemplate>
   );
 }

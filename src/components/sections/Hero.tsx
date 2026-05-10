@@ -18,8 +18,8 @@ export default function Hero() {
   const { t, isRTL } = useLanguage();
 
   const headlineLines = [
-    { text: t("hero.line1"), weight: 300, color: "text-brand-navy dark:text-white" },
-    { text: t("hero.line2"), weight: 700, color: "text-brand-navy dark:text-white" },
+    { text: t("hero.line1"), weight: 300, color: "text-white" },
+    { text: t("hero.line2"), weight: 700, color: "text-white" },
     { text: t("hero.line3"), weight: 700, color: "text-brand-blue" },
   ];
 
@@ -45,25 +45,25 @@ export default function Hero() {
   }, []);
 
   return (
-    <section 
+    <section
       ref={heroRef}
       data-section-name="Hero"
-      className="hero-section-trigger relative h-screen flex items-center justify-center bg-white dark:bg-[#0D1B2A] overflow-hidden transition-colors duration-500"
+      className="hero-section-trigger relative h-screen flex items-center justify-center bg-[#0D1B2A] overflow-hidden"
     >
+      {/* Kuwait City background */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src="https://wallpapercat.com/w/full/6/f/3/1593721-2323x1406-desktop-hd-kuwait-city-wallpaper-image.jpg"
+          alt="Kuwait City"
+          className="w-full h-full object-cover"
+          onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
+        />
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(to right, rgba(13,27,42,0.92) 0%, rgba(13,27,42,0.75) 50%, rgba(13,27,42,0.55) 100%)' }} />
+      </div>
+
       <SceneWrapper scene="home" />
       {/* PREMIUM CANVAS BACKGROUND */}
       <HeroBackground />
-
-      {/* Floating Badge */}
-      <motion.div
-        initial={{ opacity: 0, y: -10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1.2, duration: 0.6 }}
-        className="absolute top-24 right-8 z-10 hidden lg:flex items-center gap-2 px-4 py-2 rounded-full border border-brand-navy/10 dark:border-white/10 bg-white/80 dark:bg-brand-navy/80 backdrop-blur-sm text-brand-navy dark:text-white font-semibold text-xs tracking-widest uppercase shadow-sm"
-      >
-        <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-        Kuwait
-      </motion.div>
 
       <div className="container relative z-10 px-6 max-w-7xl mx-auto">
         <div className={cn("flex flex-col", isRTL ? "items-start text-right" : "items-center text-center")}>
@@ -72,9 +72,12 @@ export default function Hero() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="mb-10 px-4 py-1.5 rounded-full border border-brand-blue/20 bg-brand-blue/5 text-xs font-bold tracking-[0.3em] text-brand-blue uppercase"
+            className="mb-10 inline-flex items-center gap-2 px-5 py-2 rounded-full border border-white/20 bg-white/[0.08] backdrop-blur-sm"
           >
-            {t("hero.label")}
+            <span className="w-1.5 h-1.5 rounded-full bg-white/60 animate-pulse" />
+            <span className="text-[12px] font-medium tracking-wide text-white">
+              {t("hero.label")}
+            </span>
           </motion.div>
 
           {/* Headline with Per-Word ClipPath Reveal */}
@@ -110,7 +113,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.45, duration: 1, ease: [0.16, 1, 0.3, 1] }}
             className={cn(
-              "text-lg md:text-xl text-[#475569] dark:text-white/60 mb-12 max-w-2xl font-medium leading-relaxed",
+              "text-lg md:text-xl text-white/70 mb-12 max-w-2xl font-medium leading-relaxed",
               !isRTL && "mx-auto"
             )}
           >
@@ -132,7 +135,7 @@ export default function Hero() {
             </Link>
             <Link
               href="/contact"
-              className="px-10 py-5 border border-brand-navy/20 dark:border-white/20 text-brand-navy dark:text-white font-bold rounded-full hover:bg-brand-navy/5 dark:hover:bg-white/5 transition-all text-center"
+              className="px-10 py-5 border border-white/20 text-white font-bold rounded-full hover:bg-white/5 transition-all text-center"
             >
               {t("hero.btn2")}
             </Link>
@@ -149,7 +152,7 @@ export default function Hero() {
             isRTL ? "left-6" : "right-6"
           )}
         >
-          <span className="text-[10px] uppercase font-bold tracking-[0.4em] text-brand-navy/40 dark:text-white/40 rotate-90 origin-center translate-y-[-20px]">
+          <span className="text-[10px] uppercase font-bold tracking-[0.4em] text-white/40 rotate-90 origin-center translate-y-[-20px]">
             {t("hero.scroll")}
           </span>
           <div className="w-[1px] h-20 bg-gradient-to-t from-brand-blue to-transparent" />

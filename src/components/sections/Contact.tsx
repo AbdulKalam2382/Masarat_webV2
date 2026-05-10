@@ -53,6 +53,7 @@ export default function Contact() {
     } catch (err) {
       console.error(err);
       setStatus('error');
+      setTimeout(() => setStatus('idle'), 5000);
     }
   };
 

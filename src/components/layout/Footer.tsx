@@ -2,7 +2,7 @@
 
 import { Link } from "@/i18n/routing";
 import { useLanguage } from "@/lib/LanguageContext";
-import { Github, Linkedin, Twitter } from "lucide-react";
+import { Linkedin, Twitter } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 
@@ -71,8 +71,14 @@ export default function Footer() {
               <a href="#" className="p-4 bg-white dark:bg-[#10192C] border border-[#E5E5EA] dark:border-[#1E3150] rounded-2xl text-brand-ink dark:text-white hover:bg-blue-600 hover:text-white transition-all shadow-sm hover:shadow-blue-600/20 group">
                 <Linkedin size={20} className="group-hover:scale-110 transition-transform" />
               </a>
-              <a href="#" className="p-4 bg-white dark:bg-[#10192C] border border-[#E5E5EA] dark:border-[#1E3150] rounded-2xl text-brand-ink dark:text-white hover:bg-blue-600 hover:text-white transition-all shadow-sm hover:shadow-blue-600/20 group">
-                <Github size={20} className="group-hover:scale-110 transition-transform" />
+              <a
+                href="https://x.com/masaratkwt"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 rounded-full border border-[#E2EAF8] dark:border-white/10 flex items-center justify-center hover:bg-[#1A56DB] hover:border-[#1A56DB] hover:text-white transition-all duration-200 text-[#64748B] dark:text-[#94A3B8]">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                </svg>
               </a>
             </div>
             <div className="flex flex-col gap-2">

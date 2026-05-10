@@ -1,8 +1,13 @@
 "use client";
 import SolutionDetailTemplate from "@/components/templates/SolutionDetailTemplate";
-import { Server, Zap, ShieldCheck } from "lucide-react";
+import {
+  Server, Zap, ShieldCheck,
+  HardDrive, RefreshCw, Cpu,
+  Settings, BarChart2, Shield, Clock,
+} from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
 import { cn } from "@/lib/utils";
+import CapabilityWheel from "@/components/ui/CapabilityWheel";
 
 export default function MissionCriticalPage() {
   const { isRTL } = useLanguage();
@@ -35,7 +40,24 @@ export default function MissionCriticalPage() {
         { title: "Operational Discipline", description: "Implementing rigorous SOP/MOP/EOP practices to ensure maximum availability and uptime." }
       ]}
     >
-      <section className="py-24 border-t border-brand-border dark:border-white/5">
+      {/* Data center capabilities image */}
+      <section className="relative overflow-hidden border-t border-[#E2EAF8]" style={{ height: 320 }}>
+        <img
+          src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=90&w=800&auto=format&fit=crop"
+          alt="Data center"
+          loading="lazy"
+          onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-[#0D1B2A]/85 flex items-end p-10">
+          <p className="text-white/80 text-lg font-light max-w-2xl leading-relaxed">
+            Masarat and Hydrotek Engineering deliver Tier III certified data center environments — from design through live operations.
+          </p>
+        </div>
+      </section>
+
+      {/* Proven Experience & Value to Clients */}
+      <section className="py-24 border-t border-brand-border dark:border-white/5 bg-white dark:bg-brand-navy">
         <div className="container max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
             <div className={cn(isRTL ? "text-right" : "text-left")}>
@@ -86,6 +108,41 @@ export default function MissionCriticalPage() {
               </ul>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Capability Wheel */}
+      <section className="py-20 bg-[#F8FAFF] border-t border-[#E2EAF8]">
+        <div className="container max-w-5xl mx-auto px-6">
+          <div className="text-center mb-14">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#0D1B2A] tracking-tighter">
+              Our Capabilities at a Glance
+            </h2>
+          </div>
+          <CapabilityWheel
+            solutionName="Mission Critical"
+            centerLabel={"Mission-Critical\nInfrastructure"}
+            categories={[
+              {
+                name: "Data Center",
+                nodes: [
+                  { label: "Design & Build", icon: Server },
+                  { label: "Tier III Delivery", icon: HardDrive },
+                  { label: "Live Upgrades", icon: RefreshCw },
+                  { label: "AI-Ready Environments", icon: Cpu },
+                ],
+              },
+              {
+                name: "Operations",
+                nodes: [
+                  { label: "Facility Management", icon: Settings },
+                  { label: "Capacity Planning", icon: BarChart2 },
+                  { label: "Mission-Critical Ops", icon: Shield },
+                  { label: "24/7 Support", icon: Clock },
+                ],
+              },
+            ]}
+          />
         </div>
       </section>
     </SolutionDetailTemplate>

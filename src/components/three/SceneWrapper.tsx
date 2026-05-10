@@ -11,6 +11,7 @@ const scenes = {
   dataCenter: dynamic(() => import("./scenes/DataCenterScene"), { ssr: false }),
   elv:        dynamic(() => import("./scenes/ELVScene"),        { ssr: false }),
   digital:    dynamic(() => import("./scenes/SolutionsScene"),  { ssr: false }),
+  infinity:   dynamic(() => import("./scenes/InfinityScene"),   { ssr: false }),
 } as const;
 
 type SceneName = keyof typeof scenes;

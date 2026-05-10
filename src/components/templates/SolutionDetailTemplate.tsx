@@ -224,52 +224,43 @@ export default function SolutionDetailTemplate({
       <main ref={mainRef} className="bg-white dark:bg-brand-navy overflow-hidden">
         
         {/* SECTION 1: Hero */}
-        <section ref={heroRef} className="hero-section-trigger relative min-h-screen flex items-center overflow-hidden bg-[#0D1B2A]">
-          <SceneWrapper scene={heroScene} />
+        <section ref={heroRef} className="hero-section-trigger relative min-h-screen flex items-center overflow-hidden">
+          <div className="absolute inset-0 z-0">
+            <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, #0D1B2A 0%, #0F2A4A 25%, #1A3A6B 60%, #1A56DB 100%)" }} />
+            <div className="absolute pointer-events-none" style={{ top: "-20%", left: "-10%", width: "60%", height: "140%", background: "linear-gradient(135deg, rgba(255,255,255,0.04) 0%, transparent 50%)", transform: "rotate(-15deg)" }} />
+            <div className="absolute pointer-events-none" style={{ top: "-30%", right: "-5%", width: "50%", height: "130%", background: "linear-gradient(225deg, rgba(26,86,219,0.15) 0%, transparent 60%)", transform: "rotate(10deg)" }} />
+            <div className="relative z-[1]"><SceneWrapper scene={heroScene} /></div>
+          </div>
 
-          <div className="hero-text-content container max-w-7xl mx-auto px-6 relative z-10 pt-20 opacity-0">
+          <div className="hero-text-content container max-w-7xl mx-auto px-6 relative z-10 pt-20">
             {/* Breadcrumb */}
-            <div 
-              className={cn("flex items-center gap-2 text-white/40 text-[10px] font-black uppercase tracking-[0.3em] mb-12", isRTL && "flex-row-reverse")}
-            >
-              <Link href="/solutions" className="hover:text-brand-blue-soft transition-colors">{t("nav.solutions")}</Link>
-              {isRTL ? <ChevronLeft size={10} /> : <ChevronRight size={10} />}
+            <div className={cn("flex items-center gap-2 text-white/50 text-[13px] font-medium mb-4", isRTL && "flex-row-reverse")}>
+              <Link href="/solutions" className="hover:text-white transition-colors">{t("nav.solutions")}</Link>
+              {isRTL ? <ChevronLeft size={12} /> : <ChevronRight size={12} />}
               <span className="text-white/80">{name}</span>
             </div>
 
-            <div className={cn("max-w-4xl", isRTL ? "text-right" : "text-left")}>
-              <span
-                className="inline-block px-5 py-2 rounded-full bg-brand-blue/20 border border-brand-blue/30 text-brand-blue-soft text-[10px] font-black uppercase tracking-[0.3em] mb-8"
-              >
+            <div className={cn("max-w-2xl", isRTL ? "text-right" : "text-left")}>
+              <span className="inline-flex px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-white/80 text-[11px] font-bold uppercase tracking-[0.25em] mb-4">
                 {category}
               </span>
-              
-              <h1
-                className="text-5xl md:text-8xl font-bold tracking-tighter text-white mb-8 font-outfit leading-[0.95]"
-              >
+
+              <h1 className="text-5xl md:text-6xl font-bold tracking-tight text-white mb-4 font-outfit leading-tight">
                 {name}
               </h1>
 
-              <p
-                className="text-lg md:text-xl text-white/60 font-light mb-12 max-w-xl leading-relaxed"
-              >
+              <p className="text-[17px] text-white/65 font-light mt-4 max-w-xl leading-relaxed">
                 {description}
               </p>
-              
-              <div
-                className={cn("flex flex-wrap gap-4", isRTL && "flex-row-reverse")}
-              >
-                <Link 
-                  href="/contact" 
-                  className="bg-brand-blue text-white px-10 py-5 rounded-full font-bold hover:bg-brand-blue-soft transition-all hover:scale-105 shadow-xl shadow-brand-blue/20 uppercase tracking-widest text-xs"
-                >
-                  {t("nav.cta")}
+
+              <div className={cn("flex flex-wrap gap-4 mt-8", isRTL && "flex-row-reverse")}>
+                <Link href="/contact"
+                  className="px-7 py-3.5 rounded-full bg-white text-[#0D1B2A] text-[14px] font-bold tracking-tight hover:bg-[#F8FAFF] hover:scale-[1.02] transition-all duration-200">
+                  Schedule a Consultation
                 </Link>
-                <Link
-                  href="/contact"
-                  className="bg-white/10 text-white border border-white/20 px-10 py-5 rounded-full font-bold hover:bg-white/20 transition-all uppercase tracking-widest text-xs backdrop-blur-md"
-                >
-                  {t("solutions.detail.download")}
+                <Link href="/contact"
+                  className="px-7 py-3.5 rounded-full border-2 border-white/30 text-white text-[14px] font-semibold hover:border-white/60 hover:bg-white/10 transition-all duration-200">
+                  Contact Us
                 </Link>
               </div>
             </div>
@@ -280,33 +271,27 @@ export default function SolutionDetailTemplate({
         <div className="h-24 w-full bg-gradient-to-b from-[#0D1B2A] to-[#F8FAFF] pointer-events-none" />
 
         {/* SECTION 2: Overview */}
-        <section className="animate-section py-32 bg-white dark:bg-brand-navy">
+        <section className="py-20 bg-white dark:bg-brand-navy">
           <div className="container max-w-7xl mx-auto px-6">
-            <div className="mb-20">
-              <span className="text-[10px] font-black tracking-[0.3em] text-brand-blue uppercase mb-4 block">
-                {category}
+            <div className="mb-14">
+              <span className="text-[14px] font-bold tracking-[0.2em] text-[#1A56DB] uppercase mb-5 flex items-center gap-3">
+                <span className="w-7 h-[2px] bg-[#1A56DB] rounded-full" />{category}
               </span>
               <h2 className="text-4xl md:text-5xl font-bold tracking-tight font-outfit text-brand-navy dark:text-white">
                 {t("solutions.detail.deliver_title")}
               </h2>
             </div>
- 
-            <div className="deliverables-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+
+            <div className="deliverables-grid grid grid-cols-1 md:grid-cols-3 gap-8">
               {deliverables.map((item, i) => (
-                <div
-                  key={i}
-                  className={cn(
-                    "deliverable-item flex flex-col gap-6",
-                    isRTL ? "items-end text-right" : "items-start text-left"
-                  )}
-                >
-                  <div className="deliverable-icon-box w-14 h-14 rounded-full bg-brand-blue text-white flex items-center justify-center shadow-lg shadow-brand-blue/20">
+                <div key={i}
+                  className={cn("deliverable-item p-6 rounded-xl border border-[#E2EAF8] bg-[#F8FAFF] dark:bg-white/5 dark:border-white/10",
+                    isRTL ? "text-right" : "text-left")}>
+                  <div className="deliverable-icon-box w-12 h-12 rounded-xl bg-[#EEF4FF] border border-[#DBEAFE] flex items-center justify-center mb-4 text-[#1A56DB]">
                     {item.icon}
                   </div>
-                  <div className="space-y-3 overflow-hidden">
-                    <h4 className="text-lg font-bold text-brand-navy dark:text-white tracking-tight whitespace-nowrap overflow-hidden origin-left">{item.title}</h4>
-                    <p className="text-sm text-brand-muted dark:text-white/40 leading-relaxed font-medium">{item.description}</p>
-                  </div>
+                  <h4 className="text-[17px] font-bold text-[#0D1B2A] dark:text-white mb-2 tracking-tight">{item.title}</h4>
+                  <p className="text-[15px] text-[#64748B] dark:text-white/55 leading-relaxed">{item.description}</p>
                 </div>
               ))}
             </div>
@@ -314,29 +299,23 @@ export default function SolutionDetailTemplate({
         </section>
 
         {/* SECTION 3: Approach */}
-        <section className="animate-section py-32 bg-brand-surface dark:bg-white/[0.02]">
+        <section className="py-20 bg-[#F8FAFF] dark:bg-white/[0.02]">
           <div className="container max-w-7xl mx-auto px-6">
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tight font-outfit text-brand-navy dark:text-white mb-20">
+            <h2 className="text-4xl font-bold tracking-tight font-outfit text-brand-navy dark:text-white mb-14">
               {t("solutions.detail.approach")}
             </h2>
 
-            <div className="space-y-24">
+            <div className="space-y-8">
               {approach.map((item, i) => (
-                <div
-                  key={i}
-                  className="approach-item relative group max-w-3xl"
-                >
-                  <div className={cn(
-                    "absolute -top-16 text-[100px] md:text-[140px] font-black text-brand-blue/[0.06] dark:text-white/[0.04] leading-none pointer-events-none select-none z-0 transition-all group-hover:scale-110",
-                    isRTL ? "-right-8" : "-left-8"
-                  )}>
+                <div key={i} className={cn("approach-item flex items-start gap-6", isRTL && "flex-row-reverse")}>
+                  <div className="text-[56px] font-black text-[#1A56DB]/10 leading-none w-20 flex-shrink-0 select-none">
                     0{i + 1}
                   </div>
-                  <div className="relative z-10 pt-4">
-                    <h3 className="text-2xl md:text-3xl font-bold text-brand-navy dark:text-white mb-4 tracking-tight">
+                  <div className="flex-1 pt-2">
+                    <h3 className="text-[20px] font-bold text-[#0D1B2A] dark:text-white tracking-tight mb-2">
                       {item.title}
                     </h3>
-                    <p className="text-base md:text-lg text-brand-muted dark:text-white/40 leading-relaxed font-light">
+                    <p className="text-[15px] text-[#64748B] dark:text-white/55 leading-relaxed">
                       {item.description}
                     </p>
                   </div>
@@ -387,16 +366,12 @@ export default function SolutionDetailTemplate({
 
         {/* SECTION 5: Image Banner */}
         <section className="relative h-[280px] w-full overflow-hidden">
-          <Image
-            src={bannerImage}
-            alt="Single-point accountability"
-            fill
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-brand-navy/60 backdrop-blur-[2px] flex items-center justify-center p-6">
-            <h3 className="text-xl md:text-3xl font-light text-white text-center max-w-3xl leading-relaxed">
+          <Image src={bannerImage} alt="Single-point accountability" fill className="object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0D1B2A]/80 via-[#0D1B2A]/40 to-transparent" />
+          <div className="absolute bottom-8 left-8">
+            <p className="text-[18px] italic text-white/80 max-w-xl leading-relaxed">
               {t("solutions.detail.ctabanner")}
-            </h3>
+            </p>
           </div>
         </section>
 
@@ -410,20 +385,29 @@ export default function SolutionDetailTemplate({
         <div className="h-24 w-full bg-gradient-to-b from-[#F8FAFF] to-[#0D1B2A] pointer-events-none" />
 
         {/* SECTION 6: CTA */}
-        <section className="animate-section py-32 bg-brand-navy text-center">
-          <div className="container max-w-4xl mx-auto px-6">
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tight font-outfit text-white mb-8">
+        <section className="relative py-24 overflow-hidden text-center">
+          <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, #0D1B2A 0%, #0F2A4A 30%, #1A3A6B 65%, #1A56DB 100%)" }} />
+          <div className="absolute inset-0 pointer-events-none overflow-hidden">
+            <div className="absolute" style={{ top: "-20%", left: "-10%", width: "60%", height: "140%", background: "linear-gradient(135deg, rgba(255,255,255,0.04) 0%, transparent 50%)", transform: "rotate(-15deg)" }} />
+            <div className="absolute" style={{ top: "-30%", right: "-5%", width: "50%", height: "130%", background: "linear-gradient(225deg, rgba(26,86,219,0.15) 0%, transparent 60%)", transform: "rotate(10deg)" }} />
+          </div>
+          <div className="relative z-10 container max-w-3xl mx-auto px-6">
+            <h2 className="text-4xl font-bold tracking-tight font-outfit text-white mb-4">
               {t("solutions.cta_title")}
             </h2>
-            <p className="text-xl text-white/50 mb-12 font-light">
+            <p className="text-[17px] text-white/60 mb-10 leading-relaxed">
               {t("solutions.cta_sub")}
             </p>
-            <Link
-              href="/contact"
-              className="inline-block px-12 py-5 bg-brand-blue text-white rounded-full font-bold text-sm uppercase tracking-widest hover:bg-brand-blue-soft hover:shadow-2xl hover:shadow-brand-blue-soft/20 transition-all"
-            >
-              {t("nav.cta")}
-            </Link>
+            <div className="flex items-center justify-center gap-4 flex-wrap">
+              <Link href="/contact"
+                className="px-7 py-3.5 rounded-full bg-white text-[#0D1B2A] text-[14px] font-bold tracking-tight hover:bg-[#F8FAFF] hover:scale-[1.02] transition-all duration-200">
+                Schedule a Consultation
+              </Link>
+              <Link href="/solutions"
+                className="px-7 py-3.5 rounded-full border-2 border-white/30 text-white text-[14px] font-semibold hover:border-white/60 hover:bg-white/10 transition-all duration-200">
+                View All Solutions
+              </Link>
+            </div>
           </div>
         </section>
 

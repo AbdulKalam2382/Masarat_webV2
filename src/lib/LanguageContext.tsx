@@ -23,20 +23,20 @@ const enTranslations = {
     career: "Career",
     resources: "Resources",
     contact: "Contact",
-    cta: "Schedule Consultation",
+    cta: "Schedule a Consultation",
     dropdowns: {
       about: {
         who_we_are: { title: "Who We Are", brief: "Our legacy and commitment to Kuwait." },
         vision_mission: { title: "Vision & Mission", brief: "The pillars of our corporate strategy." },
         delivery_model: { title: "Delivery Model", brief: "How we ensure mission-critical success." },
-        tech_partners: { title: "Technology Partners", brief: "Collaborating with global leaders." }
+        tech_partners: { title: "Tech Partners", brief: "Collaborating with global leaders." }
       },
       solutions: {
-        enterprise: { title: "Digital Platforms", brief: "Enterprise transformation & automation." },
-        ai_data: { title: "AI & Data", brief: "Intelligent systems & advanced analytics." },
-        cybersecurity: { title: "Cybersecurity", brief: "Digital trust & infrastructure protection." },
+        enterprise: { title: "Enterprise Transformation & Digital Platforms", brief: "Enterprise transformation & automation." },
+        ai_data: { title: "AI Data & Intelligent Systems", brief: "Intelligent systems & advanced analytics." },
+        cybersecurity: { title: "Cybersecurity & Digital Trust", brief: "Digital trust & infrastructure protection." },
         elv: { title: "ELV & Smart Systems", brief: "Integrated building & security solutions." },
-        infrastructure: { title: "Critical Infrastructure", brief: "Data centers & mission-critical systems." }
+        infrastructure: { title: "Mission-Critical Infrastructure & Data Centers", brief: "Data centers & mission-critical systems." }
       },
       resources: {
         knowledge: { title: "Knowledge Hub", brief: "Insights on emerging technologies." },
@@ -51,11 +51,11 @@ const enTranslations = {
     }
   },
   hero: {
-    label: "Kuwait's IT Partner",
+    label: "Industry's Leading IT Partner",
     line1: "WE ARCHITECT",
     line2: "DIGITAL TRUST.",
     line3: "INTELLIGENTLY.",
-    sub: "Enterprise Intelligence · Cybersecurity · Infrastructure",
+    sub: "AI Ops · Enterprise Intelligence · Cybersecurity · Infrastructure",
     btn1: "Explore Solutions",
     btn2: "Contact Us",
     scroll: "Scroll"
@@ -146,7 +146,7 @@ const enTranslations = {
       how_deliver: "How We Deliver",
       download: "Download Overview",
       ctabanner: "Delivered with single-point accountability and proven execution capability.",
-      cta: "Schedule Consultation",
+      cta: "Schedule a Consultation",
       btn1: "Get Started",
       timeline: {
         s1t: "Assessment & Planning", "s1d": "Understanding requirements",
@@ -177,7 +177,7 @@ const enTranslations = {
     privacy: "Privacy Policy",
     terms: "Terms of Service",
     nav_label: "Navigation",
-    connect_label: "Connectivity",
+    connect_label: "Technology Partners",
     support_label: "Support Inquiry"
   },
   insights_page: {
@@ -220,9 +220,28 @@ const enTranslations = {
   contact_page: {
     kicker: "Contact Us",
     title: "Advisory.",
-    body: "Connect with our strategic consultants to architect your institution's digital future."
+    title_accent: "great.",
+    body: "Connect with our strategic consultants to architect your institution's digital future.",
+    website_label: "Website",
+    email_label: "Email",
+    phone_label: "Phone",
+    form_firstname: "First name",
+    form_lastname: "Last name",
+    form_email: "Work email",
+    form_company: "Company name",
+    form_message: "Tell us about your project...",
+    form_submit: "Send Message",
+    form_sending: "Sending...",
+    form_sent: "Message Sent ✓",
+    form_success: "We will be in touch soon.",
+    form_error: "Something went wrong. Try again."
   },
   services: {
+    kicker: "Core Capabilities",
+    link: "Explore All Solutions",
+    learnmore: "Know More →",
+    sectors_kicker: "Sectors We Serve",
+    sectors_title: "Industry expertise.",
     s1title: "Strategic Advisory",
     s1desc: "Consulting on digital roadmaps and readiness.",
     s2title: "System Integration",
@@ -281,11 +300,11 @@ const arTranslations = {
         tech_partners: { title: "شركاء التقنية", brief: "التعاون مع القادة العالميين." }
       },
       solutions: {
-        enterprise: { title: "المنصات الرقمية", brief: "التحول المؤسسي والأتمتة." },
-        ai_data: { title: "الذكاء الاصطناعي والبيانات", brief: "الأنظمة الذكية والتحليلات المتقدمة." },
-        cybersecurity: { title: "الأمن السيبراني", brief: "الثقة الرقمية وحماية البنية التحتية." },
+        enterprise: { title: "التحول المؤسسي والمنصات الرقمية", brief: "التحول المؤسسي والأتمتة." },
+        ai_data: { title: "الذكاء الاصطناعي والأنظمة الذكية", brief: "الأنظمة الذكية والتحليلات المتقدمة." },
+        cybersecurity: { title: "الأمن السيبراني والثقة الرقمية", brief: "الثقة الرقمية وحماية البنية التحتية." },
         elv: { title: "أنظمة ELV والأنظمة الذكية", brief: "حلول المباني والأمن المتكاملة." },
-        infrastructure: { title: "البنية التحتية الحيوية", brief: "مراكز البيانات والأنظمة الحساسة." }
+        infrastructure: { title: "البنية التحتية الحيوية ومراكز البيانات", brief: "مراكز البيانات والأنظمة الحساسة." }
       },
       resources: {
         knowledge: { title: "مركز المعرفة", brief: "رؤى حول التقنيات الناشئة." },
@@ -300,11 +319,11 @@ const arTranslations = {
     }
   },
   hero: {
-    label: "شريكك التقني في الكويت",
+    label: "شريك تقنية المعلومات الرائد في الصناعة",
     line1: "نحن نبني",
     line2: "الثقة الرقمية.",
     line3: "على نطاق واسع.",
-    sub: "الذكاء المؤسسي · الأمن السيبراني · البنية التحتية",
+    sub: "عمليات الذكاء الاصطناعي · الذكاء المؤسسي · الأمن السيبراني · البنية التحتية",
     btn1: "استكشف الحلول",
     btn2: "تواصل معنا",
     scroll: "اسحب لأسفل"
@@ -469,9 +488,28 @@ const arTranslations = {
   contact_page: {
     kicker: "تواصل معنا",
     title: "استشارات.",
-    body: "تواصل مع مستشارينا الاستراتيجيين لبناء المستقبل الرقمي لمؤسستك."
+    title_accent: "رائعاً.",
+    body: "تواصل مع مستشارينا الاستراتيجيين لبناء المستقبل الرقمي لمؤسستك.",
+    website_label: "الموقع الإلكتروني",
+    email_label: "البريد الإلكتروني",
+    phone_label: "الهاتف",
+    form_firstname: "الاسم الأول",
+    form_lastname: "اسم العائلة",
+    form_email: "البريد المهني",
+    form_company: "اسم الشركة",
+    form_message: "أخبرنا عن مشروعك...",
+    form_submit: "إرسال الرسالة",
+    form_sending: "جارٍ الإرسال...",
+    form_sent: "تم إرسال الرسالة ✓",
+    form_success: "سنتواصل معك قريباً.",
+    form_error: "حدث خطأ. حاول مرة أخرى."
   },
   services: {
+    kicker: "قدراتنا الأساسية",
+    link: "استكشف جميع الحلول",
+    learnmore: "اعرف المزيد ←",
+    sectors_kicker: "القطاعات التي نخدمها",
+    sectors_title: "خبرة صناعية.",
     s1title: "الاستشارات الاستراتيجية",
     s1desc: "استشارات حول خارطة الطريق الرقمية والجاهزية.",
     s2title: "تكامل الأنظمة",
@@ -548,19 +586,27 @@ export function LanguageProvider({
 
   // Translation function
   const t = (key: string): string => {
-    const keys = key.split('.');
-    let value: unknown = language === 'ar' ? arTranslations : enTranslations;
-    
-    for (const k of keys) {
-      if (value && typeof value === 'object' && k in value) {
-        value = (value as Record<string, unknown>)[k];
-      } else {
-        value = undefined;
-        break;
+    try {
+      const keys = key.split('.')
+      const translations = language === 'ar' ? arTranslations : enTranslations
+      let value: unknown = translations
+      for (const k of keys) {
+        if (value && typeof value === 'object') {
+          value = (value as Record<string, unknown>)[k]
+        } else {
+          value = undefined
+          break
+        }
       }
+      if (typeof value === 'string' && value.length > 0) {
+        return value
+      }
+      // Fallback: convert key to readable text instead of showing raw key
+      const lastPart = key.split('.').pop() || key
+      return lastPart.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase())
+    } catch {
+      return key
     }
-    
-    return (typeof value === 'string' ? value : key);
   }
 
   return (

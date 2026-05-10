@@ -138,21 +138,21 @@
 
 /* Premium Section Kicker */
 .section-kicker {
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 700;
-  letter-spacing: 0.25em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: #3B82F6; /* brand-blue-soft */
+  color: #1A56DB;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
 }
 .section-kicker::before {
   content: '';
   display: block;
-  width: 20px;
+  width: 28px;
   height: 2px;
-  background: #3B82F6;
+  background: currentColor;
   border-radius: 2px;
   flex-shrink: 0;
 }

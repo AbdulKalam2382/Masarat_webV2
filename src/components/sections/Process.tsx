@@ -85,7 +85,7 @@ export default function Process() {
     <section className="py-24 bg-white dark:bg-[#0B1221] overflow-hidden transition-colors duration-500">
       <div className="container max-w-7xl mx-auto px-6" ref={containerRef}>
         <div className="mb-16 relative">
-          <span className="text-xs uppercase tracking-[0.3em] font-bold text-blue-600 mb-4 block rtl:text-right">
+          <span className="text-[14px] uppercase tracking-[0.2em] font-bold text-blue-600 mb-5 block rtl:text-right">
             {t("process.kicker")}
           </span>
           <h2 className="text-4xl md:text-5xl font-bold tracking-tighter font-outfit rtl:text-right text-brand-ink dark:text-[#F5F5F7]">

@@ -1,7 +1,12 @@
 "use client";
 import SolutionDetailTemplate from "@/components/templates/SolutionDetailTemplate";
-import { FileCheck, Shield, Search } from "lucide-react";
+import {
+  FileCheck, Shield, Search,
+  Network, Lock, Eye,
+  ClipboardCheck, AlertTriangle, Settings,
+} from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
+import CapabilityWheel from "@/components/ui/CapabilityWheel";
 
 export default function CybersecurityPage() {
   const { isRTL } = useLanguage();
@@ -33,6 +38,61 @@ export default function CybersecurityPage() {
         { title: "Continuous Response", description: "Proactive threat monitoring and incident response planning to ensure business continuity." },
         { title: "Security by Design", description: "Embedding security controls into the foundation of every solution we deliver." }
       ]}
-    />
+    >
+      {/* Cybersecurity approach image */}
+      <section className="py-12 bg-white border-t border-[#E2EAF8]">
+        <div className="container max-w-7xl mx-auto px-6">
+          <div className="relative w-full rounded-2xl overflow-hidden" style={{ height: 320 }}>
+            <img
+              src="https://images.unsplash.com/photo-1563986768609-322da13575f3?q=90&w=800&auto=format&fit=crop"
+              alt="Cybersecurity"
+              loading="lazy"
+              onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-[#0D1B2A]/60 flex items-end p-10">
+              <p className="text-white/80 text-lg font-light max-w-xl leading-relaxed">
+                Enterprise-grade security architecture designed for Kuwait&apos;s most critical environments.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Capability Wheel */}
+      <section className="py-20 bg-[#F8FAFF] border-t border-[#E2EAF8]">
+        <div className="container max-w-5xl mx-auto px-6">
+          <div className="text-center mb-14">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#0D1B2A] tracking-tighter">
+              Our Capabilities at a Glance
+            </h2>
+          </div>
+          <CapabilityWheel
+            solutionName="Cybersecurity"
+            centerLabel={"Cybersecurity\n& Digital Trust"}
+            categories={[
+              {
+                name: "Protection",
+                nodes: [
+                  { label: "IT Security", icon: Shield },
+                  { label: "OT Security", icon: Network },
+                  { label: "Infrastructure Protection", icon: Lock },
+                  { label: "Threat Monitoring", icon: Eye },
+                ],
+              },
+              {
+                name: "Governance",
+                nodes: [
+                  { label: "Risk Management", icon: FileCheck },
+                  { label: "Compliance", icon: ClipboardCheck },
+                  { label: "Incident Response", icon: AlertTriangle },
+                  { label: "Security Architecture", icon: Settings },
+                ],
+              },
+            ]}
+          />
+        </div>
+      </section>
+    </SolutionDetailTemplate>
   );
 }

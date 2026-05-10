@@ -1,7 +1,11 @@
 "use client";
 import SolutionDetailTemplate from "@/components/templates/SolutionDetailTemplate";
-import { Zap, LayoutDashboard, Settings } from "lucide-react";
+import {
+  Zap, LayoutDashboard, Settings,
+  Layers, GitMerge, BarChart2, Target, RefreshCw,
+} from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
+import CapabilityWheel from "@/components/ui/CapabilityWheel";
 
 export default function DigitalTransformationPage() {
   const { isRTL } = useLanguage();
@@ -33,6 +37,39 @@ export default function DigitalTransformationPage() {
         { title: "Intelligent Automation", description: "Streamlining operations through intelligent automation and workflow redesign for maximum efficiency." },
         { title: "Leadership Visibility", description: "Dashboards and reporting systems that provide real-time insights for leadership decision-making." }
       ]}
-    />
+    >
+      <section className="py-20 bg-[#F8FAFF] border-t border-[#E2EAF8]">
+        <div className="container max-w-5xl mx-auto px-6">
+          <div className="text-center mb-14">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#0D1B2A] tracking-tighter">
+              Our Capabilities at a Glance
+            </h2>
+          </div>
+          <CapabilityWheel
+            solutionName="Enterprise Transformation"
+            centerLabel={"Enterprise\nTransformation"}
+            categories={[
+              {
+                name: "Digital Platforms",
+                nodes: [
+                  { label: "Enterprise Platforms", icon: Layers },
+                  { label: "Process Automation", icon: Zap },
+                  { label: "System Integration", icon: GitMerge },
+                  { label: "Governance", icon: BarChart2 },
+                ],
+              },
+              {
+                name: "Operational Excellence",
+                nodes: [
+                  { label: "Workflow Design", icon: Settings },
+                  { label: "Performance Mgmt", icon: Target },
+                  { label: "Continuous Improvement", icon: RefreshCw },
+                ],
+              },
+            ]}
+          />
+        </div>
+      </section>
+    </SolutionDetailTemplate>
   );
 }
