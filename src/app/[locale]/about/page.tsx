@@ -11,7 +11,7 @@ import { useLanguage } from "@/lib/LanguageContext";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import SceneWrapper from "@/components/three/SceneWrapper";
-import Image from 'next/image';
+
 
 export default function AboutPage() {
   const { t, isRTL } = useLanguage();
@@ -66,7 +66,7 @@ export default function AboutPage() {
                 </p>
               </div>
               <div className="w-full rounded-2xl overflow-hidden" style={{ height: 380 }}>
-                <Image
+                <img
                   src="https://images.unsplash.com/photo-1486325212027-8081e485255e?q=90&w=800&auto=format&fit=crop"
                   alt="Kuwait city"
                   loading="lazy"
@@ -95,7 +95,7 @@ export default function AboutPage() {
 
         {/* Hydrotek Partnership — full-width data center background */}
         <section className="relative overflow-hidden" style={{ minHeight: 320 }}>
-          <Image
+          <img
             src="https://static.vecteezy.com/system/resources/thumbnails/070/051/423/small/data-center-with-multiple-server-racks-housing-advanced-technology-for-data-processing-and-storage-in-a-modern-facility-photo.jpeg"
             alt="Data center partnership"
             loading="lazy"
