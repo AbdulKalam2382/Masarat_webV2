@@ -18,7 +18,7 @@ export default function Home() {
   const {t, isRTL } = useLanguage();
 
   return (
-    <div className={cn(isRTL ? "font-cairo text-right" : "font-inter")}>
+    <div className={cn(isRTL ? "font-cairo text-right" : "font-inter", "pt-[90px]")}>
       <Navbar />
       <main>
         {/* 1. Hero */}
