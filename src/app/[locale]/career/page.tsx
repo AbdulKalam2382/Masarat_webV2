@@ -31,7 +31,7 @@ export default function CareerPage() {
     "Take ownership of meaningful work from day one",
   ];
 
-  const benefitCards = [
+  const _benefitCards = [
     { icon: Trophy,        key: "b1" },
     { icon: GraduationCap, key: "b2" },
     { icon: Globe,         key: "b3" },
