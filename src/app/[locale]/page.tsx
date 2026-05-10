@@ -15,7 +15,7 @@ import { Link } from "@/i18n/routing";
 import { motion } from "framer-motion";
 
 export default function Home() {
-  const { t, isRTL } = useLanguage();
+  const { _t, isRTL } = useLanguage();
 
   return (
     <div className={cn(isRTL ? "font-cairo text-right" : "font-inter")}>
@@ -215,9 +215,9 @@ export default function Home() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-0 mb-16 border border-white/10 rounded-2xl overflow-hidden">
               {[
                 { num: "40+", label: "Years of Combined Experience", desc: "Decades of proven delivery across Kuwait's most critical sectors." },
-                { num: "5",   label: "Integrated Capabilities",      desc: "One partner covering the full enterprise technology stack." },
-                { num: "Tier III", label: "Certified Delivery",       desc: "Data center projects delivered to international standards." },
-                { num: "1",   label: "Point of Accountability",      desc: "Single partner from design through to long-term operations." },
+                { num: "5", label: "Integrated Capabilities", desc: "One partner covering the full enterprise technology stack." },
+                { num: "Tier III", label: "Certified Delivery", desc: "Data center projects delivered to international standards." },
+                { num: "1", label: "Point of Accountability", desc: "Single partner from design through to long-term operations." },
               ].map((stat, i) => (
                 <div key={i} className="p-8 text-center border-r border-b border-white/10 last:border-r-0 hover:bg-white/5 transition-colors duration-200">
                   <div className="text-4xl font-bold text-white tracking-tight mb-2" style={{ letterSpacing: '-0.04em' }}>{stat.num}</div>

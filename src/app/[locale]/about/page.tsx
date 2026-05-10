@@ -11,6 +11,7 @@ import { useLanguage } from "@/lib/LanguageContext";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import SceneWrapper from "@/components/three/SceneWrapper";
+import Image from 'next/image';
 
 export default function AboutPage() {
   const { t, isRTL } = useLanguage();
@@ -35,7 +36,7 @@ export default function AboutPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <span className="section-kicker text-white mb-6 block">
+              <span className="section-kicker text-brand-blue mb-6 block">
                 {t("about_page.kicker")}
               </span>
               <h1 className="text-6xl md:text-8xl font-bold tracking-tighter mb-8 font-outfit uppercase text-white leading-[0.95]">
@@ -65,7 +66,7 @@ export default function AboutPage() {
                 </p>
               </div>
               <div className="w-full rounded-2xl overflow-hidden" style={{ height: 380 }}>
-                <img
+                <Image
                   src="https://images.unsplash.com/photo-1486325212027-8081e485255e?q=90&w=800&auto=format&fit=crop"
                   alt="Kuwait city"
                   loading="lazy"
@@ -86,7 +87,7 @@ export default function AboutPage() {
           )}>
             M
           </div>
-          
+
           <div className="container max-w-7xl mx-auto px-6 relative z-10">
             <Challenges />
           </div>
@@ -94,7 +95,7 @@ export default function AboutPage() {
 
         {/* Hydrotek Partnership — full-width data center background */}
         <section className="relative overflow-hidden" style={{ minHeight: 320 }}>
-          <img
+          <Image
             src="https://static.vecteezy.com/system/resources/thumbnails/070/051/423/small/data-center-with-multiple-server-racks-housing-advanced-technology-for-data-processing-and-storage-in-a-modern-facility-photo.jpeg"
             alt="Data center partnership"
             loading="lazy"
@@ -123,7 +124,7 @@ export default function AboutPage() {
             <QualityCompliance />
           </div>
         </section>
-        
+
         {/* VISION & MISSION */}
         <AboutVisionMission />
 
