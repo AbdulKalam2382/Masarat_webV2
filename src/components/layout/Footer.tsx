@@ -154,12 +154,12 @@ export default function Footer() {
                       isBroadcom ? "h-16 w-48" : "h-12 w-36"
                     )}>
                       <img
-                        src={`/images/partners/${partner.toLowerCase().replace(/\s+/g, "-")}.png`}
+                        src={`/images/Partners/${partner === "Hydrotek" ? "Hydrotek" : partner.toLowerCase().replace(/\s+/g, "-")}.png`}
                         alt={partner}
                         className="h-full w-full object-contain"
                         onError={(e) => {
                           if (partner.toLowerCase().includes('broadcom')) {
-                            (e.target as HTMLImageElement).src = '/images/partners/broadcom.png';
+                            (e.target as HTMLImageElement).src = '/images/Partners/broadcom.png';
                           }
                         }}
                       />
