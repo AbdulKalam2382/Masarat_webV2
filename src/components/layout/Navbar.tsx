@@ -148,7 +148,7 @@ export default function Navbar() {
             </Link>
 
             <div className={cn("flex items-center gap-3", isRTL && "flex-row-reverse")}>
-              <LanguageToggle />
+              {/* <LanguageToggle /> */}
               <ThemeToggle />
               <Link
                 href="/contact"
@@ -309,7 +309,7 @@ export default function Navbar() {
             </div>
 
             <div className="px-6 pb-10 pt-4 space-y-3 flex-shrink-0">
-              <LanguageToggle />
+              {/* <LanguageToggle /> */}
               <Link
                 href="/contact"
                 onClick={() => setMobileOpen(false)}

@@ -565,21 +565,18 @@ export function LanguageProvider({
   const [language, setLanguageState] = useState<Language>('en')
 
   useEffect(() => {
-    // Load saved language from localStorage
-    const saved = localStorage.getItem('masarat_language') as Language
-    if (saved) {
-      setLanguageState(saved)
-      document.documentElement.lang = saved
-      document.documentElement.dir = saved === 'ar' ? 'rtl' : 'ltr'
-    }
+    // Temporarily disabled Arabic support
+    setLanguageState('en')
+    document.documentElement.lang = 'en'
+    document.documentElement.dir = 'ltr'
   }, [])
 
   const setLanguage = (lang: Language) => {
-    setLanguageState(lang)
-    localStorage.setItem('masarat_language', lang)
-    // Apply to entire document instantly
-    document.documentElement.lang = lang
-    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr'
+    // Temporarily disabled: only English is allowed
+    setLanguageState('en')
+    localStorage.setItem('masarat_language', 'en')
+    document.documentElement.lang = 'en'
+    document.documentElement.dir = 'ltr'
   }
 
   const isRTL = language === 'ar'
