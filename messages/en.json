@@ -145,6 +145,16 @@
     "cta_title": "Ready to get started?",
     "cta_sub": "Talk to our solutions team about your specific requirements.",
     "cta_btn1": "Schedule a Consultation",
+    "s1title": "Enterprise Transformation & Digital Platforms",
+    "s1desc": "Empowering organizations to redesign, automate, and scale their core operations.",
+    "s2title": "AI, Data & Intelligent Systems",
+    "s2desc": "Building the data and AI foundation for intelligent decision-making.",
+    "s3title": "Cybersecurity & Digital Trust",
+    "s3desc": "Protecting mission-critical environments through enterprise security frameworks.",
+    "s4title": "ELV & Smart Systems",
+    "s4desc": "Designing and implementing integrated physical and intelligent environments.",
+    "s5title": "Mission-Critical Infrastructure",
+    "s5desc": "Specialized management for data centers and mission-critical facility lifecycles.",
     "detail": {
       "overview": "Overview",
       "process": "Methodology",
@@ -230,7 +240,8 @@
   },
   "contact_page": {
     "kicker": "Contact Us",
-    "title": "Advisory.",
+    "title": "Transform. Build. Succeed",
+    "title_accent": "",
     "body": "Connect with our strategic consultants to architect your institution's digital future."
   },
   "services": {
