@@ -60,23 +60,21 @@ export default function SolutionDetailTemplate({
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // 1. STANDARD CINEMATIC ENTRANCES
+      // 1. STANDARD CINEMATIC ENTRANCES — fade in only, no clipPath
       gsap.utils.toArray<Element>("h1, h2, h3").forEach((heading) => {
         gsap.from(heading, {
-          clipPath: "inset(100% 0% 0% 0%)",
-          y: 50,
+          y: 30,
           opacity: 0,
-          duration: 1,
+          duration: 0.7,
           scrollTrigger: {
             trigger: heading,
             start: "top 90%",
-            end: "top 60%",
-            scrub: 0.3,
+            toggleActions: "play none none none",
           }
         });
       });
 
-      gsap.utils.toArray<Element>(".solution-card, .deliverable-item").forEach((card) => {
+      gsap.utils.toArray<Element>(".solution-card").forEach((card) => {
         gsap.from(card, {
           scale: 0.92,
           opacity: 0,
@@ -89,6 +87,22 @@ export default function SolutionDetailTemplate({
           }
         });
       });
+
+      // Default animation for deliverables if not specialized
+      if (!["digital-transformation", "mission-critical"].includes(slug)) {
+        gsap.utils.toArray<Element>(".deliverable-item").forEach((item) => {
+          gsap.from(item, {
+            opacity: 0,
+            y: 30,
+            scrollTrigger: {
+              trigger: item,
+              start: "top 90%",
+              end: "top 70%",
+              scrub: 0.3,
+            }
+          });
+        });
+      }
 
       // 2. DOMAIN SPECIFIC SCROLL ANIMATIONS
       
@@ -184,22 +198,14 @@ export default function SolutionDetailTemplate({
         });
       }
 
-      // 3. HERO PINNING & SEQUENCING
-      const heroTl = gsap.timeline({
-        scrollTrigger: {
-          trigger: ".hero-section-trigger",
-          start: "top top",
-          end: "+=150%", // Pin for 1.5x the screen height
-          pin: true,
-          scrub: 1,
-        }
+      // 3. HERO ENTRANCE (Simple)
+      gsap.from(".hero-text-content", {
+        opacity: 0,
+        y: 30,
+        duration: 1,
+        delay: 0.5,
+        ease: "power2.out"
       });
-
-      // Text reveals as animation dismantles
-      heroTl.fromTo(".hero-text-content", 
-        { opacity: 0, y: 50 }, 
-        { opacity: 1, y: 0, duration: 1, ease: "power2.out" }
-      );
 
       // 4. REFRESH
       ScrollTrigger.refresh();
@@ -267,8 +273,8 @@ export default function SolutionDetailTemplate({
           </div>
         </section>
 
-        {/* Gradient transition: dark → light */}
-        <div className="h-24 w-full bg-gradient-to-b from-[#0D1B2A] to-[#F8FAFF] pointer-events-none" />
+        {/* Reduced Girth & Opacity Transition */}
+        <div className="h-12 w-full bg-gradient-to-b from-[#0D1B2A]/30 to-transparent pointer-events-none -mt-px" />
 
         {/* SECTION 2: Overview */}
         <section className="py-20 bg-white dark:bg-brand-navy">
@@ -381,8 +387,8 @@ export default function SolutionDetailTemplate({
           </div>
         )}
 
-        {/* Gradient transition: light → dark */}
-        <div className="h-24 w-full bg-gradient-to-b from-[#F8FAFF] to-[#0D1B2A] pointer-events-none" />
+        {/* Reduced Girth & Opacity Transition */}
+        <div className="h-12 w-full bg-gradient-to-b from-transparent to-[#0D1B2A]/20 pointer-events-none" />
 
         {/* SECTION 6: CTA */}
         <section className="relative py-24 overflow-hidden text-center">

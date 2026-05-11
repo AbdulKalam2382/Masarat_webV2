@@ -8,12 +8,13 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { cn } from "@/lib/utils";
 import { useLanguage } from "@/lib/LanguageContext";
+import Captcha from "@/components/ui/Captcha";
 
 const schema = z.object({
-  firstName: z.string().min(2, 'First name is required').regex(/^[a-zA-Z\s\u0600-\u06FF]+$/, 'Invalid name format'),
-  lastName: z.string().min(2, 'Last name is required').regex(/^[a-zA-Z\s\u0600-\u06FF]+$/, 'Invalid name format'),
+  firstName: z.string().min(2, 'First name is required').regex(/^[a-zA-Z\s\u0600-\u06FF\-\.]+$/, 'Invalid name format'),
+  lastName: z.string().min(2, 'Last name is required').regex(/^[a-zA-Z\s\u0600-\u06FF\-\.]+$/, 'Invalid name format'),
   email: z.string().email('Invalid email address'),
-  phone: z.string().min(8, 'Invalid phone number').regex(/^[0-9+\s]+$/, 'Only numbers allowed'),
+  phone: z.string().min(8, 'Invalid phone number').regex(/^[0-9+\s\-\(\)]+$/, 'Invalid phone format'),
   company: z.string().min(2, 'Company name is required'),
   message: z.string().min(10, 'Message must be at least 10 characters')
 });
@@ -22,13 +23,15 @@ type FormData = z.infer<typeof schema>;
 
 export default function Contact() {
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
   const { t, isRTL } = useLanguage();
 
   const {
     register,
     handleSubmit,
     reset,
-    formState: { errors, isDirty }
+    formState: { errors, dirtyFields }
   } = useForm<FormData>({
     resolver: zodResolver(schema),
     mode: "onChange"
@@ -36,30 +39,52 @@ export default function Contact() {
 
   const onSubmit = async (data: FormData) => {
     setStatus('loading');
+    setErrorMessage(null);
 
     try {
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
+        body: JSON.stringify({ ...data, captchaToken }),
       });
 
-      if (!response.ok) throw new Error('Failed to send message');
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || 'Failed to send message');
+      }
 
       setStatus('success');
       reset();
+      setCaptchaToken(null);
       
       setTimeout(() => setStatus('idle'), 5000);
-    } catch (err) {
+    } catch (err: any) {
       console.error(err);
       setStatus('error');
-      setTimeout(() => setStatus('idle'), 5000);
+      setErrorMessage(err.message);
+      setTimeout(() => {
+        setStatus('idle');
+        setErrorMessage(null);
+      }, 6000);
+    }
+  };
+
+  const onError = (errors: any) => {
+    const firstError = Object.values(errors)[0] as any;
+    if (firstError) {
+      setErrorMessage(firstError.message);
+      setStatus('error');
+      setTimeout(() => {
+        setStatus('idle');
+        setErrorMessage(null);
+      }, 5000);
     }
   };
 
   const getFieldStatus = (name: keyof FormData) => {
     if (errors[name]) return "error";
-    if (isDirty && !errors[name]) return "valid";
+    if (dirtyFields[name] && !errors[name]) return "valid";
     return "idle";
   };
 
@@ -154,7 +179,7 @@ export default function Contact() {
           >
             <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_top_right,_rgba(37,99,235,0.03)_0%,_transparent_50%)] pointer-events-none" />
             
-            <form className="flex flex-col gap-6" onSubmit={handleSubmit(onSubmit)}>
+            <form className="flex flex-col gap-6" onSubmit={handleSubmit(onSubmit, onError)}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="flex flex-col gap-2">
                   <label className={cn("text-xs font-bold uppercase tracking-widest text-[#6B6B6B] dark:text-[#A1A1A6] px-1", isRTL && "text-right")}>
@@ -228,12 +253,16 @@ export default function Contact() {
                 />
               </div>
 
+              <div className="mt-2">
+                <Captcha onVerify={setCaptchaToken} isRTL={isRTL} />
+              </div>
+
               <motion.div
                 animate={Object.keys(errors).length > 0 ? "shake" : ""}
                 variants={shakeAnimation}
               >
                 <button 
-                  disabled={status === 'loading' || status === 'success'}
+                  disabled={status === 'loading' || status === 'success' || !captchaToken}
                   className={cn(
                     "w-full py-5 rounded-[16px] font-bold text-base flex items-center justify-center gap-3 transition-all active:scale-[0.98] shadow-lg",
                     {
@@ -291,7 +320,7 @@ export default function Contact() {
                     className={cn("flex items-center gap-2 text-red-500 bg-red-500/10 p-4 rounded-[12px] border border-red-500/20", isRTL && "flex-row-reverse")}
                   >
                     <AlertCircle size={18} />
-                    <p className="text-sm font-semibold">{t("contact_page.form_error")}</p>
+                    <p className="text-sm font-semibold">{errorMessage || t("contact_page.form_error")}</p>
                   </motion.div>
                 )}
               </AnimatePresence>

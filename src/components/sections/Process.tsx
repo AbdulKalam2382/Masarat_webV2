@@ -114,10 +114,10 @@ export default function Process() {
               </div>
               
               <div className="flex flex-col gap-4">
-                <h3 className="text-xl font-bold tracking-tight font-outfit rtl:text-right text-brand-ink dark:text-[#F5F5F7]">
+                <h3 className="text-2xl font-bold tracking-tight font-outfit rtl:text-right text-brand-ink dark:text-[#F5F5F7]">
                   {step.title}
                 </h3>
-                <p className="text-sm text-gray-500 dark:text-[#8E8E93] leading-relaxed font-light rtl:text-right">
+                <p className="text-[17px] text-gray-500 dark:text-[#8E8E93] leading-relaxed font-light rtl:text-right">
                   {step.desc}
                 </p>
               </div>
@@ -133,10 +133,10 @@ export default function Process() {
               <div className="w-8 h-8 rounded-lg bg-[#2563EB]/10 border border-[#2563EB]/20 flex items-center justify-center mb-4">
                 <CheckCircle size={16} className="text-[#2563EB]" />
               </div>
-              <h4 className="text-white font-semibold text-sm mb-2">
+              <h4 className="text-white font-semibold text-base mb-2">
                 {t("process.callouts.c1t")}
               </h4>
-              <p className="text-white/50 text-xs leading-relaxed">
+              <p className="text-white/60 text-sm leading-relaxed">
                 {t("process.callouts.c1d")}
               </p>
             </div>
@@ -145,10 +145,10 @@ export default function Process() {
               <div className="w-8 h-8 rounded-lg bg-[#2563EB]/10 border border-[#2563EB]/20 flex items-center justify-center mb-4">
                 <Shield size={16} className="text-[#2563EB]" />
               </div>
-              <h4 className="text-white font-semibold text-sm mb-2">
+              <h4 className="text-white font-semibold text-base mb-2">
                 {t("process.callouts.c2t")}
               </h4>
-              <p className="text-white/50 text-xs leading-relaxed">
+              <p className="text-white/60 text-sm leading-relaxed">
                 {t("process.callouts.c2d")}
               </p>
             </div>
@@ -157,10 +157,10 @@ export default function Process() {
               <div className="w-8 h-8 rounded-lg bg-[#2563EB]/10 border border-[#2563EB]/20 flex items-center justify-center mb-4">
                 <Activity size={16} className="text-[#2563EB]" />
               </div>
-              <h4 className="text-white font-semibold text-sm mb-2">
+              <h4 className="text-white font-semibold text-base mb-2">
                 {t("process.callouts.c3t")}
               </h4>
-              <p className="text-white/50 text-xs leading-relaxed">
+              <p className="text-white/60 text-sm leading-relaxed">
                 {t("process.callouts.c3d")}
               </p>
             </div>

@@ -10,8 +10,8 @@ export default function CybersecurityPage() {
       name={isRTL ? "الأمن السيبراني والثقة الرقمية" : "Cybersecurity & Digital Trust"}
       category={isRTL ? "أمن" : "Security"}
       description={isRTL
-        ? "حماية البيئات الرقمية الأكثر أهمية في الكويت من خلال أطر أمنية على مستوى المؤسسات ومراقبة مستمرة وإدارة مخاطر موجهة بالامتثال. الأمن مبدأ تصميم أساسي وليس طبقة إضافية."
-        : "Protecting Kuwait's most critical digital environments through enterprise-grade security frameworks, continuous monitoring, and compliance-driven risk management. Security is a core design principle, not an add-on layer."}
+        ? "حماية البيئات الرقمية الأكثر أهمية من خلال أطر أمنية على مستوى المؤسسات ومراقبة مستمرة وإدارة مخاطر موجهة بالامتثال. الأمن مبدأ تصميم أساسي وليس طبقة إضافية."
+        : "Protecting critical digital environments through enterprise-grade security frameworks, continuous monitoring, and compliance-driven risk management. Security is a core design principle, not an add-on layer."}
       deliverables={isRTL ? [
         "الأمن السيبراني لتقنية المعلومات والتقنيات التشغيلية",
         "حماية البنية التحتية والشبكات",

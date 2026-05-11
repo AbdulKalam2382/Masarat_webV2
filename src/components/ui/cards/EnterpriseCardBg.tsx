@@ -1,9 +1,9 @@
 "use client";
 
-const COLS = 18;
-const ROWS = 13;
-const CELL = 18;
-const GAP = 3;
+const COLS = 12;
+const ROWS = 9;
+const CELL = 26;
+const GAP = 4;
 const S = CELL + GAP;
 const DUR = 6;
 
@@ -15,6 +15,8 @@ export default function EnterpriseCardBg() {
         preserveAspectRatio="xMidYMid slice"
         className="w-full h-full"
         aria-hidden="true"
+        shapeRendering="optimizeSpeed"
+        colorRendering="optimizeSpeed"
       >
         <defs>
           <style>{`

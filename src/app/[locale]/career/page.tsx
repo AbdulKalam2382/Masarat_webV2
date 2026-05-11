@@ -16,17 +16,17 @@ export default function CareerPage() {
   const { t, isRTL } = useLanguage();
 
   const whyBullets = isRTL ? [
-    "العمل على مشاريع عالية الأثر لأبرز المنظمات الاستراتيجية في الكويت",
+    "العمل على مشاريع عالية الأثر لأبرز المنظمات الاستراتيجية",
     "النمو جنباً إلى جنب مع فريق من المهندسين والاستشاريين ذوي الخبرة",
     "الوصول إلى التعلم المستمر ودعم الاعتماد المهني",
-    "المساهمة في أجندة التحول الرقمي للكويت",
+    "المساهمة في أجندة التحول الرقمي",
     "الاستمتاع بثقافة مبنية على النزاهة والتعاون والتميز",
     "تحمّل ملكية العمل ذي المعنى منذ اليوم الأول",
   ] : [
-    "Work on high-impact projects for Kuwait's most strategic organizations",
+    "Work on high-impact projects for leading strategic organizations",
     "Grow alongside a team of experienced engineers and consultants",
     "Access continuous learning and professional certification support",
-    "Contribute to Kuwait's digital transformation agenda",
+    "Contribute to the digital transformation agenda",
     "Enjoy a culture built on integrity, collaboration, and excellence",
     "Take ownership of meaningful work from day one",
   ];
@@ -92,8 +92,8 @@ export default function CareerPage() {
           </div>
         </section>
 
-        {/* Gradient transition: dark → light */}
-        <div className="h-24 w-full bg-gradient-to-b from-[#0D1B2A] to-[#F8FAFF] pointer-events-none" />
+        {/* Reduced Girth & Opacity Transition */}
+        <div className="h-12 w-full bg-gradient-to-b from-[#0D1B2A]/30 to-transparent pointer-events-none -mt-px" />
 
         {/* ═══════════════════════════════════════
             2. WHY WORK AT MASARAT
@@ -172,7 +172,7 @@ export default function CareerPage() {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0D1B2A]/50 to-transparent" />
                 <div className="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-sm rounded-xl p-5 border border-[#E2EAF8]">
                   <p className="text-[12px] font-bold tracking-[0.15em] uppercase text-[#1A56DB] mb-2">Why join us</p>
-                  <p className="text-[15px] font-semibold text-[#0D1B2A] leading-snug">Work on projects that shape Kuwait&apos;s technology future.</p>
+                  <p className="text-[15px] font-semibold text-[#0D1B2A] leading-snug">Work on projects that shape the technology future.</p>
                 </div>
               </div>
 
@@ -193,10 +193,10 @@ export default function CareerPage() {
                   {[
                     { title: "Competitive Compensation", desc: "Market-aligned salaries with performance-based rewards that recognise real contribution and delivery." },
                     { title: "Learning & Development", desc: "Access to certifications, training programmes, and global technology partner learning platforms including Broadcom, Huawei, and Qlik." },
-                    { title: "Global Technology Exposure", desc: "Work directly with world-class technology vendors and enterprise platforms used by leading institutions across Kuwait and the GCC." },
+                    { title: "Global Technology Exposure", desc: "Work directly with world-class technology vendors and enterprise platforms used by leading regional institutions." },
                     { title: "Fast Career Progression", desc: "A growing company with expanding capabilities means real opportunities for advancement based on merit and impact." },
                     { title: "Collaborative Environment", desc: "A culture built on accountability, mutual respect, and delivering quality work — where your expertise is valued and your voice matters." },
-                    { title: "Meaningful Local Impact", desc: "Your work directly contributes to the technology infrastructure of Kuwait's most critical government, banking, and energy institutions." },
+                    { title: "Meaningful Institutional Impact", desc: "Your work directly contributes to the technology infrastructure of critical government, banking, and energy institutions." },
                   ].map((item, i) => (
                     <div key={i}
                       className={cn(
@@ -209,8 +209,8 @@ export default function CareerPage() {
                         </span>
                       </div>
                       <div className="flex-1">
-                        <h3 className="text-[15px] font-bold text-[#0D1B2A] mb-1 tracking-tight">{item.title}</h3>
-                        <p className="text-[14px] text-[#64748B] leading-relaxed">{item.desc}</p>
+                        <h3 className="text-[18px] font-bold text-[#0D1B2A] mb-1 tracking-tight">{item.title}</h3>
+                        <p className="text-[16px] text-[#64748B] leading-relaxed">{item.desc}</p>
                       </div>
                     </div>
                   ))}
@@ -220,8 +220,8 @@ export default function CareerPage() {
           </div>
         </section>
 
-        {/* Gradient transition: light → dark */}
-        <div className="h-24 w-full bg-gradient-to-b from-[#F8FAFF] to-[#0D1B2A] pointer-events-none" />
+        {/* Reduced Girth & Opacity Transition */}
+        <div className="h-12 w-full bg-gradient-to-b from-transparent to-[#0D1B2A]/20 pointer-events-none" />
 
         {/* ═══════════════════════════════════════
             4. OUR WORK CULTURE
@@ -253,10 +253,10 @@ export default function CareerPage() {
                     <div className="w-11 h-11 rounded-full bg-brand-blue-soft/20 text-brand-blue-soft flex items-center justify-center">
                       <pillar.icon size={20} />
                     </div>
-                    <h3 className="text-base font-bold text-white tracking-tight">
+                    <h3 className="text-lg font-bold text-white tracking-tight">
                       {t(`career_page.${pillar.key}t`)}
                     </h3>
-                    <p className="text-sm text-white/55 leading-relaxed font-light">
+                    <p className="text-[15px] text-white/60 leading-relaxed font-light">
                       {t(`career_page.${pillar.key}d`)}
                     </p>
                   </motion.div>
@@ -265,8 +265,8 @@ export default function CareerPage() {
           </div>
         </section>
 
-        {/* Gradient transition: dark → light */}
-        <div className="h-24 w-full bg-gradient-to-b from-[#0D1B2A] to-[#F8FAFF] pointer-events-none" />
+        {/* Reduced Girth & Opacity Transition */}
+        <div className="h-12 w-full bg-gradient-to-b from-[#0D1B2A]/30 to-transparent pointer-events-none -mt-px" />
 
         {/* ═══════════════════════════════════════
             5. OPEN POSITIONS

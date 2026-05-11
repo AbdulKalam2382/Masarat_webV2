@@ -101,7 +101,7 @@ function NeuralNetwork({ nodeCount }: { nodeCount: number }) {
 export default function AIScene() {
   const isMobile = useIsMobile();
   return (
-    <Canvas camera={{ position: [0, 0, 10], fov: 60 }} gl={{ alpha: true, antialias: true }}
+    <Canvas camera={{ position: [0, 0, 10], fov: 60 }} gl={{ alpha: true, antialias: true, powerPreference: "high-performance" }}
       style={{ position: "absolute", inset: 0, width: "100%", height: "100%", pointerEvents: "none" }}
       dpr={[1, 1.5]}>
       <NeuralNetwork nodeCount={isMobile ? 18 : 40} />

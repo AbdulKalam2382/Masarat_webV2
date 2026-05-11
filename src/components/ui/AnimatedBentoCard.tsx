@@ -2,13 +2,18 @@
 
 import { Link } from "@/i18n/routing";
 import { cn } from "@/lib/utils";
-import EnterpriseCardBg from "@/components/ui/cards/EnterpriseCardBg";
-import AICardBg from "@/components/ui/cards/AICardBg";
-import CyberCardBg from "@/components/ui/cards/CyberCardBg";
-import ELVCardBg from "@/components/ui/cards/ELVCardBg";
-import DataCenterCardBg from "@/components/ui/cards/DataCenterCardBg";
+import { motion, useInView } from "framer-motion";
+import { useRef, lazy, Suspense } from "react";
+import type { CardType } from "@/components/ui/AnimatedBentoCard";
 
-export type CardType = "enterprise" | "ai" | "cyber" | "elv" | "datacenter";
+// Lazy-load each animated background so it only renders when needed
+const EnterpriseCardBg = lazy(() => import("@/components/ui/cards/EnterpriseCardBg"));
+const AICardBg         = lazy(() => import("@/components/ui/cards/AICardBg"));
+const CyberCardBg      = lazy(() => import("@/components/ui/cards/CyberCardBg"));
+const ELVCardBg        = lazy(() => import("@/components/ui/cards/ELVCardBg"));
+const DataCenterCardBg = lazy(() => import("@/components/ui/cards/DataCenterCardBg"));
+
+export type { CardType };
 
 interface AnimatedBentoCardProps {
   cardType: CardType;
@@ -20,13 +25,14 @@ interface AnimatedBentoCardProps {
   className?: string;
   overlayFrom?: string;
   overlayTo?: string;
+  index?: number; // for stagger delay
 }
 
-const bgComponents: Record<CardType, React.ComponentType> = {
+const bgComponents: Record<CardType, React.LazyExoticComponent<React.ComponentType>> = {
   enterprise: EnterpriseCardBg,
-  ai: AICardBg,
-  cyber: CyberCardBg,
-  elv: ELVCardBg,
+  ai:         AICardBg,
+  cyber:      CyberCardBg,
+  elv:        ELVCardBg,
   datacenter: DataCenterCardBg,
 };
 
@@ -46,22 +52,43 @@ export default function AnimatedBentoCard({
   href,
   isRTL = false,
   className,
+  index = 0,
 }: AnimatedBentoCardProps) {
+  const ref = useRef<HTMLDivElement>(null);
+  // Only mount the SVG background once the card is ~10% visible
+  const isInView = useInView(ref, { once: true, margin: "0px 0px -60px 0px" });
+
   const BgComponent = bgComponents[cardType];
   const overlay = defaultOverlay[cardType];
 
   return (
-    <div
+    <motion.div
+      ref={ref}
       className={cn(
         "solution-card relative overflow-hidden rounded-2xl min-h-[420px] group flex flex-col",
-        "transition-all duration-300 hover:-translate-y-1",
-        "hover:shadow-[0_20px_40px_rgba(26,86,219,0.25)]",
+        "transition-shadow duration-300 hover:shadow-[0_20px_40px_rgba(26,86,219,0.25)]",
         className
       )}
-      style={{ background: 'linear-gradient(135deg, #0D1B2A 0%, #0F2A4A 25%, #1A3A6B 60%, #1A56DB 100%)' }}
+      style={{ 
+        background: "linear-gradient(135deg, #0D1B2A 0%, #0F2A4A 25%, #1A3A6B 60%, #1A56DB 100%)",
+        willChange: "transform, opacity"
+      }}
+      initial={{ opacity: 0, y: 28 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "0px 0px -40px 0px" }}
+      transition={{
+        duration: 0.6,
+        delay: index * 0.1,
+        ease: [0.33, 1, 0.68, 1],
+      }}
+      whileHover={{ y: -4 }}
     >
-      {/* Animated background canvas */}
-      <BgComponent />
+      {/* Lazy animated background — only renders when card enters viewport */}
+      {isInView && (
+        <Suspense fallback={null}>
+          <BgComponent />
+        </Suspense>
+      )}
 
       {/* Dark gradient overlay */}
       <div
@@ -89,9 +116,9 @@ export default function AnimatedBentoCard({
           </span>
         </div>
 
-        {/* MIDDLE — title + divider + bullets, centred in remaining space */}
+        {/* MIDDLE — title + divider + bullets */}
         <div className="flex-1 flex flex-col justify-center py-2">
-          <h3 className="text-[20px] font-bold text-white tracking-tight leading-snug mb-4 font-outfit">
+          <h3 className="text-[26px] md:text-[28px] font-bold text-white tracking-tight leading-snug mb-4 font-outfit">
             {title}
           </h3>
           <div className="w-8 h-[1.5px] bg-[#1A56DB] rounded-full mb-4" />
@@ -99,7 +126,7 @@ export default function AnimatedBentoCard({
             {bullets.map((b, i) => (
               <li key={i} className={cn("flex items-start gap-2.5", isRTL && "flex-row-reverse")}>
                 <span className="w-2 h-2 rounded-full bg-white/40 mt-[6px] flex-shrink-0" />
-                <span className="text-[14px] text-white/65 leading-relaxed">{b}</span>
+                <span className="text-[17px] text-white/80 leading-relaxed">{b}</span>
               </li>
             ))}
           </ul>
@@ -122,6 +149,6 @@ export default function AnimatedBentoCard({
           </Link>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

@@ -10,21 +10,21 @@ const sectors = [
     icon: Landmark,
     titleEN: "Government & Public Sector",
     titleAR: "الحكومة والقطاع العام",
-    p1EN: "We partner with Kuwait's government ministries and public agencies to deliver digital transformation initiatives that modernize service delivery and improve operational efficiency.",
-    p1AR: "نتشارك مع وزارات الحكومة الكويتية والجهات العامة لتقديم مبادرات التحول الرقمي التي تُحدّث تقديم الخدمات وتُحسّن الكفاءة التشغيلية.",
+    p1EN: "We partner with government ministries and public agencies to deliver digital transformation initiatives that modernize service delivery and improve operational efficiency.",
+    p1AR: "نتشارك مع وزارات الحكومة والجهات العامة لتقديم مبادرات التحول الرقمي التي تُحدّث تقديم الخدمات وتُحسّن الكفاءة التشغيلية.",
     p2EN: "From enterprise resource planning to citizen service portals, we help government entities modernize their operational backbone with scalable, secure platforms.",
     p2AR: "من تخطيط موارد المؤسسات إلى بوابات خدمات المواطنين، نساعد الجهات الحكومية على تحديث بنيتها التشغيلية بمنصات آمنة وقابلة للتوسع.",
-    p3EN: "Our work supports Kuwait's Vision 2035 by enabling data-driven governance and digital-first public service delivery across ministries and agencies.",
-    p3AR: "يدعم عملنا رؤية الكويت 2035 من خلال تمكين الحوكمة القائمة على البيانات وتقديم الخدمات العامة بنهج رقمي عبر الوزارات والجهات الحكومية.",
+    p3EN: "Our work supports strategic institutional visions by enabling data-driven governance and digital-first public service delivery across ministries and agencies.",
+    p3AR: "يدعم عملنا الرؤى الاستراتيجية والتحول الرقمي من خلال تمكين الحوكمة القائمة على البيانات وتقديم الخدمات العامة بنهج رقمي عبر الوزارات والجهات الحكومية.",
   },
   {
     icon: Banknote,
     titleEN: "Banking & Financial Services",
     titleAR: "الخدمات المصرفية والمالية",
-    p1EN: "Kuwait's financial institutions demand the highest standards of security, availability, and compliance. We deliver purpose-built solutions that meet these requirements without compromise.",
-    p1AR: "تتطلب المؤسسات المالية الكويتية أعلى معايير الأمان والتوافر والامتثال. نقدم حلولاً مصممة خصيصاً لتلبية هذه المتطلبات دون تنازل.",
-    p2EN: "We deliver robust cybersecurity frameworks, compliance-aligned platforms, and AI-powered risk analytics purpose-built for Kuwait's financial institutions.",
-    p2AR: "نقدم أطر أمن سيبراني متينة ومنصات متوافقة مع الامتثال وتحليلات مخاطر مدعومة بالذكاء الاصطناعي مصممة للمؤسسات المالية الكويتية.",
+    p1EN: "Leading financial institutions demand the highest standards of security, availability, and compliance. We deliver purpose-built solutions that meet these requirements without compromise.",
+    p1AR: "تتطلب المؤسسات المالية الرائدة أعلى معايير الأمان والتوافر والامتثال. نقدم حلولاً مصممة خصيصاً لتلبية هذه المتطلبات دون تنازل.",
+    p2EN: "We deliver robust cybersecurity frameworks, compliance-aligned platforms, and AI-powered risk analytics purpose-built for regional financial institutions.",
+    p2AR: "نقدم أطر أمن سيبراني متينة ومنصات متوافقة مع الامتثال وتحليلات مخاطر مدعومة بالذكاء الاصطناعي مصممة للمؤسسات المالية الكبرى.",
     p3EN: "Our mission-critical infrastructure ensures continuous availability for banking operations, with Tier III aligned environments and zero-downtime upgrade pathways.",
     p3AR: "تضمن بنيتنا التحتية الحيوية الاستمرارية الكاملة للعمليات المصرفية، مع بيئات متوافقة مع المستوى الثالث ومسارات ترقية بدون توقف.",
   },
@@ -32,8 +32,8 @@ const sectors = [
     icon: Flame,
     titleEN: "Oil, Gas & Energy",
     titleAR: "النفط والغاز والطاقة",
-    p1EN: "Kuwait's energy sector requires resilient, highly available infrastructure that can withstand operational demands while meeting stringent security and compliance obligations.",
-    p1AR: "يتطلب قطاع الطاقة الكويتي بنية تحتية متينة وعالية التوافر قادرة على تحمل المتطلبات التشغيلية مع الوفاء بالتزامات الأمن والامتثال الصارمة.",
+    p1EN: "The energy sector requires resilient, highly available infrastructure that can withstand operational demands while meeting stringent security and compliance obligations.",
+    p1AR: "يتطلب قطاع الطاقة بنية تحتية متينة وعالية التوافر قادرة على تحمل المتطلبات التشغيلية مع الوفاء بالتزامات الأمن والامتثال الصارمة.",
     p2EN: "We integrate OT security monitoring and industrial control system protection to safeguard critical energy assets against advanced cyber threats.",
     p2AR: "ندمج مراقبة أمن التقنيات التشغيلية وحماية أنظمة التحكم الصناعي لحماية أصول الطاقة الحيوية من التهديدات الإلكترونية المتقدمة.",
     p3EN: "Smart infrastructure solutions — from BMS integration to SCADA-connected ELV systems — support operational continuity across upstream and downstream facilities.",
@@ -43,12 +43,12 @@ const sectors = [
     icon: Building2,
     titleEN: "Real Estate & Hospitality",
     titleAR: "العقارات والضيافة",
-    p1EN: "Kuwait's growing real estate and hospitality sector demands intelligent, connected building environments that deliver exceptional experiences while optimizing operational costs.",
-    p1AR: "يتطلب قطاع العقارات والضيافة الكويتي المتنامي بيئات مبانٍ ذكية ومتصلة تقدم تجارب استثنائية مع تحسين التكاليف التشغيلية.",
+    p1EN: "The growing real estate and hospitality sector demands intelligent, connected building environments that deliver exceptional experiences while optimizing operational costs.",
+    p1AR: "يتطلب قطاع العقارات والضيافة المتنامي بيئات مبانٍ ذكية ومتصلة تقدم تجارب استثنائية مع تحسين التكاليف التشغيلية.",
     p2EN: "Intelligent building management systems, integrated ELV, and fire & life safety solutions transform commercial and hospitality properties into seamlessly connected environments.",
     p2AR: "تحوّل أنظمة إدارة المباني الذكية وأنظمة ELV المتكاملة وحلول الحماية من الحرائق والسلامة العقارات التجارية والضيافة إلى بيئات متصلة بسلاسة.",
-    p3EN: "Our smart building frameworks reduce operational costs, enhance guest experiences, and meet the growing demand for sustainable, connected real estate in Kuwait.",
-    p3AR: "تقلل أطر المباني الذكية لدينا التكاليف التشغيلية وتعزز تجارب الضيوف وتلبي الطلب المتزايد على العقارات المستدامة والمتصلة في الكويت.",
+    p3EN: "Our smart building frameworks reduce operational costs, enhance guest experiences, and meet the growing demand for sustainable, connected real estate.",
+    p3AR: "تقلل أطر المباني الذكية لدينا التكاليف التشغيلية وتعزز تجارب الضيوف وتلبي الطلب المتزايد على العقارات المستدامة والمتصلة.",
   },
 ];
 
@@ -111,17 +111,17 @@ export default function SectorsWeServe() {
                   <Icon size={20} className="text-brand-blue" />
                 </div>
 
-                <h3 className="text-xl font-bold text-white tracking-tight mb-5 font-outfit">
+                <h3 className="text-2xl font-bold text-white tracking-tight mb-5 font-outfit">
                   {isRTL ? sector.titleAR : sector.titleEN}
                 </h3>
 
-                <p className="text-sm text-white/55 font-light leading-relaxed mb-3">
+                <p className="text-[16px] text-white/60 font-light leading-relaxed mb-3">
                   {isRTL ? sector.p1AR : sector.p1EN}
                 </p>
-                <p className="text-sm text-white/55 font-light leading-relaxed mb-3">
+                <p className="text-[16px] text-white/60 font-light leading-relaxed mb-3">
                   {isRTL ? sector.p2AR : sector.p2EN}
                 </p>
-                <p className="text-sm text-white/55 font-light leading-relaxed">
+                <p className="text-[16px] text-white/60 font-light leading-relaxed">
                   {isRTL ? sector.p3AR : sector.p3EN}
                 </p>
               </motion.div>

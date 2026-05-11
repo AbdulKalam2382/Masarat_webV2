@@ -18,8 +18,8 @@ export default function CybersecurityPage() {
       heroImage="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=90&w=1920&auto=format&fit=crop"
       bannerImage="https://images.unsplash.com/photo-1563986768609-322da13575f3?q=85&w=1920&auto=format&fit=crop"
       description={isRTL
-        ? "حماية البيئات الرقمية الأكثر أهمية في الكويت من خلال أطر أمنية على مستوى المؤسسات ومراقبة مستمرة وإدارة مخاطر موجهة بالامتثال."
-        : "Protecting Kuwait's most critical digital environments through enterprise-grade security frameworks, continuous monitoring, and compliance-driven risk management."}
+        ? "حماية البيئات الرقمية الأكثر أهمية من خلال أطر أمنية على مستوى المؤسسات ومراقبة مستمرة وإدارة مخاطر موجهة بالامتثال."
+        : "Protecting critical digital environments through enterprise-grade security frameworks, continuous monitoring, and compliance-driven risk management."}
       deliverables={isRTL ? [
         { title: "حماية البنية التحتية", description: "تأمين الشبكات والأنظمة الحيوية ضد التهديدات.", icon: <Shield size={20} /> },
         { title: "المخاطر والامتثال", description: "التوافق التنظيمي وإدارة المخاطر المؤسسية.", icon: <FileCheck size={20} /> },
@@ -52,7 +52,7 @@ export default function CybersecurityPage() {
             />
             <div className="absolute inset-0 bg-[#0D1B2A]/60 flex items-end p-10">
               <p className="text-white/80 text-lg font-light max-w-xl leading-relaxed">
-                Enterprise-grade security architecture designed for Kuwait&apos;s most critical environments.
+                Enterprise-grade security architecture designed for the most critical environments.
               </p>
             </div>
           </div>

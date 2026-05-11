@@ -92,7 +92,7 @@ export default function Navbar() {
       <nav
         className="fixed top-0 left-0 right-0 z-50"
         style={{
-          height: "90px",
+          height: "110px",
           background: isDark ? "rgba(13,27,42,0.97)" : "rgba(255,255,255,0.97)",
           backdropFilter: "blur(20px)",
           borderBottom: isDark ? "1px solid rgba(255,255,255,0.08)" : "1px solid #E2EAF8",
@@ -114,8 +114,8 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop nav */}
-          <div className={cn("hidden md:flex items-center gap-8", isRTL && "flex-row-reverse")}>
-            {(["about", "solutions", "resources"] as NonNullable<DropdownKey>[]).map((key) => (
+          <div className={cn("hidden md:flex items-center gap-8 ml-auto", isRTL ? "ml-0 mr-auto flex-row-reverse" : "ml-auto")}>
+            {(["about", "solutions"] as NonNullable<DropdownKey>[]).map((key) => (
               <div
                 key={key}
                 className="relative h-full flex items-center"
@@ -250,7 +250,7 @@ export default function Navbar() {
             </div>
 
             <div className="flex-1 overflow-y-auto px-6 py-8 space-y-1">
-              {(["about", "solutions", "resources"] as NonNullable<DropdownKey>[]).map((key) => (
+              {(["about", "solutions"] as NonNullable<DropdownKey>[]).map((key) => (
                 <div key={key}>
                   <button
                     onClick={() => setMobileAccordion(mobileAccordion === key ? null : key)}

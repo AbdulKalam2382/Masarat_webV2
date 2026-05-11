@@ -45,8 +45,8 @@ export default function ContactPage() {
           </div>
         </section>
 
-        {/* Gradient transition: dark → light */}
-        <div className="h-20 w-full bg-gradient-to-b from-[#0D1B2A] to-white pointer-events-none" />
+        {/* Reduced Girth & Opacity Transition */}
+        <div className="h-12 w-full bg-gradient-to-b from-[#0D1B2A]/30 to-transparent pointer-events-none -mt-px" />
 
         {/* CONTACT FORM SECTION */}
         <section className="relative py-20 bg-white overflow-hidden">

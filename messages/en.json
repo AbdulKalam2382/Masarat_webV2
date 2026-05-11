@@ -8,17 +8,17 @@
     "cta": "Schedule Consultation",
     "dropdowns": {
       "about": {
-        "who_we_are": { "title": "Who We Are", "brief": "Our legacy and commitment to Kuwait." },
+        "who_we_are": { "title": "Who We Are", "brief": "Our legacy and commitment to excellence." },
         "vision_mission": { "title": "Vision & Mission", "brief": "The pillars of our corporate strategy." },
         "delivery_model": { "title": "Delivery Model", "brief": "How we ensure mission-critical success." },
         "tech_partners": { "title": "Technology Partners", "brief": "Collaborating with global leaders." }
       },
       "solutions": {
-        "enterprise": { "title": "Digital Platforms", "brief": "Enterprise transformation & automation." },
-        "ai_data": { "title": "AI & Data", "brief": "Intelligent systems & advanced analytics." },
-        "cybersecurity": { "title": "Cybersecurity", "brief": "Digital trust & infrastructure protection." },
+        "enterprise": { "title": "Enterprise Transformation & Digital Platforms", "brief": "Enterprise transformation & automation." },
+        "ai_data": { "title": "AI Data & Intelligent Systems", "brief": "Intelligent systems & advanced analytics." },
+        "cybersecurity": { "title": "Cybersecurity & Digital Trust", "brief": "Digital trust & infrastructure protection." },
         "elv": { "title": "ELV & Smart Systems", "brief": "Integrated building & security solutions." },
-        "infrastructure": { "title": "Critical Infrastructure", "brief": "Data centers & mission-critical systems." }
+        "infrastructure": { "title": "Mission-Critical Infrastructure & Data Centers", "brief": "Data centers & mission-critical systems." }
       },
       "resources": {
         "knowledge": { "title": "Knowledge Hub", "brief": "Insights on emerging technologies." },
@@ -28,28 +28,28 @@
       "career": {
         "why_masarat": { "title": "Why Masarat", "brief": "Our values and work culture." },
         "benefits": { "title": "Perks & Benefits", "brief": "How we take care of our people." },
-        "positions": { "title": "Open Positions", "brief": "Join the elite team in Kuwait." }
+        "positions": { "title": "Open Positions", "brief": "Join our elite team." }
       }
     }
   },
   "hero": {
-    "label": "Kuwait's IT Partner",
+    "label": "Enterprise Technology & Critical Infrastructure Partner",
     "line1": "WE ARCHITECT",
     "line2": "DIGITAL TRUST.",
     "line3": "INTELLIGENTLY.",
-    "sub": "Enterprise Intelligence · Cybersecurity · Infrastructure",
+    "sub": "AI & Enterprise Intelligence · Cybersecurity · Infrastructure",
     "btn1": "Explore Solutions",
     "btn2": "Contact Us",
     "scroll": "Scroll"
   },
   "about_page": {
-    "body": "Masarat Technologies is a leading enterprise IT solutions provider based in Kuwait. \n\nWe specialize in architecting the mission-critical pillars of digital transformation — from national cybersecurity to intelligent infrastructure.",
+    "body": "Masarat Technologies is a leading enterprise IT solutions provider. \n\nWe specialize in architecting the mission-critical pillars of digital transformation — from critical cybersecurity to intelligent infrastructure.",
     "quality_title": "Enterprise Excellence & Compliance",
     "quality_body": "Our solutions are governed by international standards and local regulatory frameworks, ensuring your institution remains compliant, secure, and resilient.",
     "quality_footer": "ISO 27001 · SOC2 · NCA Compliant · CITRA Certified",
-    "challenges_title": "Solving Kuwait's Toughest Tech Challenges.",
+    "challenges_title": "Solving Complex Enterprise Tech Challenges.",
     "challenge1_title": "Data Sovereignty",
-    "challenge1_desc": "Architecting systems that keep Kuwait's data safe and localized within national borders.",
+    "challenge1_desc": "Architecting systems that ensure data sovereignty and secure localized storage.",
     "challenge2_title": "Legacy Modernization",
     "challenge2_desc": "Transforming aging infrastructure into high-performance digital platforms without operational downtime.",
     "challenge3_title": "Cyber Resilience",
@@ -58,8 +58,8 @@
   },
   "about": {
     "kicker": "Who We Are",
-    "title": "Architecting Digital Trust since 2026.",
-    "body": "Based in the heart of Kuwait, Masarat Technologies was founded to bridge the gap between complex global technologies and local institutional needs. We are more than an IT provider; we are strategic architects of the digital future.",
+    "title": "Built for Complex Enterprise Environments",
+    "body": "Our work is grounded in deep understanding of regulatory, operational, and institutional environments where reliability, security, and continuity are mission critical. We deliver technology solutions designed for organizations where failure is not an option.",
     "metrics": {
       "m1t": "Mission-Critical",
       "m1d": "Environments we operate in",
@@ -69,10 +69,10 @@
   },
   "home": {
     "vision_eyebrow": "Our Vision",
-    "vision_text": "To be the most trusted architect of digital intelligence and national infrastructure in Kuwait.",
+    "vision_text": "To be the most trusted architect of digital intelligence and critical infrastructure.",
     "mission_eyebrow": "Our Mission",
     "mission_text": "To deliver mission-critical technology solutions with single-point accountability and proven execution excellence.",
-    "power_quote": "Technology is the lever. Trust is the fulcrum.",
+    "power_quote": "Technology creates capability. Trust creates resilience",
     "power_sub": "We don't just deploy systems; we architect institutional resilience.",
     "power_btn": "Our Approach",
     "learn_more": "Learn More"
@@ -80,22 +80,71 @@
   "solutions": {
     "kicker": "Our Capabilities",
     "page_title": "Integrated Solutions.",
-    "page_sub": "Five core capabilities. One accountable partner.",
-    "title": "Integrated Solutions.",
+    "page_sub": "Architecting the mission-critical pillars of digital transformation — from intelligent infrastructure to strategic cybersecurity.",
+    "capability1": {
+      "title": "Resilient Digital Infrastructure",
+      "p": "In an era of constant connectivity, your digital foundation must be more than just functional; it must be resilient. We architect secure, scalable, and mission-critical infrastructure solutions that form the backbone of modern enterprise operations. Our approach ensures continuity across distributed networks and complex cloud environments, minimizing downtime and maximizing performance. This foundation is designed to support not just current needs, but long-term institutional growth and operational agility.",
+      "points": [
+        "High-Availability Cloud & Hybrid Architectures",
+        "Scalable Software-Defined Networking (SDN)",
+        "Disaster Recovery & Business Continuity Planning",
+        "Real-time Performance Monitoring & Optimization"
+      ]
+    },
+    "capability2": {
+      "title": "Cybersecurity & Digital Trust",
+      "p": "Digital trust is the fulcrum upon which modern enterprise innovation rests. Our integrated cybersecurity solutions are designed to protect complex enterprise, industrial, and critical infrastructure environments against an ever-evolving landscape of cyber risks. We go beyond traditional perimeter defense by implementing multi-layered security frameworks that safeguard data, identities, and operational assets. By building resilience into every layer, we enable organizations to operate with confidence in a high-threat digital world.",
+      "points": [
+        "Zero Trust Architecture (ZTA) Implementation",
+        "Industrial Control Systems (ICS/SCADA) Security",
+        "Managed Detection and Response (MDR)",
+        "Regulatory Compliance & Governance (NCA, ISO 27001)"
+      ]
+    },
+    "capability3": {
+      "title": "AI, Data & Enterprise Intelligence",
+      "p": "Data is the raw material of the digital economy, but its true value is only realized through intelligent processing. We deploy advanced AI and data platforms that transform vast amounts of disparate information into actionable strategic intelligence. These solutions enable smarter operations, predictive maintenance, and data-driven decision-making at every level of the organization. By bridging the gap between raw data and business outcomes, we help enterprises unlock new levels of efficiency and innovation.",
+      "points": [
+        "Predictive Analytics & Machine Learning Models",
+        "Enterprise Data Warehousing & Lakehouse Architecture",
+        "Natural Language Processing (NLP) for Workflow",
+        "Real-time Business Intelligence (BI) Dashboards"
+      ]
+    },
+    "capability4": {
+      "title": "Enterprise Applications & Automation",
+      "p": "Operational efficiency is driven by the seamless integration of modern platforms and intelligent workflows. We deliver enterprise applications and automation solutions that streamline complex business processes and improve organizational governance. By digitizing manual workflows and integrating siloed systems, we accelerate the pace of digital transformation across the institution. Our solutions are designed to enhance user experience while maintaining the highest standards of security and auditability.",
+      "points": [
+        "Custom Enterprise Resource Planning (ERP) Integration",
+        "Robotic Process Automation (RPA) Deployment",
+        "Low-code/No-code Workflow Digitization",
+        "Seamless Cross-Platform System Integration"
+      ]
+    },
+    "capability5": {
+      "title": "Critical Infrastructure & Integrated Systems",
+      "p": "The physical environment of a modern enterprise is increasingly inseparable from its digital twin. We provide end-to-end delivery of mission-critical facilities, including data centers, command-and-control centers, and smart operational infrastructure. Our expertise spans ELV systems, OT integration, and the sophisticated management platforms required to run them. By integrating physical security with digital intelligence, we create environments that are both highly secure and operationally optimized.",
+      "points": [
+        "Tier III & IV Data Center Design & Construction",
+        "Integrated ELV & Building Management Systems (BMS)",
+        "Next-Gen Command & Control Center (SOC/NOC)",
+        "Smart City & IoT Infrastructure Integration"
+      ]
+    },
+    "capability6": {
+      "title": "Managed Services & Operational Support",
+      "p": "Technology is an ongoing commitment that requires constant vigilance and expert optimization. Our managed services provide continuous support, monitoring, and lifecycle management designed to ensure the long-term resilience of your technology stack. We act as an extension of your team, providing proactive maintenance and rapid response to operational challenges. This comprehensive support model allows your organization to focus on its core mission while we ensure the performance and reliability of your systems.",
+      "points": [
+        "24/7 Proactive System Monitoring & NOC Services",
+        "Full Lifecycle Asset & Patch Management",
+        "Dedicated On-site & Remote Technical Support",
+        "Continuous Security Posture Assessment"
+      ]
+    },
     "link": "Know More",
     "cta_title": "Ready to get started?",
     "cta_sub": "Talk to our solutions team about your specific requirements.",
     "cta_btn1": "Schedule a Consultation",
-    "s1title": "Enterprise Transformation & Digital Platforms",
-    "s1desc": "Enabling organisations to redesign, automate, and scale their core operations.",
-    "s2title": "AI, Data & Intelligent Systems",
-    "s2desc": "Building the data and AI foundation for intelligent decision-making.",
-    "s3title": "Cybersecurity & Digital Trust",
-    "s3desc": "Protecting critical environments through enterprise-grade security frameworks.",
-    "s4title": "ELV & Smart Systems",
-    "s4desc": "Designing and implementing integrated physical and smart environments.",
-    "s5title": "Mission-Critical Infrastructure",
-    "s5desc": "Specialized data center and critical environment lifecycle management.",
     "detail": {
       "overview": "Overview",
       "process": "Methodology",
@@ -119,31 +168,33 @@
   },
   "sectors": {
     "kicker": "Sectors We Serve",
-    "title": "Trusted across Kuwait's most demanding industries.",
+    "title": "Trusted across the region's most demanding industries.",
     "desc": "From government and banking to oil & gas and enterprise infrastructure — our solutions are designed for environments where performance, security, and reliability are non-negotiable.",
     "s1t": "Government & Regulatory",
-    "s1d": "Central Bank of Kuwait and government institutions",
+    "s1d": "Central Banks and government institutions",
     "s2t": "Banking & Financial Services",
-    "s2d": "Kuwait's leading banks and financial institutions",
+    "s2d": "Leading regional banks and financial institutions",
     "s3t": "Oil & Gas",
-    "s3d": "KOC, KGOC and energy sector infrastructure",
+    "s3d": "Leading energy sector infrastructure",
     "s4t": "Enterprise & Private Sector",
     "s4d": "Regional enterprises, healthcare & telecoms"
   },
   "footer": {
-    "copy": "© 2026 Masarat Technologies · Kuwait",
+    "copy": "© 2023 Masarat Technologies",
     "tagline": "Architecting Digital Trust & Enterprise Intelligence",
     "insights": "Knowledge Hub",
     "privacy": "Privacy Policy",
     "terms": "Terms of Service",
     "nav_label": "Navigation",
     "connect_label": "Connectivity",
-    "support_label": "Support Inquiry"
+    "support_label": "Support Inquiry",
+    "partners_label": "Technology Partner Ecosystem",
+    "solutions_label": "Solutions"
   },
   "insights_page": {
     "kicker": "Knowledge Hub",
     "title": "Insights.",
-    "body": "Strategic intelligence on cybersecurity, AI, and the future of enterprise technology in Kuwait.",
+    "body": "Strategic intelligence on cybersecurity, AI, and the future of enterprise technology.",
     "home_title": "Latest Insights.",
     "home_link": "View Knowledge Hub",
     "read_article": "Read Article",
@@ -152,13 +203,13 @@
   "career_page": {
     "kicker": "Why work at Masarat?",
     "hero_title": "Let's Build Together",
-    "hero_sub": "Be part of the team architecting the digital future of Kuwait.",
+    "hero_sub": "Be part of the team architecting the digital future.",
     "hero_cta": "View Openings",
     "why_title": "Why Masarat?",
     "why_statement": "We foster a culture of excellence, innovation, and local impact.",
     "benefits_title": "Perks & Benefits",
     "culture_title": "Our Culture",
-    "culture_quote": "Building the future of Kuwait, together.",
+    "culture_quote": "Building the future together.",
     "positions_title": "Current Openings",
     "no_positions_title": "No current openings",
     "no_positions_desc": "We are always looking for exceptional talent. Send us your CV for future opportunities.",
@@ -166,7 +217,7 @@
     "email": "careers@masaratkwt.com",
     "v1t": "Integrity", "v1d": "We uphold the highest standards of professional trust.",
     "v2t": "Innovation", "v2d": "Driving the next wave of intelligent systems.",
-    "v3t": "Impact", "v3d": "Creating real value for Kuwait's digital landscape.",
+    "v3t": "Impact", "v3d": "Creating real value for the digital landscape.",
     "b1t": "Premium Healthcare", "b1d": "Comprehensive coverage for you and your family.",
     "b2t": "Continuous Learning", "b2d": "Access to global certifications and training.",
     "b3t": "Flexible Work", "b3d": "Dynamic environment with hybrid work options.",
@@ -174,7 +225,7 @@
     "b5t": "Modern Workspace", "b5d": "State-of-the-art facilities designed for collaboration.",
     "b6t": "Wellness Program", "b6d": "Monthly activities focused on mental and physical health.",
     "p1t": "Trust & Accountability", "p1d": "We take full ownership of our commitments and results.",
-    "p2t": "National Vision", "p2d": "Contributing to Kuwait's 2035 vision through digital excellence.",
+    "p2t": "Strategic Vision", "p2d": "Contributing to regional excellence and institutional transformation through digital innovation.",
     "p3t": "Elite Talent", "p3d": "Work alongside the best engineers and consultants in the region."
   },
   "contact_page": {

@@ -163,6 +163,7 @@ export default function SolutionsPreview() {
               {...solution}
               isRTL={isRTL}
               className="min-h-[480px]"
+              index={i}
             />
           ))}
         </div>

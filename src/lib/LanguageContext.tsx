@@ -26,7 +26,7 @@ const enTranslations = {
     cta: "Schedule a Consultation",
     dropdowns: {
       about: {
-        who_we_are: { title: "Who We Are", brief: "Our legacy and commitment to Kuwait." },
+        who_we_are: { title: "Who We Are", brief: "Our legacy and commitment to excellence." },
         vision_mission: { title: "Vision & Mission", brief: "The pillars of our corporate strategy." },
         delivery_model: { title: "Delivery Model", brief: "How we ensure mission-critical success." },
         tech_partners: { title: "Tech Partners", brief: "Collaborating with global leaders." }
@@ -46,12 +46,12 @@ const enTranslations = {
       career: {
         why_masarat: { title: "Why Masarat", brief: "Our values and work culture." },
         benefits: { title: "Perks & Benefits", brief: "How we take care of our people." },
-        positions: { title: "Open Positions", brief: "Join the elite team in Kuwait." }
+        positions: { title: "Open Positions", brief: "Join our elite team." }
       }
     }
   },
   hero: {
-    label: "Industry's Leading IT Partner",
+    label: "Enterprise IT Partner",
     line1: "WE ARCHITECT",
     line2: "DIGITAL TRUST.",
     line3: "INTELLIGENTLY.",
@@ -62,30 +62,30 @@ const enTranslations = {
   },
   home: {
     vision_eyebrow: "Our Vision",
-    vision_text: "To be the most trusted architect of digital intelligence and national infrastructure in Kuwait.",
+    vision_text: "To be the most trusted architect of digital intelligence and critical infrastructure.",
     mission_eyebrow: "Our Mission",
     mission_text: "To deliver mission-critical technology solutions with single-point accountability and proven execution excellence.",
-    power_quote: "Technology is the lever. Trust is the fulcrum.",
+    power_quote: "Technology creates capability. Trust creates resilience",
     power_sub: "We don't just deploy systems; we architect institutional resilience.",
     power_btn: "Our Approach",
     learn_more: "Learn More",
     cta_title: "Ready to transform your organisation?",
-    cta_sub: "Partner with Masarat Technologies for integrated, mission-critical technology delivery across Kuwait.",
+    cta_sub: "Partner with Masarat Technologies for integrated, mission-critical technology delivery.",
     cta_btn2: "View Our Capabilities →"
   },
   about_page: {
     kicker: "About Masarat",
     title: "Partners in Success.",
-    body: "Masarat Technologies is a leading enterprise IT solutions provider based in Kuwait. \n\nWe specialize in architecting the mission-critical pillars of digital transformation — from national cybersecurity to intelligent infrastructure.",
+    body: "Masarat Technologies is a leading enterprise IT solutions provider. \n\nWe specialize in architecting the mission-critical pillars of digital transformation — from critical cybersecurity to intelligent infrastructure.",
     quality_title: "Enterprise Excellence & Compliance",
     quality_body: "Our solutions are governed by international standards and local regulatory frameworks, ensuring your institution remains compliant, secure, and resilient.",
     quality_footer: "ISO 27001 · SOC2 · NCA Compliant · CITRA Certified",
     quality_iso1: "ISO 27001 Certified",
     quality_iso2: "SOC2 Type II Compliant",
     quality_iso3: "NCA & CITRA Certified",
-    challenges_title: "Solving Kuwait's Toughest Tech Challenges.",
+    challenges_title: "Solving Complex Enterprise Tech Challenges.",
     challenge1_title: "Data Sovereignty",
-    challenge1_desc: "Architecting systems that keep Kuwait's data safe and localized within national borders.",
+    challenge1_desc: "Architecting systems that ensure data sovereignty and secure localized storage.",
     challenge2_title: "Legacy Modernization",
     challenge2_desc: "Transforming aging infrastructure into high-performance digital platforms without operational downtime.",
     challenge3_title: "Cyber Resilience",
@@ -94,8 +94,8 @@ const enTranslations = {
   },
   about: {
     kicker: "Who We Are",
-    title: "Architecting Digital Trust since 2026.",
-    body: "Based in the heart of Kuwait, Masarat Technologies was founded to bridge the gap between complex global technologies and local institutional needs. We are more than an IT provider; we are strategic architects of the digital future.",
+    title: "Built for Complex Enterprise Environments",
+    body: "Our work is grounded in deep understanding of regulatory, operational, and institutional environments where reliability, security, and continuity are mission critical. We deliver technology solutions designed for organizations where failure is not an option.",
     metrics: {
       m1t: "Mission-Critical",
       m1d: "Environments we operate in",
@@ -159,31 +159,33 @@ const enTranslations = {
   },
   sectors: {
     kicker: "Sectors We Serve",
-    title: "Trusted across Kuwait's most demanding industries.",
+    title: "Trusted across the region's most demanding industries.",
     desc: "From government and banking to oil & gas and enterprise infrastructure — our solutions are designed for environments where performance, security, and reliability are non-negotiable.",
     s1t: "Government & Regulatory",
-    s1d: "Central Bank of Kuwait and government institutions",
+    s1d: "Central Banks and government institutions",
     s2t: "Banking & Financial Services",
-    s2d: "Kuwait's leading banks and financial institutions",
+    s2d: "Leading regional banks and financial institutions",
     s3t: "Oil & Gas",
-    s3d: "KOC, KGOC and energy sector infrastructure",
+    s3d: "Leading energy sector infrastructure",
     s4t: "Enterprise & Private Sector",
     s4d: "Regional enterprises, healthcare & telecoms"
   },
   footer: {
-    copy: "© 2026 Masarat Technologies · Kuwait",
+    copy: "© 2023 Masarat Technologies",
     tagline: "Architecting Digital Trust & Enterprise Intelligence",
     insights: "Knowledge Hub",
     privacy: "Privacy Policy",
     terms: "Terms of Service",
     nav_label: "Navigation",
-    connect_label: "Technology Partners",
-    support_label: "Support Inquiry"
+    connect_label: "Connectivity",
+    support_label: "Support Inquiry",
+    partners_label: "Technology Partner Ecosystem",
+    solutions_label: "Solutions"
   },
   insights_page: {
     kicker: "Knowledge Hub",
     title: "Insights.",
-    body: "Strategic intelligence on cybersecurity, AI, and the future of enterprise technology in Kuwait.",
+    body: "Strategic intelligence on cybersecurity, AI, and the future of enterprise technology.",
     home_title: "Latest Insights.",
     home_link: "View Knowledge Hub",
     read_article: "Read Article",
@@ -192,13 +194,13 @@ const enTranslations = {
   career_page: {
     kicker: "Why work at Masarat?",
     hero_title: "Let's Build Together",
-    hero_sub: "Be part of the team architecting the digital future of Kuwait.",
+    hero_sub: "Be part of the team architecting the digital future.",
     hero_cta: "View Openings",
     why_title: "Why Masarat?",
     why_statement: "We foster a culture of excellence, innovation, and local impact.",
     benefits_title: "Perks & Benefits",
     culture_title: "Our Culture",
-    culture_quote: "Building the future of Kuwait, together.",
+    culture_quote: "Building the future together.",
     positions_title: "Current Openings",
     no_positions_title: "No current openings",
     no_positions_desc: "We are always looking for exceptional talent. Send us your CV for future opportunities.",
@@ -206,7 +208,7 @@ const enTranslations = {
     email: "careers@masaratkwt.com",
     v1t: "Integrity", "v1d": "We uphold the highest standards of professional trust.",
     v2t: "Innovation", "v2d": "Driving the next wave of intelligent systems.",
-    v3t: "Impact", "v3d": "Creating real value for Kuwait's digital landscape.",
+    v3t: "Impact", "v3d": "Creating real value for the digital landscape.",
     b1t: "Premium Healthcare", "b1d": "Comprehensive coverage for you and your family.",
     b2t: "Continuous Learning", "b2d": "Access to global certifications and training.",
     b3t: "Flexible Work", "b3d": "Dynamic environment with hybrid work options.",
@@ -214,7 +216,7 @@ const enTranslations = {
     b5t: "Modern Workspace", "b5d": "State-of-the-art facilities designed for collaboration.",
     b6t: "Wellness Program", "b6d": "Monthly activities focused on mental and physical health.",
     p1t: "Trust & Accountability", "p1d": "We take full ownership of our commitments and results.",
-    p2t: "National Vision", "p2d": "Contributing to Kuwait's 2035 vision through digital excellence.",
+    p2t: "Strategic Vision", "p2d": "Contributing to regional excellence and institutional transformation through digital innovation.",
     p3t: "Elite Talent", "p3d": "Work alongside the best engineers and consultants in the region."
   },
   contact_page: {
@@ -236,22 +238,44 @@ const enTranslations = {
     form_success: "We will be in touch soon.",
     form_error: "Something went wrong. Try again."
   },
-  services: {
-    kicker: "Core Capabilities",
-    link: "Explore All Solutions",
-    learnmore: "Know More →",
-    sectors_kicker: "Sectors We Serve",
-    sectors_title: "Industry expertise.",
-    s1title: "Strategic Advisory",
-    s1desc: "Consulting on digital roadmaps and readiness.",
-    s2title: "System Integration",
-    s2desc: "Seamlessly connecting complex enterprise environments.",
-    s3title: "Managed Services",
-    s3desc: "24/7 mission-critical operations and support.",
-    s4title: "Cloud Excellence",
-    s4desc: "Hybrid and multi-cloud architecture and migration.",
-    s5title: "Security Operations",
-    s5desc: "Continuous monitoring and threat intelligence."
+  solutions: {
+    kicker: "Our Capabilities",
+    page_title: "Integrated Solutions.",
+    page_sub: "Architecting the mission-critical pillars of digital transformation — from intelligent infrastructure to strategic cybersecurity.",
+    capability1: {
+      title: "Resilient Digital Infrastructure",
+      p: "In an era of constant connectivity, your digital foundation must be more than just functional; it must be resilient. We architect secure, scalable, and mission-critical infrastructure solutions that form the backbone of modern enterprise operations. Our approach ensures continuity across distributed networks and complex cloud environments, minimizing downtime and maximizing performance.",
+      points: ["High-Availability Cloud", "Scalable Networking", "Disaster Recovery", "Performance Monitoring"]
+    },
+    capability2: {
+      title: "Cybersecurity & Digital Trust",
+      p: "Digital trust is the fulcrum upon which modern enterprise innovation rests. Our integrated cybersecurity solutions are designed to protect complex enterprise, industrial, and critical infrastructure environments against an ever-evolving landscape of cyber risks.",
+      points: ["Zero Trust Architecture", "ICS/SCADA Security", "Managed Detection (MDR)", "Regulatory Compliance"]
+    },
+    capability3: {
+      title: "AI, Data & Enterprise Intelligence",
+      p: "Data is the raw material of the digital economy, but its true value is only realized through intelligent processing. We deploy advanced AI and data platforms that transform vast amounts of disparate information into actionable strategic intelligence.",
+      points: ["Predictive Analytics", "Data Lakehouse", "NLP Workflows", "Real-time BI Dashboards"]
+    },
+    capability4: {
+      title: "Enterprise Applications & Automation",
+      p: "Operational efficiency is driven by the seamless integration of modern platforms and intelligent workflows. We deliver enterprise applications and automation solutions that streamline complex business processes and improve organizational governance.",
+      points: ["ERP Integration", "RPA Deployment", "Low-code Workflow", "System Integration"]
+    },
+    capability5: {
+      title: "Critical Infrastructure & Integrated Systems",
+      p: "The physical environment of a modern enterprise is increasingly inseparable from its digital twin. We provide end-to-end delivery of mission-critical facilities, including data centers, command-and-control centers, and smart operational infrastructure.",
+      points: ["Tier III/IV Data Centers", "Integrated BMS/ELV", "Next-Gen SOC/NOC", "Smart City/IoT"]
+    },
+    capability6: {
+      title: "Managed Services & Operational Support",
+      p: "Technology is an ongoing commitment that requires constant vigilance and expert optimization. Our managed services provide continuous support, monitoring, and lifecycle management designed to ensure the long-term resilience of your technology stack.",
+      points: ["24/7 Monitoring", "Lifecycle Management", "Dedicated Support", "Security Assessments"]
+    },
+    link: "Know More",
+    cta_title: "Ready to get started?",
+    cta_sub: "Talk to our solutions team about your specific requirements.",
+    cta_btn1: "Schedule a Consultation",
   },
   process: {
     kicker: "The Methodology",
@@ -294,7 +318,7 @@ const arTranslations = {
     cta: "حجز استشارة",
     dropdowns: {
       about: {
-        who_we_are: { title: "من نحن", brief: "تراثنا والتزامنا تجاه الكويت." },
+        who_we_are: { title: "من نحن", brief: "تراثنا والتزامنا تجاه التميز." },
         vision_mission: { title: "الرؤية والرسالة", brief: "ركائز استراتيجية شركتنا." },
         delivery_model: { title: "نموذج التسليم", brief: "كيف نضمن نجاح المشاريع الحيوية." },
         tech_partners: { title: "شركاء التقنية", brief: "التعاون مع القادة العالميين." }
@@ -314,7 +338,7 @@ const arTranslations = {
       career: {
         why_masarat: { title: "لماذا مسارات", brief: "قيمنا وثقافة عملنا." },
         benefits: { title: "المزايا والفوائد", brief: "كيف نعتني بموظفينا." },
-        positions: { title: "الوظائف الشاغرة", brief: "انضم إلى فريق النخبة في الكويت." }
+        positions: { title: "الوظائف الشاغرة", brief: "انضم إلى فريق النخبة." }
       }
     }
   },
@@ -330,30 +354,30 @@ const arTranslations = {
   },
   home: {
     vision_eyebrow: "رؤيتنا",
-    vision_text: "أن نكون الشريك الأكثر ثقة في بناء الذكاء الرقمي والبنية التحتية الوطنية في الكويت.",
+    vision_text: "أن نكون الشريك الأكثر ثقة في بناء الذكاء الرقمي والبنية التحتية الحيوية.",
     mission_eyebrow: "رؤيتنا",
     mission_text: "تقديم حلول تقنية حيوية مع مسؤولية نقطة واحدة وتميز مشهود في التنفيذ.",
-    power_quote: "التقنية هي الرافعة. والثقة هي المرتكز.",
+    power_quote: "التقنية تخلق القدرة. والثقة تخلق المرونة.",
     power_sub: "نحن لا نقوم فقط بنشر الأنظمة؛ نحن نبني المرونة المؤسسية.",
     power_btn: "نهجنا",
     learn_more: "اعرف المزيد",
     cta_title: "هل أنت مستعد لتحويل مؤسستك؟",
-    cta_sub: "كن شريكاً مع مسارات تكنولوجيز لتقديم تقنية متكاملة ومهمة عبر الكويت.",
+    cta_sub: "كن شريكاً مع مسارات تكنولوجيز لتقديم تقنية متكاملة ومهمة عبر المنطقة.",
     cta_btn2: "عرض قدراتنا ←"
   },
   about_page: {
     kicker: "عن مسارات",
     title: "شركاء في النجاح.",
-    body: "مسارات تكنولوجيز هي شركة رائدة في تقديم حلول تقنية المعلومات للمؤسسات ومقرها الكويت. \n\nنحن متخصصون في بناء الركائز الحيوية للتحول الرقمي — من الأمن السيبراني الوطني إلى البنية التحتية الذكية.",
+    body: "مسارات تكنولوجيز هي شركة رائدة في تقديم حلول تقنية المعلومات للمؤسسات. \n\nنحن متخصصون في بناء الركائز الحيوية للتحول الرقمي — من الأمن السيبراني المؤسسي إلى البنية التحتية الذكية.",
     quality_title: "التميز المؤسسي والامتثال",
     quality_body: "تخضع حلولنا للمعايير الدولية والأطر التنظيمية المحلية، مما يضمن بقاء مؤسستك ممتثلة وآمنة ومرنة.",
     quality_footer: "ISO 27001 · SOC2 · NCA Compliant · CITRA Certified",
     quality_iso1: "شهادة ISO 27001",
     quality_iso2: "امتثال SOC2 Type II",
     quality_iso3: "اعتماد NCA و CITRA",
-    challenges_title: "حل أصعب التحديات التقنية في الكويت.",
+    challenges_title: "حل أصعب التحديات التقنية المؤسسية.",
     challenge1_title: "سيادة البيانات",
-    challenge1_desc: "هندسة الأنظمة التي تحافظ على سلامة بيانات الكويت وتوطينها داخل الحدود الوطنية.",
+    challenge1_desc: "هندسة الأنظمة التي تحافظ على سلامة البيانات وتوطينها داخل الحدود الآمنة.",
     challenge2_title: "تحديث الأنظمة القديمة",
     challenge2_desc: "تحويل البنية التحتية المتهالكة إلى منصات رقمية عالية الأداء دون توقف العمليات.",
     challenge3_title: "المرونة السيبرانية",
@@ -362,8 +386,8 @@ const arTranslations = {
   },
   about: {
     kicker: "من نحن",
-    title: "بناء الثقة الرقمية منذ عام ٢٠٢٦.",
-    body: "تأسست مسارات تكنولوجيز في قلب الكويت لردم الفجوة بين التقنيات العالمية المعقدة والاحتياجات المؤسسية المحلية. نحن أكثر من مجرد مزود لخدمات تقنية المعلومات؛ نحن المعماريون الاستراتيجيون للمستقبل الرقمي.",
+    title: "مصمم لبيئات المؤسسات المعقدة",
+    body: "يرتكز عملنا على فهم عميق للبيئات التنظيمية والتشغيلية والمؤسسية حيث تعتبر الموثوقية والأمن والاستمرارية مهاماً حرجة. نحن نقدم حلولاً تقنية مصممة للمؤسسات التي لا يعتبر الفشل فيها خياراً.",
     metrics: {
       m1t: "بيئات حيوية",
       m1d: "البيئات التي نعمل فيها",
@@ -427,19 +451,19 @@ const arTranslations = {
   },
   sectors: {
     kicker: "القطاعات التي نخدمها",
-    title: "موثوقون في أهم الصناعات وأكثرها تطلباً في الكويت.",
+    title: "موثوقون في أهم الصناعات وأكثرها تطلباً.",
     desc: "من القطاع الحكومي والمصرفي إلى النفط والغاز والبنية التحتية للمؤسسات — صُممت حلولنا للبيئات التي لا تقبل المساومة على الأداء والأمن والموثوقية.",
     s1t: "الحكومة والجهات التنظيمية",
-    s1d: "البنك المركزي الكويتي والمؤسسات الحكومية",
+    s1d: "البنوك المركزية والمؤسسات الحكومية",
     s2t: "البنوك والخدمات المالية",
-    s2d: "البنوك والمؤسسات المالية الكبرى في الكويت",
+    s2d: "البنوك والمؤسسات المالية الكبرى",
     s3t: "النفط والغاز",
-    s3d: "شركة نفط الكويت والبنية التحتية للطاقة",
+    s3d: "كبرى شركات الطاقة والبنية التحتية",
     s4t: "المؤسسات والقطاع الخاص",
     s4d: "الشركات الإقليمية والرعاية الصحية والاتصالات"
   },
   footer: {
-    copy: "© ٢٠٢٦ مسارات تكنولوجيز · الكويت",
+    copy: "© ٢٠٢٣ مسارات تكنولوجيز",
     tagline: "نبني الثقة الرقمية والذكاء المؤسسي",
     insights: "مركز المعرفة",
     privacy: "سياسة الخصوصية",
@@ -451,7 +475,7 @@ const arTranslations = {
   insights_page: {
     kicker: "مركز المعرفة",
     title: "رؤى ووجهات نظر.",
-    body: "أفكار حول التقنية والأمن والتحول الرقمي في الكويت.",
+    body: "أفكار حول التقنية والأمن والتحول الرقمي.",
     home_title: "أحدث المقالات",
     home_link: "← عرض جميع المقالات",
     read_article: "اقرأ المقال ←",
@@ -460,13 +484,13 @@ const arTranslations = {
   career_page: {
     kicker: "لماذا مسارات؟",
     hero_title: "لنبنِ المستقبل معاً",
-    hero_sub: "كن جزءاً من الفريق الذي يبني المستقبل الرقمي للكويت.",
+    hero_sub: "كن جزءاً من الفريق الذي يبني المستقبل الرقمي.",
     hero_cta: "عرض الوظائف الشاغرة",
     why_title: "لماذا مسارات؟",
     why_statement: "نحن نعزز ثقافة التميز والابتكار والتأثير المحلي.",
     benefits_title: "المزايا والفوائد",
     culture_title: "ثقافتنا",
-    culture_quote: "نبني مستقبل الكويت معاً.",
+    culture_quote: "نبني المستقبل معاً.",
     positions_title: "الفرص الحالية",
     no_positions_title: "لا توجد وظائف حالياً",
     no_positions_desc: "نحن نبحث دائماً عن المواهب الاستثنائية. أرسل لنا سيرتك الذاتية للفرص المستقبلية.",
@@ -474,7 +498,7 @@ const arTranslations = {
     email: "careers@masaratkwt.com",
     v1t: "النزاهة", "v1d": "نحن نلتزم بأعلى معايير الثقة المهنية.",
     v2t: "الابتكار", "v2d": "قيادة الموجة التالية من الأنظمة الذكية.",
-    v3t: "التأثير", "v3d": "خلق قيمة حقيقية للمشهد الرقمي في الكويت.",
+    v3t: "التأثير", "v3d": "خلق قيمة حقيقية للمشهد الرقمي.",
     b1t: "رعاية صحية ممتازة", "b1d": "تغطية شاملة لك ولعائلتك.",
     b2t: "التعلم المستمر", "b2d": "الوصول إلى الشهادات والتدريبات العالمية.",
     b3t: "عمل مرن", "b3d": "بيئة ديناميكية مع خيارات العمل الهجين.",
@@ -482,7 +506,7 @@ const arTranslations = {
     b5t: "بيئة عمل حديثة", "b5d": "مرافق متطورة مصممة للتعاون والإبداع.",
     b6t: "برنامج الرفاهية", "b6d": "أنشطة شهرية تركز على الصحة النفسية والجسدية.",
     p1t: "الثقة والمسؤولية", "p1d": "نحن نتحمل المسؤولية الكاملة عن التزاماتنا ونتائجنا.",
-    p2t: "رؤية وطنية", "p2d": "المساهمة في رؤية الكويت ٢٠٣٥ من خلال التميز الرقمي.",
+    p2t: "رؤية استراتيجية", "p2d": "المساهمة في التميز الرقمي والتحول المؤسسي.",
     p3t: "مواهب النخبة", "p3d": "اعمل بجانب أفضل المهندسين والمستشارين في المنطقة."
   },
   contact_page: {
@@ -504,22 +528,44 @@ const arTranslations = {
     form_success: "سنتواصل معك قريباً.",
     form_error: "حدث خطأ. حاول مرة أخرى."
   },
-  services: {
-    kicker: "قدراتنا الأساسية",
-    link: "استكشف جميع الحلول",
-    learnmore: "اعرف المزيد ←",
-    sectors_kicker: "القطاعات التي نخدمها",
-    sectors_title: "خبرة صناعية.",
-    s1title: "الاستشارات الاستراتيجية",
-    s1desc: "استشارات حول خارطة الطريق الرقمية والجاهزية.",
-    s2title: "تكامل الأنظمة",
-    s2desc: "ربط بيئات المؤسسات المعقدة بسلاسة.",
-    s3title: "الخدمات المدارة",
-    s3desc: "عمليات ودعم حيوي على مدار الساعة طوال أيام الأسبوع.",
-    s4title: "التميز السحابي",
-    s4desc: "هندسة السحب الهجينة والمتعددة والنقل إليها.",
-    s5title: "العمليات الأمنية",
-    s5desc: "مراقبة مستمرة وذكاء التهديدات."
+  solutions: {
+    kicker: "قدراتنا",
+    page_title: "حلول متكاملة.",
+    page_sub: "تصميم الأركان الحيوية للتحول الرقمي - من البنية التحتية الذكية إلى الأمن السيبراني الاستراتيجي.",
+    capability1: {
+      title: "البنية التحتية الرقمية المرنة",
+      p: "في عصر الاتصال المستمر، يجب أن تكون مؤسستك الرقمية أكثر من مجرد وظيفية؛ يجب أن تكون مرنة. نحن نصمم حلول بنية تحتية آمنة وقابلة للتوسع وضرورية للمهمة تشكل العمود الفقري لعمليات المؤسسات الحديثة.",
+      points: ["سحابة عالية التوفر", "شبكات قابلة للتوسع", "التعافي من الكوارث", "مراقبة الأداء"]
+    },
+    capability2: {
+      title: "الأمن السيبراني والثقة الرقمية",
+      p: "الثقة الرقمية هي المرتكز الذي يرتكز عليه ابتكار المؤسسات الحديثة. تم تصميم حلول الأمن السيبراني المتكاملة لدينا لحماية بيئات المؤسسات المعقدة والصناعية والبنية التحتية الحيوية.",
+      points: ["بنية الثقة الصفرية", "أمن نظم التحكم الصناعي", "الكشف والاستجابة (MDR)", "الامتثال التنظيمي"]
+    },
+    capability3: {
+      title: "الذكاء الاصطناعي والبيانات والذكاء المؤسسي",
+      p: "البيانات هي المادة الخام للاقتصاد الرقمي، لكن قيمتها الحقيقية لا تتحقق إلا من خلال المعالجة الذكية. نحن ننشر منصات متطورة للذكاء الاصطناعي والبيانات تحول المعلومات إلى ذكاء استراتيجي.",
+      points: ["التحليلات التنبؤية", "بنية Lakehouse", "سير عمل NLP", "لوحات معلومات BI"]
+    },
+    capability4: {
+      title: "تطبيقات المؤسسات والأتمتة",
+      p: "يتم دفع الكفاءة التشغيلية من خلال التكامل السلس للمنصات الحديثة وسير العمل الذكي. نحن نقدم تطبيقات المؤسسات وحلول الأتمتة التي تبسط العمليات التجارية المعقدة.",
+      points: ["تكامل ERP", "أتمتة RPA", "سير عمل Low-code", "تكامل الأنظمة"]
+    },
+    capability5: {
+      title: "البنية التحتية الحيوية والأنظمة المتكاملة",
+      p: "أصبحت البيئة المادية للمؤسسة الحديثة لا تنفصل بشكل متزايد عن توأمها الرقمي. نحن نقدم تسليمًا شاملاً للمرافق الضرورية للمهمة، بما في ذلك مراكز البيانات ومراكز القيادة.",
+      points: ["مراكز بيانات المستوى 3/4", "أنظمة BMS/ELV المتكاملة", "مراكز SOC/NOC", "المدن الذكية/IoT"]
+    },
+    capability6: {
+      title: "الخدمات المدارة والدعم التشغيلي",
+      p: "التكنولوجيا التزام مستمر يتطلب يقظة دائمة وتحسيناً خبيراً. توفر خدماتنا المدارة دعماً ومراقبة وإدارة دورة حياة مستمرة لضمان مرونة مجموعة التكنولوجيا الخاصة بك.",
+      points: ["مراقبة 24/7", "إدارة دورة الحياة", "دعم فني مخصص", "تقييمات أمنية"]
+    },
+    link: "اعرف المزيد",
+    cta_title: "هل أنت مستعد للبدء؟",
+    cta_sub: "تحدث مع فريق الحلول لدينا حول متطلباتك المحددة.",
+    cta_btn1: "حجز استشارة",
   },
   process: {
     kicker: "المنهجية",
@@ -582,23 +628,30 @@ export function LanguageProvider({
   const isRTL = language === 'ar'
 
   // Translation function
-  const t = (key: string): string => {
+  const t = (key: string, options?: { returnObjects?: boolean }): any => {
     try {
       const keys = key.split('.')
       const translations = language === 'ar' ? arTranslations : enTranslations
-      let value: unknown = translations
+      let value: any = translations
+      
       for (const k of keys) {
         if (value && typeof value === 'object') {
-          value = (value as Record<string, unknown>)[k]
+          value = value[k]
         } else {
           value = undefined
           break
         }
       }
+
+      if (options?.returnObjects) {
+        return value || []
+      }
+
       if (typeof value === 'string' && value.length > 0) {
         return value
       }
-      // Fallback: convert key to readable text instead of showing raw key
+      
+      // Fallback
       const lastPart = key.split('.').pop() || key
       return lastPart.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase())
     } catch {

@@ -17,22 +17,21 @@ export default function CapabilityWheel({ solutionName, centerLabel, categories,
     : (nodes ?? []);
 
   const size = 480;
-  const cx = size / 2;
-  const cy = size / 2;
-  const nodeRadius = 24;
-  const orbitRadius = 160;
-  const labelOffset = 52;
+  const cx = 50; // Center X in %
+  const cy = 50; // Center Y in %
+  const orbitRadiusPercent = 30; // Reduced slightly to pull nodes inward
+  const labelOffsetPercent = 15; // Increased to push labels further out
   const total = allNodes.length;
 
   return (
-    <div className="relative mx-auto" style={{ width: size, height: size, maxWidth: "100%" }}>
-      {/* SVG layer: rings, lines, node circles — NO text in SVG */}
-      <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} className="absolute inset-0 w-full h-full">
+    <div className="relative mx-auto w-full max-w-[480px] aspect-square">
+      {/* SVG layer: rings, lines, node circles */}
+      <svg viewBox="0 0 100 100" className="absolute inset-0 w-full h-full overflow-visible">
         {/* Dashed orbit ring */}
-        <circle cx={cx} cy={cy} r={orbitRadius} fill="none" stroke="#DBEAFE" strokeWidth="1" strokeDasharray="6 4" />
+        <circle cx={cx} cy={cy} r={orbitRadiusPercent} fill="none" stroke="#DBEAFE" strokeWidth="0.2" strokeDasharray="1.5 1" />
 
         {/* Center circle */}
-        <circle cx={cx} cy={cy} r={68} fill="#0D1B2A" stroke="#1A56DB" strokeWidth="2" />
+        <circle cx={cx} cy={cy} r={14} fill="#0D1B2A" stroke="#1A56DB" strokeWidth="0.5" />
 
         {/* Spoke lines */}
         {allNodes.map((_, i) => {
@@ -40,55 +39,76 @@ export default function CapabilityWheel({ solutionName, centerLabel, categories,
           return (
             <line key={i}
               x1={cx} y1={cy}
-              x2={cx + Math.cos(a) * (orbitRadius - nodeRadius - 4)}
-              y2={cy + Math.sin(a) * (orbitRadius - nodeRadius - 4)}
-              stroke="#1A56DB" strokeWidth="0.6" strokeOpacity="0.25"
+              x2={cx + Math.cos(a) * orbitRadiusPercent}
+              y2={cy + Math.sin(a) * orbitRadiusPercent}
+              stroke="#1A56DB" strokeWidth="0.15" strokeOpacity="0.2"
             />
           );
         })}
 
-        {/* Node circles (no text here — icons placed as HTML below) */}
+        {/* Node circles */}
         {allNodes.map((_, i) => {
           const a = (i / total) * Math.PI * 2 - Math.PI / 2;
-          const nx = cx + Math.cos(a) * orbitRadius;
-          const ny = cy + Math.sin(a) * orbitRadius;
-          return <circle key={i} cx={nx} cy={ny} r={nodeRadius} fill="white" stroke="#E2EAF8" strokeWidth="1.5" />;
+          const nx = cx + Math.cos(a) * orbitRadiusPercent;
+          const ny = cy + Math.sin(a) * orbitRadiusPercent;
+          return <circle key={i} cx={nx} cy={ny} r={5} fill="white" stroke="#E2EAF8" strokeWidth="0.3" />;
         })}
       </svg>
 
-      {/* Center label — HTML div, never overlaps SVG text */}
-      <div className="absolute flex items-center justify-center text-center px-3"
-        style={{ left: cx - 54, top: cy - 28, width: 108, height: 56 }}>
-        <span className="text-[11px] font-bold text-white leading-tight">
-          {centerLabel ?? solutionName}
-        </span>
+      {/* Center label */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+        <div className="w-[28%] text-center px-1">
+          <span className="text-[9px] md:text-[11px] font-bold text-white leading-tight block">
+            {centerLabel ?? solutionName}
+          </span>
+        </div>
       </div>
 
-      {/* Icons + labels as HTML divs — positioned independently, no overlap */}
+      {/* Icons + labels as HTML divs */}
       {allNodes.map((node, i) => {
         const a = (i / total) * Math.PI * 2 - Math.PI / 2;
-        const nx = cx + Math.cos(a) * orbitRadius;
-        const ny = cy + Math.sin(a) * orbitRadius;
-        const lx = cx + Math.cos(a) * (orbitRadius + labelOffset);
-        const ly = cy + Math.sin(a) * (orbitRadius + labelOffset);
+        const nx = cx + Math.cos(a) * orbitRadiusPercent;
+        const ny = cy + Math.sin(a) * orbitRadiusPercent;
+        const lx = cx + Math.cos(a) * (orbitRadiusPercent + labelOffsetPercent);
+        const ly = cy + Math.sin(a) * (orbitRadiusPercent + labelOffsetPercent);
         const Icon = node.icon;
+        
         return (
           <div key={i}>
             {/* Icon centred on the node circle */}
-            <div className="absolute flex items-center justify-center text-[#1A56DB]"
-              style={{ left: nx - 12, top: ny - 12, width: 24, height: 24, pointerEvents: "none" }}>
-              <Icon size={15} strokeWidth={2} />
+            <div 
+              className="absolute flex items-center justify-center text-[#1A56DB] pointer-events-none"
+              style={{ 
+                left: `${nx}%`, 
+                top: `${ny}%`, 
+                width: "6%", 
+                height: "6%", 
+                transform: "translate(-50%, -50%)" 
+              }}
+            >
+              <Icon className="w-full h-full p-[20%]" strokeWidth={2.5} />
             </div>
+            
             {/* Label outside the orbit ring */}
-            <div className="absolute flex items-center justify-center text-center"
-              style={{ left: lx - 44, top: ly - 18, width: 88, height: 36, pointerEvents: "none" }}>
-              <span className="text-[10px] font-semibold text-[#0D1B2A] leading-tight">
+            <div 
+              className="absolute flex items-center justify-center text-center pointer-events-none"
+              style={{ 
+                left: `${lx}%`, 
+                top: `${ly}%`, 
+                width: "25%", // Increased width to prevent tight wrapping
+                height: "12%", 
+                transform: "translate(-50%, -50%)" 
+              }}
+            >
+              <span className="text-[7.5px] md:text-[10.5px] font-semibold text-[#0D1B2A] leading-[1.1] dark:text-white/80">
                 {node.label}
               </span>
             </div>
           </div>
         );
       })}
+
     </div>
   );
 }
+

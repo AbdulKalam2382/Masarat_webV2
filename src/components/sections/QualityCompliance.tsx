@@ -30,7 +30,7 @@ export default function QualityCompliance() {
                 isRTL ? "border-r-4 border-r-[#2563EB]" : "border-l-4 border-l-[#2563EB]"
               )}
             >
-              <h3 className={cn("text-lg font-bold text-brand-ink dark:text-white", isRTL ? "text-right" : "text-left")}>
+              <h3 className={cn("text-xl font-bold text-brand-ink dark:text-white", isRTL ? "text-right" : "text-left")}>
                 {t(`about_page.quality_iso${num}`)}
               </h3>
             </motion.div>

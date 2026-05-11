@@ -2,112 +2,199 @@
 
 import { Link } from "@/i18n/routing";
 import { useLanguage } from "@/lib/LanguageContext";
-import { Linkedin, Twitter } from "lucide-react";
+import { Linkedin, Mail, Phone, MapPin, ArrowUpRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 
 export default function Footer() {
   const { t, isRTL } = useLanguage();
 
-  const links = [
-    { name: t("nav.solutions"), href: "/solutions" },
+  const solutionLinks = [
+    { name: t("nav.dropdowns.solutions.enterprise.title"), href: "/solutions#capability4" },
+    { name: t("nav.dropdowns.solutions.ai_data.title"), href: "/solutions#capability3" },
+    { name: t("nav.dropdowns.solutions.cybersecurity.title"), href: "/solutions#capability2" },
+    { name: t("nav.dropdowns.solutions.elv.title"), href: "/solutions#capability5" },
+    { name: t("nav.dropdowns.solutions.infrastructure.title"), href: "/solutions#capability1" },
+  ];
+
+  const quickLinks = [
     { name: t("nav.about"), href: "/about" },
     { name: t("nav.career"), href: "/career" },
     { name: t("nav.contact"), href: "/contact" },
-    { name: t("footer.insights"), href: "/insights" },
+  ];
+
+  const techPartners = [
+    "Broadcom", "Cloudera", "Qlik", "Nozomi Networks", 
+    "SUSE", "Huawei", "Intalio", "Ivanti", "Hydrotek"
   ];
 
   return (
-    <footer className="relative bg-[#F8FAFC] dark:bg-[#0B1221] border-t-[0.5px] border-[#E5E5EA] dark:border-[#1E3150] py-32 overflow-hidden transition-colors duration-500">
-      <div className="absolute inset-0 noise-overlay opacity-[0.03]" />
-      <div className="container max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-20 relative z-10">
+    <footer className="relative bg-white dark:bg-[#0B1221] text-brand-ink dark:text-white pt-24 pb-12 overflow-hidden transition-colors duration-500">
+      {/* Background Decorative Element */}
+      <div className="absolute top-0 left-0 w-full h-[1px] bg-[#E2EAF8] dark:bg-white/10" />
+
+      <div className="container max-w-7xl mx-auto px-6 relative z-10">
+        
+        {/* Main Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-24">
           
-          {/* Logo & Tagline */}
-          <div className="md:col-span-4 flex flex-col gap-8">
-            <Link href="/" className="inline-block">
-              <div className="relative w-[480px] h-[220px]">
+          {/* Brand Column */}
+          <div className="lg:col-span-4 flex flex-col gap-10">
+            <Link href="/" className="inline-block transition-transform hover:scale-[1.02]">
+              <div className="relative w-[500px] h-[200px]">
                 <Image
                   src="/images/Masarat Logo.png"
                   alt="Masarat Technologies"
                   fill
-                  sizes="480px"
-                  className="object-contain object-left mix-blend-multiply dark:mix-blend-normal"
+                  sizes="500px"
+                  className="object-contain object-left dark:invert dark:brightness-0"
                 />
               </div>
             </Link>
-            <p className="text-base text-[#6B6B6B] dark:text-[#A1A1A6] font-light max-w-xs leading-relaxed rtl:text-right">
+            <p className="text-lg text-[#64748B] dark:text-white/60 font-light leading-relaxed max-w-sm">
               {t("footer.tagline")}
             </p>
-          </div>
-
-          {/* Links */}
-          <div className="md:col-span-4 flex flex-col gap-6">
-            <span className="text-xs font-bold uppercase tracking-[0.3em] text-[#6B6B6B] dark:text-[#A1A1A6] rtl:text-right">
-              {t("footer.nav_label")}
-            </span>
-            <div className="grid grid-cols-2 gap-4">
-              {links.map((link) => (
-                <Link 
-                  key={link.name} 
-                  href={link.href}
-                  className="text-sm font-medium text-brand-ink dark:text-[#F5F5F7] hover:text-blue-600 dark:hover:text-blue-400 transition-colors rtl:text-right"
-                >
-                  {link.name}
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          {/* Social & Contact */}
-          <div className="md:col-span-4 flex flex-col gap-8">
-            <span className="text-xs font-bold uppercase tracking-[0.3em] text-[#6B6B6B] dark:text-[#A1A1A6] rtl:text-right">
-              {t("footer.connect_label")}
-            </span>
-            <div className={cn("flex gap-5", isRTL ? "flex-row-reverse" : "flex-row")}>
-              <a href="#" className="p-4 bg-white dark:bg-[#10192C] border border-[#E5E5EA] dark:border-[#1E3150] rounded-2xl text-brand-ink dark:text-white hover:bg-blue-600 hover:text-white transition-all shadow-sm hover:shadow-blue-600/20 group">
-                <Twitter size={20} className="group-hover:scale-110 transition-transform" />
+            <div className={cn("flex gap-4", isRTL && "flex-row-reverse")}>
+              <a href="https://linkedin.com/company/masaratkwt" target="_blank" rel="noopener" className="w-12 h-12 rounded-xl bg-[#F8FAFC] dark:bg-white/5 border border-[#E2EAF8] dark:border-white/10 flex items-center justify-center hover:bg-blue-600 hover:border-blue-600 transition-all group">
+                <Linkedin size={20} className="text-[#0D1B2A]/80 dark:text-white/80 group-hover:text-white group-hover:scale-110 transition-transform" />
               </a>
-              <a href="#" className="p-4 bg-white dark:bg-[#10192C] border border-[#E5E5EA] dark:border-[#1E3150] rounded-2xl text-brand-ink dark:text-white hover:bg-blue-600 hover:text-white transition-all shadow-sm hover:shadow-blue-600/20 group">
-                <Linkedin size={20} className="group-hover:scale-110 transition-transform" />
-              </a>
-              <a
-                href="https://x.com/masaratkwt"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-9 h-9 rounded-full border border-[#E2EAF8] dark:border-white/10 flex items-center justify-center hover:bg-[#1A56DB] hover:border-[#1A56DB] hover:text-white transition-all duration-200 text-[#64748B] dark:text-[#94A3B8]">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+              <a href="https://x.com/masaratkwt" target="_blank" rel="noopener" className="w-12 h-12 rounded-xl bg-[#F8FAFC] dark:bg-white/5 border border-[#E2EAF8] dark:border-white/10 flex items-center justify-center hover:bg-blue-600 hover:border-blue-600 transition-all group">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" className="text-[#0D1B2A]/80 dark:text-white/80 group-hover:text-white group-hover:scale-110 transition-transform">
                   <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
                 </svg>
               </a>
             </div>
-            <div className="flex flex-col gap-2">
-              <span className="text-xs text-[#6B6B6B] dark:text-[#A1A1A6] font-bold uppercase tracking-widest rtl:text-right">
-                {t("footer.support_label")}
-              </span>
-              <a href="mailto:info@masaratkwt.com" className="text-lg font-bold text-brand-ink dark:text-[#F5F5F7] hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-outfit rtl:text-right">
-                info@masaratkwt.com
+          </div>
+
+          {/* Solutions Column */}
+          <div className="lg:col-span-3 flex flex-col gap-8">
+            <h4 className={cn("text-sm font-black uppercase tracking-[0.3em] text-[#0D1B2A]/30 dark:text-white/40", isRTL && "text-right")}>
+              {t("footer.solutions_label")}
+            </h4>
+            <ul className="flex flex-col gap-5">
+              {solutionLinks.map((link) => (
+                <li key={link.name} className={cn("group", isRTL && "text-right")}>
+                  <Link href={link.href} className="text-[15px] text-[#475569] dark:text-white/70 hover:text-blue-600 dark:hover:text-white transition-colors flex items-center gap-2 group-hover:translate-x-1 duration-300 rtl:group-hover:-translate-x-1">
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Navigation Column */}
+          <div className="lg:col-span-2 flex flex-col gap-8">
+            <h4 className={cn("text-sm font-black uppercase tracking-[0.3em] text-[#0D1B2A]/30 dark:text-white/40", isRTL && "text-right")}>
+              {t("footer.nav_label")}
+            </h4>
+            <ul className="flex flex-col gap-5">
+              {quickLinks.map((link) => (
+                <li key={link.name} className={cn("group", isRTL && "text-right")}>
+                  <Link href={link.href} className="text-[15px] text-[#475569] dark:text-white/70 hover:text-blue-600 dark:hover:text-white transition-colors flex items-center gap-2 group-hover:translate-x-1 duration-300 rtl:group-hover:-translate-x-1">
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact Column */}
+          <div className="lg:col-span-3 flex flex-col gap-8">
+            <h4 className={cn("text-sm font-black uppercase tracking-[0.3em] text-[#0D1B2A]/30 dark:text-white/40", isRTL && "text-right")}>
+              {t("footer.connect_label")}
+            </h4>
+            <div className="flex flex-col gap-6">
+              <a href="mailto:info@masaratkwt.com" className="flex items-center gap-4 text-[#475569] dark:text-white/70 hover:text-blue-600 dark:hover:text-white transition-all group">
+                <div className="w-10 h-10 rounded-lg bg-[#F8FAFC] dark:bg-white/5 border border-[#E2EAF8] dark:border-white/10 flex items-center justify-center group-hover:bg-blue-600/10 group-hover:border-blue-600/30 transition-all">
+                  <Mail size={18} className="group-hover:text-blue-600" />
+                </div>
+                <div className={cn("flex flex-col", isRTL && "text-right")}>
+                  <span className="text-xs text-[#0D1B2A]/20 dark:text-white/30 uppercase tracking-tighter">Email</span>
+                  <span className="text-sm font-semibold">info@masaratkwt.com</span>
+                </div>
               </a>
+              <a href="tel:+96567013229" className="flex items-center gap-4 text-[#475569] dark:text-white/70 hover:text-blue-600 dark:hover:text-white transition-all group">
+                <div className="w-10 h-10 rounded-lg bg-[#F8FAFC] dark:bg-white/5 border border-[#E2EAF8] dark:border-white/10 flex items-center justify-center group-hover:bg-blue-600/10 group-hover:border-blue-600/30 transition-all">
+                  <Phone size={18} className="group-hover:text-blue-600" />
+                </div>
+                <div className={cn("flex flex-col", isRTL && "text-right")}>
+                  <span className="text-xs text-[#0D1B2A]/20 dark:text-white/30 uppercase tracking-tighter">Phone</span>
+                  <span className="text-sm font-semibold">+965 6701 3229</span>
+                </div>
+              </a>
+              <div className="flex items-center gap-4 text-[#475569] dark:text-white/70 group">
+                <div className="w-10 h-10 rounded-lg bg-[#F8FAFC] dark:bg-white/5 border border-[#E2EAF8] dark:border-white/10 flex items-center justify-center group-hover:bg-blue-600/10 group-hover:border-blue-600/30 transition-all">
+                  <MapPin size={18} className="group-hover:text-blue-600" />
+                </div>
+                <div className={cn("flex flex-col", isRTL && "text-right")}>
+                  <span className="text-xs text-[#0D1B2A]/20 dark:text-white/30 uppercase tracking-tighter">Office</span>
+                  <span className="text-sm font-semibold">Kuwait City, Kuwait</span>
+                </div>
+              </div>
             </div>
           </div>
-
         </div>
 
+        {/* Tech Partners Section */}
+        <div className="border-t border-[#E2EAF8] dark:border-white/10 pt-16 pb-20">
+          <div className="flex flex-col gap-10">
+            <h4 className={cn("text-[11px] font-black uppercase tracking-[0.4em] text-center text-[#0D1B2A]/40 dark:text-white/50")}>
+              {t("footer.partners_label")}
+            </h4>
+            <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-10 transition-all duration-700">
+              {techPartners.map((partner) => {
+                const isBroadcom = partner === "Broadcom";
+                return (
+                  <div key={partner} className={cn(
+                    "flex items-center justify-center group relative px-4",
+                    isBroadcom ? "h-20" : "h-14"
+                  )}>
+                    <div className={cn(
+                      "relative transition-transform duration-500 group-hover:scale-110",
+                      isBroadcom ? "h-16 w-48" : "h-12 w-36"
+                    )}>
+                      <img
+                        src={`/images/partners/${partner.toLowerCase().replace(/\s+/g, "-")}.png`}
+                        alt={partner}
+                        className="h-full w-full object-contain"
+                        onError={(e) => {
+                          if (partner.toLowerCase().includes('broadcom')) {
+                            (e.target as HTMLImageElement).src = '/images/partners/broadcom.png';
+                          }
+                        }}
+                      />
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
 
         {/* Bottom Strip */}
-        <div className={cn("flex flex-col md:flex-row items-center justify-between border-t-[0.5px] border-[#E5E5EA] dark:border-[#1E3150] pt-10 gap-6 relative z-10", isRTL && "md:flex-row-reverse")}>
-          <div className={cn("flex gap-8", isRTL ? "flex-row-reverse" : "flex-row")}>
-            <Link href="/privacy" className="text-xs text-[#6B6B6B] dark:text-[#A1A1A6] hover:text-brand-ink dark:hover:text-[#F5F5F7] transition-colors font-medium">
-              {t("footer.privacy")}
-            </Link>
-            <Link href="/terms" className="text-xs text-[#6B6B6B] dark:text-[#A1A1A6] hover:text-brand-ink dark:hover:text-[#F5F5F7] transition-colors font-medium">
-              {t("footer.terms")}
-            </Link>
-          </div>
-          <p className="text-xs text-[#6B6B6B] dark:text-[#A1A1A6] font-medium rtl:text-right">
+        <div className={cn("flex flex-col md:flex-row items-center justify-between border-t border-[#E2EAF8] dark:border-white/5 pt-12 gap-8", isRTL && "md:flex-row-reverse")}>
+          <p className="text-[13px] text-[#64748B] dark:text-white/30 font-medium tracking-tight">
             {t("footer.copy")}
           </p>
+          <div className={cn("flex items-center gap-10", isRTL && "flex-row-reverse")}>
+            <Link href="/privacy" className="text-[13px] text-[#64748B] dark:text-white/30 hover:text-blue-600 dark:hover:text-white transition-colors font-medium">
+              {t("footer.privacy")}
+            </Link>
+            <Link href="/terms" className="text-[13px] text-[#64748B] dark:text-white/30 hover:text-blue-600 dark:hover:text-white transition-colors font-medium">
+              {t("footer.terms")}
+            </Link>
+            <button 
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              className="flex items-center gap-2 text-[11px] font-black uppercase tracking-widest text-[#0D1B2A]/40 dark:text-white/40 hover:text-blue-600 transition-all group"
+            >
+              Back to Top
+              <div className="w-8 h-8 rounded-full border border-[#E2EAF8] dark:border-white/10 flex items-center justify-center group-hover:bg-blue-600 group-hover:border-blue-600 transition-all">
+                <ArrowUpRight size={14} className="group-hover:text-white" />
+              </div>
+            </button>
+          </div>
         </div>
+
       </div>
     </footer>
   );

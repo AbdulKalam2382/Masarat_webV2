@@ -49,10 +49,10 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Gradient transition: dark → light */}
-        <div className="h-24 w-full bg-gradient-to-b from-[#0D1B2A] to-[#F8FAFF] pointer-events-none" />
+        {/* Reduced Girth & Opacity Transition */}
+        <div className="h-12 w-full bg-gradient-to-b from-[#0D1B2A]/30 to-transparent pointer-events-none -mt-px" />
 
-        {/* Executive Overview — 2 column with Kuwait city image */}
+        {/* Executive Overview — 2 column with institutional imagery */}
         <section className="py-20 bg-[#F8FAFF]">
           <div className="max-w-7xl mx-auto px-6">
             <div className={cn("grid grid-cols-1 lg:grid-cols-2 gap-16 items-center", isRTL ? "lg:flex lg:flex-row-reverse" : "")}>
@@ -93,30 +93,6 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Hydrotek Partnership — full-width data center background */}
-        <section className="relative overflow-hidden" style={{ minHeight: 320 }}>
-          <img
-            src="https://static.vecteezy.com/system/resources/thumbnails/070/051/423/small/data-center-with-multiple-server-racks-housing-advanced-technology-for-data-processing-and-storage-in-a-modern-facility-photo.jpeg"
-            alt="Data center partnership"
-            loading="lazy"
-            onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
-            className="absolute inset-0 w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-[#0D1B2A]/85" />
-          <div className="relative z-10 flex items-center min-h-[320px]">
-            <div className="max-w-7xl mx-auto px-6 py-16">
-              <span className="text-[10px] font-bold tracking-[0.3em] text-[#3B82F6] uppercase mb-4 block">
-                Strategic Partnership
-              </span>
-              <h3 className="text-3xl md:text-4xl font-bold text-white tracking-tighter mb-6 max-w-2xl font-outfit">
-                Masarat × Hydrotek Engineering
-              </h3>
-              <p className="text-white/60 font-light text-lg leading-relaxed max-w-xl">
-                Together, we deliver Tier III certified data center environments and mission-critical infrastructure solutions across Kuwait.
-              </p>
-            </div>
-          </div>
-        </section>
 
         {/* WHITE SECTION - Top border + Noise */}
         <section className="animate-section relative py-32 bg-white border-t border-brand-blue/10 bg-noise overflow-hidden">

@@ -24,10 +24,10 @@ export default function Challenges() {
               transition={{ delay: num * 0.1 }}
               className="p-8 rounded-2xl border border-[#E2EAF8] dark:border-[#1E3150] bg-white dark:bg-[#10192C] shadow-sm"
             >
-              <h3 className={cn("text-xl font-bold text-brand-ink dark:text-white mb-4", isRTL ? "text-right" : "text-left")}>
+              <h3 className={cn("text-2xl font-bold text-brand-ink dark:text-white mb-4", isRTL ? "text-right" : "text-left")}>
                 {t(`about_page.challenge${num}_title`)}
               </h3>
-              <p className={cn("text-brand-muted dark:text-[#A1A1A6] font-light", isRTL ? "text-right" : "text-left")}>
+              <p className={cn("text-lg text-brand-muted dark:text-[#A1A1A6] font-light leading-relaxed", isRTL ? "text-right" : "text-left")}>
                 {t(`about_page.challenge${num}_desc`)}
               </p>
             </motion.div>
@@ -40,7 +40,7 @@ export default function Challenges() {
           viewport={{ once: true }}
           className="p-10 rounded-2xl bg-[#1B3A6B] text-white shadow-xl shadow-brand-blue/10"
         >
-          <p className={cn("text-xl md:text-2xl font-light text-[#F5F5F7] leading-relaxed", isRTL ? "text-right" : "text-center")}>
+          <p className={cn("text-2xl md:text-3xl font-light text-[#F5F5F7] leading-relaxed", isRTL ? "text-right" : "text-center")}>
             {t("about_page.challenges_callout")}
           </p>
         </motion.div>

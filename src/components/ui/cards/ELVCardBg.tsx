@@ -36,6 +36,8 @@ export default function ELVCardBg() {
         preserveAspectRatio="xMidYMid slice"
         className="w-full h-full"
         aria-hidden="true"
+        shapeRendering="optimizeSpeed"
+        colorRendering="optimizeSpeed"
       >
         {/* Building outline — draws in */}
         <rect

@@ -26,23 +26,23 @@ export const insights: Insight[] = [
   {
     slug: "cybersecurity-zero-trust",
     category: "Cybersecurity",
-    date: "2026-04-01",
+    date: "2024-04-01",
     readTime: 6,
     author: "Masarat Technologies Team",
     en: {
-      title: "Zero Trust Architecture for Kuwait Enterprises",
+      title: "Zero Trust Architecture for Regional Enterprises",
       excerpt:
-        "How Kuwait's financial and government sectors are adopting zero-trust models to protect critical infrastructure.",
+        "How leading financial and government sectors are adopting zero-trust models to protect critical infrastructure.",
       intro:
-        "The traditional perimeter-based security model is no longer sufficient for modern enterprise environments. As Kuwait's institutions accelerate digital transformation, the attack surface grows — and with it, the need for a fundamentally different security paradigm: Zero Trust.",
+        "The traditional perimeter-based security model is no longer sufficient for modern enterprise environments. As leading institutions accelerate digital transformation, the attack surface grows — and with it, the need for a fundamentally different security paradigm: Zero Trust.",
       sections: [
         {
           heading: "What is Zero Trust?",
           body: "Zero Trust is a security framework built on the principle of 'never trust, always verify'. Unlike legacy approaches that assume everything inside the corporate network is safe, Zero Trust treats every request — from any user, device, or location — as a potential threat until proven otherwise.",
         },
         {
-          heading: "Why Kuwait Enterprises Need It Now",
-          body: "Kuwait's financial sector and government institutions handle extremely sensitive citizen and transactional data. Recent increases in nation-state cyberattacks targeting GCC infrastructure have accelerated the urgency for stronger identity-first security architectures.",
+          heading: "Why Enterprises Need It Now",
+          body: "Financial sectors and government institutions handle extremely sensitive citizen and transactional data. Recent increases in cyberattacks targeting critical infrastructure have accelerated the urgency for stronger identity-first security architectures.",
         },
         {
           heading: "The Five Pillars of Zero Trust",
@@ -76,22 +76,22 @@ export const insights: Insight[] = [
         },
       ],
       conclusion:
-        "Zero Trust is not a single product — it is an architectural philosophy. For Kuwait's most critical institutions, adopting it is no longer optional. Masarat Technologies provides end-to-end Zero Trust advisory and implementation services tailored to local regulatory requirements.",
+        "Zero Trust is not a single product — it is an architectural philosophy. For critical institutions, adopting it is no longer optional. Masarat Technologies provides end-to-end Zero Trust advisory and implementation services tailored to regulatory requirements.",
     },
     ar: {
-      title: "بنية الثقة الصفرية لمؤسسات الكويت",
+      title: "بنية الثقة الصفرية للمؤسسات الإقليمية",
       excerpt:
-        "كيف يعتمد القطاع المالي والحكومي في الكويت نماذج الثقة الصفرية لحماية البنية التحتية الحيوية.",
+        "كيف يعتمد القطاع المالي والحكومي نماذج الثقة الصفرية لحماية البنية التحتية الحيوية.",
       intro:
-        "لم يعد نموذج الأمن التقليدي القائم على المحيط كافياً للبيئات المؤسسية الحديثة. مع تسارع المؤسسات الكويتية في مسيرة التحول الرقمي، يتوسع نطاق الهجوم — ومعه تزداد الحاجة إلى نموذج أمني مختلف جوهرياً: الثقة الصفرية.",
+        "لم يعد نموذج الأمن التقليدي القائم على المحيط كافياً للبيئات المؤسسية الحديثة. مع تسارع المؤسسات الرائدة في مسيرة التحول الرقمي، يتوسع نطاق الهجوم — ومعه تزداد الحاجة إلى نموذج أمني مختلف جوهرياً: الثقة الصفرية.",
       sections: [
         {
           heading: "ما هي الثقة الصفرية؟",
           body: "الثقة الصفرية إطار أمني مبني على مبدأ 'لا تثق أبداً، تحقق دائماً'. على عكس الأساليب التقليدية التي تفترض أن كل ما هو داخل الشبكة المؤسسية آمن، تعامل الثقة الصفرية كل طلب — من أي مستخدم أو جهاز أو موقع — باعتباره تهديداً محتملاً حتى يثبت العكس.",
         },
         {
-          heading: "لماذا تحتاجها المؤسسات الكويتية الآن",
-          body: "يتعامل القطاع المالي والمؤسسات الحكومية في الكويت مع بيانات مواطنين وبيانات معاملات بالغة الحساسية. أدى تزايد الهجمات السيبرانية التي ترعاها الدول والتي تستهدف البنية التحتية لدول مجلس التعاون الخليجي إلى تسريع الحاجة إلى بنيات أمنية أكثر صرامة تعتمد على الهوية.",
+          heading: "لماذا تحتاجها المؤسسات الكبرى الآن",
+          body: "يتعامل القطاع المالي والمؤسسات الحكومية مع بيانات مواطنين وبيانات معاملات بالغة الحساسية. أدى تزايد الهجمات السيبرانية التي تستهدف البنية التحتية الحيوية إلى تسريع الحاجة إلى بنيات أمنية أكثر صرامة تعتمد على الهوية.",
         },
         {
           heading: "الركائز الخمس للثقة الصفرية",
@@ -125,25 +125,25 @@ export const insights: Insight[] = [
         },
       ],
       conclusion:
-        "الثقة الصفرية ليست منتجاً واحداً — بل هي فلسفة معمارية. بالنسبة للمؤسسات الأكثر أهمية في الكويت، لم يعد اعتمادها خياراً. تقدم مسارات تكنولوجيز خدمات استشارية وتنفيذية شاملة للثقة الصفرية مصممة وفقاً للمتطلبات التنظيمية المحلية.",
+        "الثقة الصفرية ليست منتجاً واحداً — بل هي فلسفة معمارية. بالنسبة للمؤسسات الأكثر أهمية، لم يعد اعتمادها خياراً. تقدم مسارات تكنولوجيز خدمات استشارية وتنفيذية شاملة للثقة الصفرية مصممة وفقاً للمتطلبات التنظيمية.",
     },
   },
   {
     slug: "cloud-hybrid-strategy",
     category: "Cloud",
-    date: "2026-03-15",
+    date: "2024-03-15",
     readTime: 5,
     author: "Masarat Technologies Team",
     en: {
       title: "Building a Hybrid Cloud Strategy That Lasts",
       excerpt:
-        "Lessons learned from deploying hybrid cloud architectures across Kuwait's most demanding institutions.",
+        "Lessons learned from deploying hybrid cloud architectures across demanding institutional environments.",
       intro:
-        "Hybrid cloud — the combination of on-premises infrastructure with one or more public clouds — has become the dominant model for enterprise IT in Kuwait. Done right, it delivers agility without sacrificing control. Done poorly, it creates sprawl, security gaps, and runaway costs.",
+        "Hybrid cloud — the combination of on-premises infrastructure with one or more public clouds — has become the dominant model for enterprise IT. Done right, it delivers agility without sacrificing control. Done poorly, it creates sprawl, security gaps, and runaway costs.",
       sections: [
         {
           heading: "Why Pure Cloud Is Not Always the Answer",
-          body: "Many Kuwait government and financial institutions face data sovereignty mandates that require certain workloads to remain on local infrastructure. A pure public cloud strategy is therefore neither feasible nor compliant for these organisations.",
+          body: "Many government and financial institutions face data sovereignty mandates that require certain workloads to remain on local infrastructure. A pure public cloud strategy is therefore neither feasible nor compliant for these organisations.",
         },
         {
           heading: "The Four Design Principles",
@@ -169,22 +169,22 @@ export const insights: Insight[] = [
         },
         {
           heading: "Lessons from the Field",
-          body: "After dozens of hybrid deployments across Kuwaiti institutions, our most consistent finding is that governance — not technology — is the primary failure point. Organisations that invest in cloud governance frameworks before migration succeed far more often than those that focus purely on migration speed.",
+          body: "After dozens of hybrid deployments across leading institutions, our most consistent finding is that governance — not technology — is the primary failure point. Organisations that invest in cloud governance frameworks before migration succeed far more often than those that focus purely on migration speed.",
         },
       ],
       conclusion:
-        "A hybrid cloud strategy is only as strong as the operating model behind it. Masarat Technologies helps Kuwait institutions design, deploy, and govern hybrid environments that perform reliably for years — not just at go-live.",
+        "A hybrid cloud strategy is only as strong as the operating model behind it. Masarat Technologies helps institutions design, deploy, and govern hybrid environments that perform reliably for years — not just at go-live.",
     },
     ar: {
       title: "بناء استراتيجية سحابة هجينة تدوم",
       excerpt:
-        "دروس مستفادة من نشر بنيات السحابة الهجينة عبر أكثر المؤسسات الكويتية صرامةً.",
+        "دروس مستفادة من نشر بنيات السحابة الهجينة عبر أكثر المؤسسات صرامةً.",
       intro:
-        "أصبحت السحابة الهجينة — الجمع بين البنية التحتية المحلية وسحابة عامة واحدة أو أكثر — النموذج السائد لتقنية المعلومات المؤسسية في الكويت. عند تنفيذها بشكل صحيح، تُوفر المرونة دون التضحية بالتحكم. أما إذا نُفذت بشكل سيئ، فتُنتج انتشاراً فوضوياً وثغرات أمنية وتكاليف خارجة عن السيطرة.",
+        "أصبحت السحابة الهجينة — الجمع بين البنية التحتية المحلية وسحابة عامة واحدة أو أكثر — النموذج السائد لتقنية المعلومات المؤسسية. عند تنفيذها بشكل صحيح، تُوفر المرونة دون التضحية بالتحكم. أما إذا نُفذت بشكل سيئ، فتُنتج انتشاراً فوضوياً وثغرات أمنية وتكاليف خارجة عن السيطرة.",
       sections: [
         {
           heading: "لماذا السحابة الخالصة ليست دائماً الحل",
-          body: "تواجه كثير من المؤسسات الحكومية والمالية الكويتية تفويضات سيادة البيانات التي تُلزم ببقاء أعباء عمل معينة على البنية التحتية المحلية. لذا فإن استراتيجية السحابة العامة الخالصة ليست ممكنة التطبيق ولا متوافقة مع المتطلبات لهذه المؤسسات.",
+          body: "تواجه كثير من المؤسسات الحكومية والمالية تفويضات سيادة البيانات التي تُلزم ببقاء أعباء عمل معينة على البنية التحتية المحلية. لذا فإن استراتيجية السحابة العامة الخالصة ليست ممكنة التطبيق ولا متوافقة مع المتطلبات لهذه المؤسسات.",
         },
         {
           heading: "المبادئ التصميمية الأربعة",
@@ -210,25 +210,25 @@ export const insights: Insight[] = [
         },
         {
           heading: "دروس من الميدان",
-          body: "بعد عشرات عمليات النشر الهجينة عبر المؤسسات الكويتية، نجد باستمرار أن الحوكمة — لا التكنولوجيا — هي نقطة الفشل الرئيسية. المؤسسات التي تستثمر في أطر حوكمة السحابة قبل الهجرة تنجح في أغلب الأحيان أكثر بكثير من تلك التي تركز بشكل حصري على سرعة الهجرة.",
+          body: "بعد عشرات عمليات النشر الهجينة عبر المؤسسات الكبرى، نجد باستمرار أن الحوكمة — لا التكنولوجيا — هي نقطة الفشل الرئيسية. المؤسسات التي تستثمر في أطر حوكمة السحابة قبل الهجرة تنجح في أغلب الأحيان أكثر بكثير من تلك التي تركز بشكل حصري على سرعة الهجرة.",
         },
       ],
       conclusion:
-        "استراتيجية السحابة الهجينة لا تكون أقوى من نموذج التشغيل الذي يقف خلفها. تساعد مسارات تكنولوجيز المؤسسات الكويتية على تصميم ونشر وإدارة البيئات الهجينة التي تعمل بشكل موثوق لسنوات — لا فقط عند التشغيل.",
+        "استراتيجية السحابة الهجينة لا تكون أقوى من نموذج التشغيل الذي يقف خلفها. تساعد مسارات تكنولوجيز المؤسسات على تصميم ونشر وإدارة البيئات الهجينة التي تعمل بشكل موثوق لسنوات — لا فقط عند التشغيل.",
     },
   },
   {
     slug: "ai-enterprise-readiness",
     category: "AI",
-    date: "2026-03-01",
+    date: "2024-03-01",
     readTime: 7,
     author: "Masarat Technologies Team",
     en: {
       title: "Is Your Organisation AI-Ready?",
       excerpt:
-        "A practical framework for assessing and accelerating AI adoption in Kuwait's enterprise landscape.",
+        "A practical framework for assessing and accelerating AI adoption in the enterprise landscape.",
       intro:
-        "Artificial intelligence is rapidly moving from a strategic ambition to an operational necessity for Kuwait's leading enterprises. But deploying AI successfully requires more than a vendor contract. It demands data maturity, infrastructure readiness, governance frameworks, and talent — assessed honestly before committing to transformation.",
+        "Artificial intelligence is rapidly moving from a strategic ambition to an operational necessity for leading enterprises. But deploying AI successfully requires more than a vendor contract. It demands data maturity, infrastructure readiness, governance frameworks, and talent — assessed honestly before committing to transformation.",
       sections: [
         {
           heading: "What is AI Readiness?",
@@ -252,7 +252,7 @@ export const insights: Insight[] = [
             },
             {
               heading: "4. Governance & Ethics",
-              body: "Clear policies around data privacy, model accountability, bias auditing, and the ethical use of AI must be established early. In Kuwait's regulatory environment, this is not optional — it is a compliance requirement.",
+              body: "Clear policies around data privacy, model accountability, bias auditing, and the ethical use of AI must be established early. In the current regulatory environment, this is not optional — it is a compliance requirement.",
             },
             {
               heading: "5. Strategy Alignment",
@@ -266,14 +266,14 @@ export const insights: Insight[] = [
         },
       ],
       conclusion:
-        "AI readiness is not a one-time assessment. It is a continuous process of maturation that evolves alongside your technology and business strategy. Masarat Technologies partners with Kuwait institutions at every stage of that journey — from first assessment to full-scale deployment.",
+        "AI readiness is not a one-time assessment. It is a continuous process of maturation that evolves alongside your technology and business strategy. Masarat Technologies partners with institutions at every stage of that journey — from first assessment to full-scale deployment.",
     },
     ar: {
       title: "هل مؤسستك مستعدة للذكاء الاصطناعي؟",
       excerpt:
-        "إطار عملي لتقييم اعتماد الذكاء الاصطناعي وتسريعه في المشهد المؤسسي الكويتي.",
+        "إطار عملي لتقييم اعتماد الذكاء الاصطناعي وتسريعه في المشهد المؤسسي.",
       intro:
-        "ينتقل الذكاء الاصطناعي بسرعة من طموح استراتيجي إلى ضرورة تشغيلية للمؤسسات الكويتية الرائدة. لكن النشر الناجح للذكاء الاصطناعي يتطلب أكثر من مجرد عقد مع مورد. يستلزم نضج البيانات، وجاهزية البنية التحتية، وأطر الحوكمة، والكفاءات البشرية — كلها تُقيَّم بصدق قبل الالتزام بالتحول.",
+        "ينتقل الذكاء الاصطناعي بسرعة من طموح استراتيجي إلى ضرورة تشغيلية للمؤسسات الرائدة. لكن النشر الناجح للذكاء الاصطناعي يتطلب أكثر من مجرد عقد مع مورد. يستلزم نضج البيانات، وجاهزية البنية التحتية، وأطر الحوكمة، والكفاءات البشرية — كلها تُقيَّم بصدق قبل الالتزام بالتحول.",
       sections: [
         {
           heading: "ما المقصود بالجاهزية للذكاء الاصطناعي؟",
@@ -297,7 +297,7 @@ export const insights: Insight[] = [
             },
             {
               heading: "٤. الحوكمة والأخلاقيات",
-              body: "يجب وضع سياسات واضحة حول خصوصية البيانات ومساءلة النماذج وتدقيق التحيز والاستخدام الأخلاقي للذكاء الاصطناعي في وقت مبكر. في البيئة التنظيمية الكويتية، هذا ليس اختيارياً — بل هو متطلب امتثال.",
+              body: "يجب وضع سياسات واضحة حول خصوصية البيانات ومساءلة النماذج وتدقيق التحيز والاستخدام الأخلاقي للذكاء الاصطناعي في وقت مبكر. في البيئة التنظيمية الحالية، هذا ليس اختيارياً — بل هو متطلب امتثال.",
             },
             {
               heading: "٥. التوافق الاستراتيجي",
@@ -311,7 +311,7 @@ export const insights: Insight[] = [
         },
       ],
       conclusion:
-        "الجاهزية للذكاء الاصطناعي ليست تقييماً لمرة واحدة. إنها عملية نضج مستمرة تتطور جنباً إلى جنب مع استراتيجيتك التقنية والتجارية. تُشارك مسارات تكنولوجيز المؤسسات الكويتية في كل مرحلة من مراحل تلك الرحلة — من التقييم الأول إلى النشر الكامل.",
+        "الجاهزية للذكاء الاصطناعي ليست تقييماً لمرة واحدة. إنها عملية نضج مستمرة تتطور جنباً إلى جنب مع استراتيجيتك التقنية والتجارية. تُشارك مسارات تكنولوجيز المؤسسات في كل مرحلة من مراحل تلك الرحلة — من التقييم الأول إلى النشر الكامل.",
     },
   },
 ];

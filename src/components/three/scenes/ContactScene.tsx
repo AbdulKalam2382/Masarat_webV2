@@ -50,7 +50,7 @@ function PulsingRings() {
 
 export default function ContactScene() {
   return (
-    <Canvas camera={{ position: [0, 0, 8], fov: 55 }} gl={{ alpha: true, antialias: true }}
+    <Canvas camera={{ position: [0, 0, 8], fov: 55 }} gl={{ alpha: true, antialias: true, powerPreference: "high-performance" }}
       style={{ position: "absolute", inset: 0, width: "100%", height: "100%", pointerEvents: "none" }}
       dpr={[1, 1.5]}>
       <PulsingRings />

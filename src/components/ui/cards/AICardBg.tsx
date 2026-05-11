@@ -25,6 +25,8 @@ export default function AICardBg() {
         preserveAspectRatio="xMidYMid slice"
         className="w-full h-full"
         aria-hidden="true"
+        shapeRendering="optimizeSpeed"
+        colorRendering="optimizeSpeed"
       >
         <defs>
           <filter id="ai-glow-f" x="-80%" y="-80%" width="260%" height="260%">

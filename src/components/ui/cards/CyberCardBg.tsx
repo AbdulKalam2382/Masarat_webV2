@@ -15,13 +15,13 @@ function hexPoints(cx: number, cy: number, r: number): string {
     .join(" ");
 }
 
-const R = 15;
+const R = 22;
 const SQ3 = Math.sqrt(3);
 const X_STEP = R * SQ3;
 const Y_STEP = R * 1.5;
 const X_OFF = X_STEP / 2;
-const COLS_HEX = 14;
-const ROWS_HEX = 22;
+const COLS_HEX = 10;
+const ROWS_HEX = 15;
 const VW = COLS_HEX * X_STEP;
 const VH = ROWS_HEX * Y_STEP;
 
@@ -47,6 +47,8 @@ export default function CyberCardBg() {
         preserveAspectRatio="xMidYMid slice"
         className="w-full h-full"
         aria-hidden="true"
+        shapeRendering="optimizeSpeed"
+        colorRendering="optimizeSpeed"
       >
         <defs>
           <linearGradient id="scan-grad" x1="0" y1="0" x2="1" y2="0">

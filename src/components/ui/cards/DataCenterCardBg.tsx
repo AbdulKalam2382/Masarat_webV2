@@ -31,6 +31,8 @@ export default function DataCenterCardBg() {
         preserveAspectRatio="xMidYMid slice"
         className="w-full h-full"
         aria-hidden="true"
+        shapeRendering="optimizeSpeed"
+        colorRendering="optimizeSpeed"
       >
         <defs>
           <filter id="dc-glow" x="-100%" y="-100%" width="300%" height="300%">

@@ -25,19 +25,19 @@ const cairo = Cairo({
 export const metadata: Metadata = {
   metadataBase: new URL('https://masaratkwt.com'),
   title: {
-    default: 'Masarat Technologies | IT Solutions Kuwait',
+    default: 'Masarat Technologies | Enterprise IT Solutions',
     template: '%s | Masarat Technologies'
   },
-  description: 'Kuwait-based IT solutions company specializing in Cybersecurity, Cloud Engineering, AI Integration, and IT Consulting. 40+ years of enterprise experience.',
+  description: 'Leading IT solutions company specializing in Cybersecurity, Cloud Engineering, AI Integration, and IT Consulting. Proven enterprise technology expertise.',
   keywords: [
-    'IT consulting Kuwait',
-    'cybersecurity Kuwait', 
-    'cloud solutions Kuwait',
-    'AI integration Kuwait',
-    'managed IT services Kuwait',
-    'enterprise technology Kuwait',
+    'IT consulting',
+    'cybersecurity', 
+    'cloud solutions',
+    'AI integration',
+    'managed IT services',
+    'enterprise technology',
     'مسارات تكنولوجيز',
-    'شركة تقنية معلومات الكويت'
+    'شركة تقنية معلومات'
   ],
   authors: [{ name: 'Masarat Technologies' }],
   creator: 'Masarat Technologies',
@@ -47,8 +47,8 @@ export const metadata: Metadata = {
     alternateLocale: 'ar_KW',
     url: 'https://masaratkwt.com',
     siteName: 'Masarat Technologies',
-    title: 'Masarat Technologies | IT Solutions Kuwait',
-    description: 'Kuwait-based IT solutions company specializing in Cybersecurity, Cloud, and AI. 40+ years of enterprise experience.',
+    title: 'Masarat Technologies | Enterprise IT Solutions',
+    description: 'Leading IT solutions company specializing in Cybersecurity, Cloud, and AI. Proven enterprise technology expertise.',
     images: [{
       url: '/images/Masarat Logo.png',
       width: 1200,
@@ -58,8 +58,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Masarat Technologies | IT Solutions Kuwait',
-    description: 'Kuwait-based IT solutions company.',
+    title: 'Masarat Technologies | Enterprise IT Solutions',
+    description: 'Leading enterprise IT solutions company.',
     images: ['/images/Masarat Logo.png']
   },
   robots: {
@@ -124,11 +124,11 @@ export default async function RootLayout({
                   "name": "Masarat Technologies",
                   "url": "https://masaratkwt.com",
                   "logo": "https://masaratkwt.com/images/Masarat Logo.png",
-                  "description": "Kuwait-based IT Solutions & Services provider",
+                  "description": "Enterprise IT Solutions & Services provider",
                   "address": {
                     "@type": "PostalAddress",
                     "addressCountry": "KW",
-                    "addressLocality": "Kuwait City"
+                    "addressLocality": "Regional Headquarters"
                   },
                   "contactPoint": {
                     "@type": "ContactPoint",

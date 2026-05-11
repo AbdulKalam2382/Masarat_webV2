@@ -6,52 +6,12 @@ import { useLanguage } from "@/lib/LanguageContext";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import { Link } from "@/i18n/routing";
-import { useRef, useEffect } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SceneWrapper from "@/components/three/SceneWrapper";
 import AnimatedBentoCard, { CardType } from "@/components/ui/AnimatedBentoCard";
-
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger);
-}
+import SolutionsPremium from "@/components/sections/SolutionsPremium";
 
 export default function SolutionsPage() {
   const { t, isRTL } = useLanguage();
-  const pinnedSectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const mm = gsap.matchMedia(pinnedSectionRef);
-
-    mm.add("(prefers-reduced-motion: no-preference)", () => {
-      const isMobile = window.innerWidth < 768;
-      const xOffset = isMobile ? 150 : 300;
-
-      // Explicitly set willChange
-      gsap.set(".solution-card", { willChange: "transform" });
-
-      // Card entry animations (no backgroundColor override — cards have animated dark backgrounds)
-      gsap.fromTo(
-        ".solution-card",
-        { x: xOffset, opacity: 0 },
-        {
-          x: 0,
-          opacity: 1,
-          stagger: 0.1,
-          ease: "none",
-          scrollTrigger: {
-            trigger: pinnedSectionRef.current,
-            start: "top top",
-            end: "+=600",
-            pin: true,
-            scrub: 0.3,
-          },
-        }
-      );
-    });
-
-    return () => mm.revert();
-  }, []);
 
   const solutions: { cardType: CardType; tag: string; title: string; slug: string; bullets: string[] }[] = [
     {
@@ -164,8 +124,8 @@ export default function SolutionsPage() {
           </div>
         </section>
 
-        {/* Gradient transition: dark → light */}
-        <div className="h-24 w-full bg-gradient-to-b from-[#0D1B2A] to-[#F8FAFF] pointer-events-none" />
+        {/* Reduced Girth & Opacity Transition */}
+        <div className="h-12 w-full bg-gradient-to-b from-[#0D1B2A]/30 to-transparent pointer-events-none -mt-px" />
 
         {/* Full-width image banner */}
         <div className="relative w-full overflow-hidden" style={{ height: 220 }}>
@@ -193,17 +153,17 @@ export default function SolutionsPage() {
                 <span className="w-7 h-[2px] bg-[#1A56DB] rounded-full" />
                 What We Do
               </p>
-              <h2 className="text-4xl font-bold text-[#0D1B2A] tracking-tight leading-tight mb-6" style={{ letterSpacing: "-0.03em" }}>
+              <h2 className="text-5xl md:text-6xl font-bold text-[#0D1B2A] tracking-tighter leading-tight mb-8" style={{ letterSpacing: "-0.04em" }}>
                 Five integrated capabilities.<br />
                 <span className="font-light text-[#64748B]">One accountable partner.</span>
               </h2>
-              <p className="text-[17px] text-[#64748B] leading-relaxed mb-5">
+              <p className="text-[19px] text-[#64748B] leading-relaxed mb-6">
                 Masarat operates across five integrated business lines that together cover the full enterprise technology stack. Each capability is designed to work alongside the others — not in isolation — ensuring that your digital platforms, intelligent systems, security environment, physical infrastructure, and data center facilities all function as one coherent, high-performing environment.
               </p>
-              <p className="text-[17px] text-[#64748B] leading-relaxed mb-5">
+              <p className="text-[19px] text-[#64748B] leading-relaxed mb-6">
                 Whether you are modernising your enterprise operations, deploying AI at scale, strengthening your security posture, building a smart facility, or delivering a new mission-critical data center — Masarat brings a single point of accountability across every phase of the engagement, from initial assessment through to long-term operations and support.
               </p>
-              <p className="text-[17px] text-[#64748B] leading-relaxed">
+              <p className="text-[19px] text-[#64748B] leading-relaxed">
                 Through our strategic partnership with Hydrotek Engineering, we extend this accountability across both digital and physical infrastructure — eliminating the coordination gaps that typically arise when multiple vendors are involved in complex, integrated projects.
               </p>
             </div>
@@ -211,54 +171,23 @@ export default function SolutionsPage() {
               {[
                 { number: "01", title: "Integrated by Design", body: "Our capabilities are built to work together. A cybersecurity engagement considers your infrastructure. An AI deployment considers your data environment. Everything connects." },
                 { number: "02", title: "Delivered with Accountability", body: "One team. One contract. One point of accountability. From the first conversation to the final handover and beyond — Masarat owns the outcome." },
-                { number: "03", title: "Built for Kuwait", body: "Our solutions are grounded in deep knowledge of Kuwait's regulatory landscape, institutional culture, and the operational demands of its most critical sectors." },
+                { number: "03", title: "Institutional Expertise", body: "Our solutions are grounded in deep knowledge of the complex regulatory landscape, institutional culture, and the operational demands of its most critical sectors." },
               ].map((item, i) => (
                 <div key={i} className="p-6 rounded-xl border border-[#E2EAF8] bg-[#F8FAFF] hover:border-[#1A56DB]/30 hover:bg-white transition-all duration-200">
                   <span className="text-[11px] font-black tracking-[0.2em] uppercase text-[#1A56DB]/40 block mb-3">{item.number}</span>
-                  <h3 className="text-[17px] font-bold text-[#0D1B2A] tracking-tight mb-3">{item.title}</h3>
-                  <p className="text-[15px] text-[#64748B] leading-relaxed">{item.body}</p>
+                  <h3 className="text-[20px] font-bold text-[#0D1B2A] tracking-tight mb-3">{item.title}</h3>
+                  <p className="text-[17px] text-[#64748B] leading-relaxed">{item.body}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* SOLUTIONS GRID */}
-        <section ref={pinnedSectionRef} className="animate-section relative py-32 bg-brand-surface overflow-hidden">
-          <div className="absolute inset-0 bg-diagonal-lines pointer-events-none opacity-50" />
-          
-          <div className="container max-w-7xl mx-auto px-6 relative z-10">
-            <div className="mb-20">
-              <span className={cn("section-kicker text-brand-blue mb-4 block", isRTL ? "flex-row-reverse" : "")}>
-                {t("solutions.what_we_solve_kicker")}
-              </span>
-              <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-brand-navy dark:text-white font-outfit">
-                {t("solutions.what_we_solve_title")}
-              </h2>
-              <p className="text-lg text-brand-muted mt-6 max-w-2xl leading-relaxed">
-                {t("solutions.what_we_solve_desc")}
-              </p>
-            </div>
+        {/* PREMIUM SOLUTIONS CAPABILITIES */}
+        <SolutionsPremium />
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {solutions.map((solution) => (
-                <AnimatedBentoCard
-                  key={solution.slug}
-                  cardType={solution.cardType}
-                  tag={solution.tag}
-                  title={solution.title}
-                  bullets={solution.bullets}
-                  href={`/solutions/${solution.slug}`}
-                  isRTL={isRTL}
-                  className="min-h-[460px]"
-                />
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Gradient transition: light → dark */}
-        <div className="h-24 w-full bg-gradient-to-b from-[#F8FAFF] to-[#0D1B2A] pointer-events-none" />
+        {/* Reduced Girth & Opacity Transition */}
+        <div className="h-12 w-full bg-gradient-to-b from-transparent to-[#0D1B2A]/20 pointer-events-none" />
 
         {/* CTA Section */}
         <section className="animate-section relative py-32 bg-brand-navy overflow-hidden">
