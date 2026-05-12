@@ -15,8 +15,8 @@ export default function ElvSmartSystemsPage() {
       slug="elv-smart-systems"
       name={isRTL ? "أنظمة ELV والأنظمة الذكية" : "ELV & Smart Systems"}
       category={isRTL ? "بنية تحتية" : "Infrastructure"}
-      heroImage="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=90&w=1920&auto=format&fit=crop"
-      bannerImage="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=85&w=1920&auto=format&fit=crop"
+      heroImage="/images/building.jpg"
+      bannerImage="/images/building.jpg"
       description={isRTL
         ? "مقدَّمة بتكامل كامل مع هيدروتيك للهندسة — تصميم وتنفيذ البيئات المادية والذكية المتكاملة."
         : "Delivered in full integration with Hydrotek Engineering — designing and implementing integrated physical and smart environments."}

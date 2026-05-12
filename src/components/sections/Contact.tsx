@@ -117,34 +117,6 @@ export default function Contact() {
           
           {/* Left Side */}
           <div className="flex flex-col gap-10">
-            <div className={cn(isRTL ? "text-right" : "text-left")}>
-              <motion.span
-                initial={{ opacity: 0, x: isRTL ? 20 : -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                className="text-xs uppercase tracking-[0.3em] font-bold text-blue-600 mb-4 block"
-              >
-                {t("contact_page.kicker")}
-              </motion.span>
-              <motion.h2
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="text-4xl md:text-6xl font-bold tracking-tighter font-outfit mb-6 text-brand-ink dark:text-[#F5F5F7] leading-tight"
-              >
-                {isRTL ? <>لنبني شيئاً <br /><span className="text-blue-600">رائعاً.</span></> : t("contact_page.title") + " " + t("contact_page.title_accent")}
-              </motion.h2>
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.1 }}
-                className="text-lg text-[#6B6B6B] font-light max-w-md leading-relaxed"
-              >
-                {t("contact_page.body")}
-              </motion.p>
-            </div>
-
             <div className="flex flex-col gap-4">
               {contactInfo.map((info, i) => (
                 <motion.a

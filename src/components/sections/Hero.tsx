@@ -53,7 +53,7 @@ export default function Hero() {
       {/* Institutional Skyline background */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://wallpapercat.com/w/full/6/f/3/1593721-2323x1406-desktop-hd-kuwait-city-wallpaper-image.jpg"
+          src="/images/hero/kuwait-hero.jpg"
           alt="Institutional Skyline"
           className="w-full h-full object-cover"
           onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}

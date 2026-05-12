@@ -4,7 +4,8 @@ import { Link } from "@/i18n/routing";
 import { cn } from "@/lib/utils";
 import { motion, useInView } from "framer-motion";
 import { useRef, lazy, Suspense } from "react";
-import type { CardType } from "@/components/ui/AnimatedBentoCard";
+
+export type CardType = "enterprise" | "ai" | "cyber" | "elv" | "datacenter";
 
 // Lazy-load each animated background so it only renders when needed
 const EnterpriseCardBg = lazy(() => import("@/components/ui/cards/EnterpriseCardBg"));
@@ -12,8 +13,6 @@ const AICardBg         = lazy(() => import("@/components/ui/cards/AICardBg"));
 const CyberCardBg      = lazy(() => import("@/components/ui/cards/CyberCardBg"));
 const ELVCardBg        = lazy(() => import("@/components/ui/cards/ELVCardBg"));
 const DataCenterCardBg = lazy(() => import("@/components/ui/cards/DataCenterCardBg"));
-
-export type { CardType };
 
 interface AnimatedBentoCardProps {
   cardType: CardType;
@@ -65,7 +64,7 @@ export default function AnimatedBentoCard({
     <motion.div
       ref={ref}
       className={cn(
-        "solution-card relative overflow-hidden rounded-2xl min-h-[420px] group flex flex-col",
+        "solution-card relative overflow-hidden rounded-2xl min-h-[380px] flex flex-col cursor-pointer group",
         "transition-shadow duration-300 hover:shadow-[0_20px_40px_rgba(26,86,219,0.25)]",
         className
       )}

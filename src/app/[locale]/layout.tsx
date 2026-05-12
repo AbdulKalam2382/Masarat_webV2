@@ -110,8 +110,7 @@ export default async function RootLayout({
           <NextIntlClientProvider messages={messages}>
             <ThemeProvider
               attribute="class"
-              defaultTheme="system"
-              enableSystem
+              forcedTheme="light"
               disableTransitionOnChange={false}
             >
             <div className="noise-overlay" />

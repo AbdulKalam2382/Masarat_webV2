@@ -1,22 +1,17 @@
 "use client";
 
-import { useState, useEffect, useRef, useCallback } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import { Link, usePathname } from "@/i18n/routing";
 import { useLanguage } from "@/lib/LanguageContext";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, Users, Target, GitMerge, Globe, Layers, Brain, Shield, Building2, Server } from "lucide-react";
 import { cn } from "@/lib/utils";
-import ThemeToggle from "../ui/ThemeToggle";
-import LanguageToggle from "../ui/LanguageToggle";
-import { useTheme } from "next-themes";
 
 type DropdownKey = "about" | "solutions" | "resources" | null;
 
 export default function Navbar() {
   const { t, isRTL } = useLanguage();
   const pathname = usePathname();
-  const { resolvedTheme } = useTheme();
-  const isDark = resolvedTheme === "dark";
 
   const [activeDropdown, setActiveDropdown] = useState<DropdownKey>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -54,18 +49,18 @@ export default function Navbar() {
   }, []);
 
   const aboutLinks = [
-    { label: t("nav.dropdowns.about.who_we_are.title"), href: "/about" },
-    { label: t("nav.dropdowns.about.delivery_model.title"), href: "/about#delivery" },
-    { label: t("nav.dropdowns.about.vision_mission.title"), href: "/about#vision" },
-    { label: t("nav.dropdowns.about.tech_partners.title"), href: "/about#partners" },
+    { label: t("nav.dropdowns.about.who_we_are.title"), href: "/about", icon: Users },
+    { label: t("nav.dropdowns.about.delivery_model.title"), href: "/about#delivery", icon: GitMerge },
+    { label: t("nav.dropdowns.about.vision_mission.title"), href: "/about#vision", icon: Target },
+    { label: t("nav.dropdowns.about.tech_partners.title"), href: "/about#partners", icon: Globe },
   ];
 
   const solutionLinks = [
-    { label: t("nav.dropdowns.solutions.enterprise.title"), href: "/solutions/digital-transformation" },
-    { label: t("nav.dropdowns.solutions.ai_data.title"), href: "/solutions/ai-data" },
-    { label: t("nav.dropdowns.solutions.cybersecurity.title"), href: "/solutions/cybersecurity" },
-    { label: t("nav.dropdowns.solutions.elv.title"), href: "/solutions/elv-smart-systems" },
-    { label: t("nav.dropdowns.solutions.infrastructure.title"), href: "/solutions/mission-critical" },
+    { label: t("nav.dropdowns.solutions.enterprise.title"), href: "/solutions/digital-transformation", icon: Layers },
+    { label: t("nav.dropdowns.solutions.ai_data.title"), href: "/solutions/ai-data", icon: Brain },
+    { label: t("nav.dropdowns.solutions.cybersecurity.title"), href: "/solutions/cybersecurity", icon: Shield },
+    { label: t("nav.dropdowns.solutions.elv.title"), href: "/solutions/elv-smart-systems", icon: Building2 },
+    { label: t("nav.dropdowns.solutions.infrastructure.title"), href: "/solutions/mission-critical", icon: Server },
   ];
 
   const resourceLinks = [
@@ -74,7 +69,7 @@ export default function Navbar() {
     { label: t("nav.dropdowns.resources.downloads.title"), href: "/insights?filter=downloads" },
   ];
 
-  const dropdownItems: Record<NonNullable<DropdownKey>, { label: string; href: string }[]> = {
+  const dropdownItems: Record<NonNullable<DropdownKey>, { label: string; href: string; icon?: React.ElementType }[]> = {
     about: aboutLinks,
     solutions: solutionLinks,
     resources: resourceLinks,
@@ -82,9 +77,7 @@ export default function Navbar() {
 
   const navItemClass = cn(
     "text-sm font-semibold flex items-center gap-1 transition-colors duration-150 cursor-pointer select-none",
-    isDark
-      ? "text-white hover:text-[#3B82F6]"
-      : "text-[#0D1B2A] hover:text-[#1A56DB]"
+    "text-[#0D1B2A] hover:text-[#1A56DB]"
   );
 
   return (
@@ -93,9 +86,9 @@ export default function Navbar() {
         className="fixed top-0 left-0 right-0 z-50"
         style={{
           height: "110px",
-          background: isDark ? "rgba(13,27,42,0.97)" : "rgba(255,255,255,0.97)",
+          background: "rgba(255,255,255,0.97)",
           backdropFilter: "blur(20px)",
-          borderBottom: isDark ? "1px solid rgba(255,255,255,0.08)" : "1px solid #E2EAF8",
+          borderBottom: "1px solid #E2EAF8",
         }}
       >
         <div className="max-w-7xl mx-auto px-6 h-full flex items-center justify-between">
@@ -108,13 +101,13 @@ export default function Navbar() {
                 height: "180px",
                 width: "auto",
                 objectFit: "contain",
-                mixBlendMode: isDark ? "normal" : "multiply",
+                mixBlendMode: "multiply",
               }}
             />
           </Link>
 
-          {/* Desktop nav */}
-          <div className={cn("hidden md:flex items-center gap-8 ml-auto", isRTL ? "ml-0 mr-auto flex-row-reverse" : "ml-auto")}>
+          {/* Desktop nav — centered */}
+          <div className={cn("hidden md:flex items-center gap-8 mr-auto", isRTL && "flex-row-reverse")}>
             {(["about", "solutions"] as NonNullable<DropdownKey>[]).map((key) => (
               <div
                 key={key}
@@ -122,52 +115,96 @@ export default function Navbar() {
                 onMouseEnter={() => openDropdown(key)}
                 onMouseLeave={scheduleClose}
               >
-                <button className={navItemClass}>
-                  {key === "about"
-                    ? t("nav.about")
-                    : key === "solutions"
-                      ? t("nav.solutions")
-                      : t("nav.resources")}
+                <Link
+                  href={key === "about" ? "/about" : "/solutions"}
+                  className={navItemClass}
+                  onClick={() => setActiveDropdown(null)}
+                >
+                  {key === "about" ? t("nav.about") : t("nav.solutions")}
                   <ChevronDown
                     size={13}
-                    className={cn(
-                      "transition-transform duration-200",
-                      activeDropdown === key && "rotate-180"
-                    )}
+                    className={cn("transition-transform duration-200", activeDropdown === key && "rotate-180")}
                   />
-                </button>
+                </Link>
+
+                {/* Dropdown anchored below this nav item */}
+                <AnimatePresence>
+                  {activeDropdown === key && (
+                    <motion.div
+                      key={key}
+                      initial={{ opacity: 0, y: -8 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -8 }}
+                      transition={{ duration: 0.18, ease: "easeOut" }}
+                      className="absolute top-full left-1/2 -translate-x-1/2 z-50 mt-px rounded-xl overflow-hidden"
+                      style={{
+                        background: "rgba(255,255,255,0.97)",
+                        backdropFilter: "blur(24px)",
+                        border: "1px solid #E2EAF8",
+                        boxShadow: "0 8px 40px rgba(13,27,42,0.08)",
+                      }}
+                      onMouseEnter={cancelClose}
+                      onMouseLeave={scheduleClose}
+                    >
+                      <div className="py-3 px-2">
+                        <div className={cn(
+                          "flex flex-col gap-1",
+                          key === "about" && "min-w-[260px]",
+                          key === "solutions" && "min-w-[380px]",
+                        )}>
+                          {dropdownItems[key].map((item) => {
+                            const Icon = item.icon;
+                            return Icon ? (
+                              <Link
+                                key={item.href}
+                                href={item.href}
+                                onClick={() => setActiveDropdown(null)}
+                                className="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[#EEF4FF] transition-colors duration-150 group"
+                              >
+                                <div className="w-7 h-7 rounded-lg bg-[#EEF4FF] border border-[#DBEAFE] flex items-center justify-center flex-shrink-0 group-hover:bg-[#1A56DB] group-hover:border-[#1A56DB] transition-all duration-150">
+                                  <Icon size={13} strokeWidth={2} className="text-[#1A56DB] group-hover:text-white transition-colors duration-150" />
+                                </div>
+                                <span className="text-[12px] font-semibold text-[#0D1B2A] group-hover:text-[#1A56DB] transition-colors duration-150 leading-tight whitespace-nowrap">
+                                  {item.label}
+                                </span>
+                              </Link>
+                            ) : (
+                              <Link
+                                key={item.href}
+                                href={item.href}
+                                onClick={() => setActiveDropdown(null)}
+                                className={cn(
+                                  "text-[13px] font-semibold text-[#0D1B2A] px-4 py-[10px] rounded-lg",
+                                  "border-l-2 border-transparent",
+                                  "hover:text-[#1A56DB] hover:border-l-[#1A56DB] hover:bg-[rgba(26,86,219,0.04)]",
+                                  "transition-all duration-150"
+                                )}
+                              >
+                                {item.label}
+                              </Link>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
             ))}
 
-            <Link
-              href="/career"
-              className={navItemClass}
-              onClick={() => setActiveDropdown(null)}
-            >
+            <Link href="/career" className={navItemClass} onClick={() => setActiveDropdown(null)}>
               {t("nav.career")}
             </Link>
 
-            <div className={cn("flex items-center gap-3", isRTL && "flex-row-reverse")}>
-              {/* <LanguageToggle /> */}
-              <ThemeToggle />
-              <Link
-                href="/contact"
-                onClick={() => setActiveDropdown(null)}
-                className="text-sm font-semibold px-4 py-2 rounded-lg transition-all duration-150 bg-[#1A56DB] text-white hover:bg-[#2563EB]"
-              >
-                {t("nav.cta")}
-              </Link>
-            </div>
+            <Link href="/contact" className={navItemClass} onClick={() => setActiveDropdown(null)}>
+              {t("nav.contact")}
+            </Link>
           </div>
 
           {/* Mobile hamburger */}
           <div className="md:hidden flex items-center gap-2">
-            <ThemeToggle />
             <button
-              className={cn(
-                "p-2 rounded-lg transition-colors",
-                isDark ? "text-white" : "text-[#0D1B2A]"
-              )}
+              className="p-2 rounded-lg transition-colors text-[#0D1B2A]"
               onClick={() => setMobileOpen((o) => !o)}
               aria-label="Toggle menu"
             >
@@ -175,55 +212,6 @@ export default function Navbar() {
             </button>
           </div>
         </div>
-
-        {/* Desktop dropdown panel — full width below navbar */}
-        <AnimatePresence>
-          {activeDropdown && (
-            <motion.div
-              key={activeDropdown}
-              initial={{ opacity: 0, y: -8 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -8 }}
-              transition={{ duration: 0.18, ease: "easeOut" }}
-              className="absolute left-0 right-0 top-full hidden md:block"
-              style={{
-                background: "rgba(255,255,255,0.97)",
-                backdropFilter: "blur(24px)",
-                borderBottom: "1px solid #E2EAF8",
-                boxShadow: "0 8px 40px rgba(13,27,42,0.08)",
-              }}
-              onMouseEnter={cancelClose}
-              onMouseLeave={scheduleClose}
-            >
-              <div className="max-w-7xl mx-auto px-6 py-5">
-                <div
-                  className={cn(
-                    "grid gap-1",
-                    activeDropdown === "about" && "grid-cols-2 max-w-sm",
-                    activeDropdown === "solutions" && "grid-cols-1 max-w-xs",
-                    activeDropdown === "resources" && "grid-cols-1 max-w-xs"
-                  )}
-                >
-                  {dropdownItems[activeDropdown].map((item) => (
-                    <Link
-                      key={item.href}
-                      href={item.href}
-                      onClick={() => setActiveDropdown(null)}
-                      className={cn(
-                        "text-[13px] font-semibold text-[#0D1B2A] px-4 py-[10px] rounded-lg",
-                        "border-l-2 border-transparent",
-                        "hover:text-[#1A56DB] hover:border-l-[#1A56DB] hover:bg-[rgba(26,86,219,0.04)]",
-                        "transition-all duration-150"
-                      )}
-                    >
-                      {item.label}
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
       </nav>
 
       {/* Mobile overlay */}
@@ -308,16 +296,13 @@ export default function Navbar() {
               </Link>
             </div>
 
-            <div className="px-6 pb-10 pt-4 space-y-3 flex-shrink-0">
-              {/* <LanguageToggle /> */}
-              <Link
-                href="/contact"
-                onClick={() => setMobileOpen(false)}
-                className="block w-full py-3 bg-[#1A56DB] text-white text-center text-sm font-semibold rounded-lg"
-              >
-                {t("nav.cta")}
-              </Link>
-            </div>
+            <Link
+              href="/contact"
+              onClick={() => setMobileOpen(false)}
+              className="flex items-center py-4 px-6 text-base font-semibold text-white border-b border-white/10"
+            >
+              {t("nav.contact")}
+            </Link>
           </motion.div>
         )}
       </AnimatePresence>

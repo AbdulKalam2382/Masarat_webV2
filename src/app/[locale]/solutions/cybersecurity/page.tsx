@@ -15,8 +15,8 @@ export default function CybersecurityPage() {
       slug="cybersecurity"
       name={isRTL ? "الأمن السيبراني والثقة الرقمية" : "Cybersecurity & Digital Trust"}
       category={isRTL ? "أمن" : "Security"}
-      heroImage="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=90&w=1920&auto=format&fit=crop"
-      bannerImage="https://images.unsplash.com/photo-1563986768609-322da13575f3?q=85&w=1920&auto=format&fit=crop"
+      heroImage="/images/security.jpg"
+      bannerImage="/images/security.jpg"
       description={isRTL
         ? "حماية البيئات الرقمية الأكثر أهمية من خلال أطر أمنية على مستوى المؤسسات ومراقبة مستمرة وإدارة مخاطر موجهة بالامتثال."
         : "Protecting critical digital environments through enterprise-grade security frameworks, continuous monitoring, and compliance-driven risk management."}
@@ -44,7 +44,7 @@ export default function CybersecurityPage() {
         <div className="container max-w-7xl mx-auto px-6">
           <div className="relative w-full rounded-2xl overflow-hidden" style={{ height: 320 }}>
             <img
-              src="https://images.unsplash.com/photo-1563986768609-322da13575f3?q=90&w=800&auto=format&fit=crop"
+              src="/images/security.jpg"
               alt="Cybersecurity"
               loading="lazy"
               onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}

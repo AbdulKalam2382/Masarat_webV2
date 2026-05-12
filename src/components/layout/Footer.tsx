@@ -10,11 +10,11 @@ export default function Footer() {
   const { t, isRTL } = useLanguage();
 
   const solutionLinks = [
-    { name: t("nav.dropdowns.solutions.enterprise.title"), href: "/solutions#capability4" },
-    { name: t("nav.dropdowns.solutions.ai_data.title"), href: "/solutions#capability3" },
-    { name: t("nav.dropdowns.solutions.cybersecurity.title"), href: "/solutions#capability2" },
-    { name: t("nav.dropdowns.solutions.elv.title"), href: "/solutions#capability5" },
-    { name: t("nav.dropdowns.solutions.infrastructure.title"), href: "/solutions#capability1" },
+    { name: t("nav.dropdowns.solutions.enterprise.title"), href: "/solutions/digital-transformation" },
+    { name: t("nav.dropdowns.solutions.ai_data.title"), href: "/solutions/ai-data" },
+    { name: t("nav.dropdowns.solutions.cybersecurity.title"), href: "/solutions/cybersecurity" },
+    { name: t("nav.dropdowns.solutions.elv.title"), href: "/solutions/elv-smart-systems" },
+    { name: t("nav.dropdowns.solutions.infrastructure.title"), href: "/solutions/mission-critical" },
   ];
 
   const quickLinks = [
@@ -24,7 +24,7 @@ export default function Footer() {
   ];
 
   const techPartners = [
-    "Broadcom", "Cloudera", "Qlik", "Nozomi Networks", 
+    "Broadcom", "BroadcomCA", "BroadcomSymantec", "Cloudera", "Qlik", "Nozomi Networks",
     "SUSE", "Huawei", "Intalio", "Ivanti", "Hydrotek"
   ];
 
@@ -144,17 +144,23 @@ export default function Footer() {
             <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-10 transition-all duration-700">
               {techPartners.map((partner) => {
                 const isBroadcom = partner === "Broadcom";
+                const isBroadcomVariant = partner === "BroadcomCA" || partner === "BroadcomSymantec";
                 return (
                   <div key={partner} className={cn(
-                    "flex items-center justify-center group relative px-4",
-                    isBroadcom ? "h-20" : "h-14"
+                    "flex items-center justify-center group relative",
+                    isBroadcom ? "h-28 px-1" : isBroadcomVariant ? "h-20 px-4" : "h-14 px-4"
                   )}>
                     <div className={cn(
                       "relative transition-transform duration-500 group-hover:scale-110",
-                      isBroadcom ? "h-16 w-48" : "h-12 w-36"
+                      isBroadcom ? "h-24 w-72" : isBroadcomVariant ? "h-14 w-44" : "h-12 w-36"
                     )}>
                       <img
-                        src={`/images/Partners/${partner === "Hydrotek" ? "Hydrotek" : partner.toLowerCase().replace(/\s+/g, "-")}.png`}
+                        src={
+                          partner === "Hydrotek" ? "/images/Partners/Hydrotek.png" :
+                          partner === "BroadcomCA" ? "/images/Partners/BroadcomCA.png" :
+                          partner === "BroadcomSymantec" ? "/images/Partners/BroadcomSymantec.webp" :
+                          `/images/Partners/${partner.toLowerCase().replace(/\s+/g, "-")}.png`
+                        }
                         alt={partner}
                         className="h-full w-full object-contain"
                         onError={(e) => {

@@ -36,7 +36,6 @@ export default function ContactPage() {
               </p>
               <h1 className="text-5xl md:text-7xl font-bold tracking-tighter mb-6 font-outfit text-white leading-[0.95]">
                 {t("contact_page.title")}
-                <span className="text-white/50 font-light"> {t("contact_page.title_accent")}</span>
               </h1>
               <p className="text-lg md:text-xl text-white/60 font-light max-w-2xl leading-relaxed">
                 {t("contact_page.body")}

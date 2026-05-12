@@ -7,32 +7,42 @@ import { motion } from "framer-motion";
 const officialPartners = [
   {
     name: "Broadcom",
-    src: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Broadcom_Inc._logo.svg/320px-Broadcom_Inc._logo.svg.png",
+    src: "/images/Partners/broadcom.png",
+    height: "22px"
+  },
+  {
+    name: "BroadcomSymantec",
+    src: "/images/Partners/BroadcomSymantec.webp",
+    height: "22px"
+  },
+  {
+    name: "BroadcomCA",
+    src: "/images/Partners/BroadcomCA.png",
     height: "22px"
   },
   {
     name: "Huawei",
-    src: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Huawei_Logo.svg/320px-Huawei_Logo.svg.png",
+    src: "/images/Partners/huawei.png",
     height: "22px"
   },
   {
     name: "Qlik",
-    src: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Qlik_Logo.svg/320px-Qlik_Logo.svg.png",
+    src: "/images/Partners/qlik.png",
     height: "20px"
   },
   {
     name: "Cloudera",
-    src: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Cloudera_logo.svg/320px-Cloudera_logo.svg.png",
+    src: "/images/Partners/cloudera.png",
     height: "20px"
   },
   {
     name: "SUSE",
-    src: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/SUSE_Logo.svg/320px-SUSE_Logo.svg.png",
+    src: "/images/Partners/suse.png",
     height: "20px"
   },
   {
     name: "HYDROTEK",
-    src: "https://hydrotek.com/wp-content/uploads/2019/07/logo-english.png",
+    src: "/images/Partners/Hydrotek.png",
     height: "20px"
   },
 ];
@@ -40,7 +50,7 @@ const officialPartners = [
 const textPartners = [
   { name: "INTALIO" },
   { name: "EVIDEN" },
-  { name: "DDN" },
+  { name: "Broadcom" },
   { name: "HYDROTEK" },
 ];
 
@@ -61,7 +71,7 @@ export default function Partners() {
 
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-12 items-center justify-items-center">
           {officialPartners.map((partner, i) => (
-            <motion.div 
+            <motion.div
               key={i}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -82,7 +92,7 @@ export default function Partners() {
                   target.style.display = 'none';
                   const parent = target.parentElement;
                   if (parent) {
-                    parent.innerHTML = 
+                    parent.innerHTML =
                       `<span style="font-size:12px; font-weight:700; letter-spacing:1px; color:#6B6B6B">${partner.name}</span>`;
                   }
                 }}

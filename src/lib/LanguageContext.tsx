@@ -107,7 +107,7 @@ const enTranslations = {
     kicker: "Our Capabilities",
     page_kicker: "Integrated Solutions",
     page_title: "Integrated Solutions.",
-    page_sub: "Five capabilities. One accountable partner.",
+    page_sub: "Architecting the mission-critical pillars of digital transformation — from intelligent infrastructure to strategic cybersecurity.",
     what_we_solve_kicker: "What We Solve",
     what_we_solve_title: "What We Solve",
     what_we_solve_desc: "Our capabilities span the full enterprise stack — from digital platforms and AI to physical infrastructure and data centers.",
@@ -155,7 +155,37 @@ const enTranslations = {
         s4t: "Testing & Deployment", "s4d": "Ensuring quality",
         s5t: "Operations & Optimization", "s5d": "Ongoing support"
       }
-    }
+    },
+    capability1: {
+      title: "Resilient Digital Infrastructure",
+      p: "In an era of constant connectivity, your digital foundation must be more than just functional; it must be resilient. We architect secure, scalable, and mission-critical infrastructure solutions that form the backbone of modern enterprise operations. Our approach ensures continuity across distributed networks and complex cloud environments, minimizing downtime and maximizing performance.",
+      points: ["High-Availability Cloud", "Scalable Networking", "Disaster Recovery", "Performance Monitoring"]
+    },
+    capability2: {
+      title: "Cybersecurity & Digital Trust",
+      p: "Digital trust is the fulcrum upon which modern enterprise innovation rests. Our integrated cybersecurity solutions are designed to protect complex enterprise, industrial, and critical infrastructure environments against an ever-evolving landscape of cyber risks.",
+      points: ["Zero Trust Architecture", "ICS/SCADA Security", "Managed Detection (MDR)", "Regulatory Compliance"]
+    },
+    capability3: {
+      title: "AI, Data & Enterprise Intelligence",
+      p: "Data is the raw material of the digital economy, but its true value is only realized through intelligent processing. We deploy advanced AI and data platforms that transform vast amounts of disparate information into actionable strategic intelligence.",
+      points: ["Predictive Analytics", "Data Lakehouse", "NLP Workflows", "Real-time BI Dashboards"]
+    },
+    capability4: {
+      title: "Enterprise Applications & Automation",
+      p: "Operational efficiency is driven by the seamless integration of modern platforms and intelligent workflows. We deliver enterprise applications and automation solutions that streamline complex business processes and improve organizational governance.",
+      points: ["ERP Integration", "RPA Deployment", "Low-code Workflow", "System Integration"]
+    },
+    capability5: {
+      title: "Critical Infrastructure & Integrated Systems",
+      p: "The physical environment of a modern enterprise is increasingly inseparable from its digital twin. We provide end-to-end delivery of mission-critical facilities, including data centers, command-and-control centers, and smart operational infrastructure.",
+      points: ["Tier III/IV Data Centers", "Integrated BMS/ELV", "Next-Gen SOC/NOC", "Smart City/IoT"]
+    },
+    capability6: {
+      title: "Managed Services & Operational Support",
+      p: "Technology is an ongoing commitment that requires constant vigilance and expert optimization. Our managed services provide continuous support, monitoring, and lifecycle management designed to ensure the long-term resilience of your technology stack.",
+      points: ["24/7 Monitoring", "Lifecycle Management", "Dedicated Support", "Security Assessments"]
+    },
   },
   sectors: {
     kicker: "Sectors We Serve",
@@ -193,7 +223,8 @@ const enTranslations = {
   },
   career_page: {
     kicker: "Why work at Masarat?",
-    hero_title: "Let's Build Together",
+    title: "Trust. Transform. Together.",
+    hero_title: "Trust. Transform. Together.",
     hero_sub: "Be part of the team architecting the digital future.",
     hero_cta: "View Openings",
     why_title: "Why Masarat?",
@@ -221,8 +252,8 @@ const enTranslations = {
   },
   contact_page: {
     kicker: "Contact Us",
-    title: "Advisory.",
-    title_accent: "great.",
+    title: "Change starts here.",
+    title_accent: "",
     body: "Connect with our strategic consultants to architect your institution's digital future.",
     website_label: "Website",
     email_label: "Email",
@@ -237,45 +268,6 @@ const enTranslations = {
     form_sent: "Message Sent ✓",
     form_success: "We will be in touch soon.",
     form_error: "Something went wrong. Try again."
-  },
-  solutions: {
-    kicker: "Our Capabilities",
-    page_title: "Integrated Solutions.",
-    page_sub: "Architecting the mission-critical pillars of digital transformation — from intelligent infrastructure to strategic cybersecurity.",
-    capability1: {
-      title: "Resilient Digital Infrastructure",
-      p: "In an era of constant connectivity, your digital foundation must be more than just functional; it must be resilient. We architect secure, scalable, and mission-critical infrastructure solutions that form the backbone of modern enterprise operations. Our approach ensures continuity across distributed networks and complex cloud environments, minimizing downtime and maximizing performance.",
-      points: ["High-Availability Cloud", "Scalable Networking", "Disaster Recovery", "Performance Monitoring"]
-    },
-    capability2: {
-      title: "Cybersecurity & Digital Trust",
-      p: "Digital trust is the fulcrum upon which modern enterprise innovation rests. Our integrated cybersecurity solutions are designed to protect complex enterprise, industrial, and critical infrastructure environments against an ever-evolving landscape of cyber risks.",
-      points: ["Zero Trust Architecture", "ICS/SCADA Security", "Managed Detection (MDR)", "Regulatory Compliance"]
-    },
-    capability3: {
-      title: "AI, Data & Enterprise Intelligence",
-      p: "Data is the raw material of the digital economy, but its true value is only realized through intelligent processing. We deploy advanced AI and data platforms that transform vast amounts of disparate information into actionable strategic intelligence.",
-      points: ["Predictive Analytics", "Data Lakehouse", "NLP Workflows", "Real-time BI Dashboards"]
-    },
-    capability4: {
-      title: "Enterprise Applications & Automation",
-      p: "Operational efficiency is driven by the seamless integration of modern platforms and intelligent workflows. We deliver enterprise applications and automation solutions that streamline complex business processes and improve organizational governance.",
-      points: ["ERP Integration", "RPA Deployment", "Low-code Workflow", "System Integration"]
-    },
-    capability5: {
-      title: "Critical Infrastructure & Integrated Systems",
-      p: "The physical environment of a modern enterprise is increasingly inseparable from its digital twin. We provide end-to-end delivery of mission-critical facilities, including data centers, command-and-control centers, and smart operational infrastructure.",
-      points: ["Tier III/IV Data Centers", "Integrated BMS/ELV", "Next-Gen SOC/NOC", "Smart City/IoT"]
-    },
-    capability6: {
-      title: "Managed Services & Operational Support",
-      p: "Technology is an ongoing commitment that requires constant vigilance and expert optimization. Our managed services provide continuous support, monitoring, and lifecycle management designed to ensure the long-term resilience of your technology stack.",
-      points: ["24/7 Monitoring", "Lifecycle Management", "Dedicated Support", "Security Assessments"]
-    },
-    link: "Know More",
-    cta_title: "Ready to get started?",
-    cta_sub: "Talk to our solutions team about your specific requirements.",
-    cta_btn1: "Schedule a Consultation",
   },
   process: {
     kicker: "The Methodology",
@@ -399,7 +391,7 @@ const arTranslations = {
     kicker: "قدراتنا",
     page_kicker: "حلول متكاملة",
     page_title: "حلول متكاملة.",
-    page_sub: "خمس قدرات أساسية. شريك واحد مسؤول.",
+    page_sub: "تصميم الأركان الحيوية للتحول الرقمي - من البنية التحتية الذكية إلى الأمن السيبراني الاستراتيجي.",
     what_we_solve_kicker: "ما نقوم بحله",
     what_we_solve_title: "ما نقوم بحله",
     what_we_solve_desc: "تغطي قدراتنا مجموعة المؤسسة الكاملة - من المنصات الرقمية والذكاء الاصطناعي إلى البنية التحتية المادية ومراكز البيانات.",
@@ -447,7 +439,37 @@ const arTranslations = {
         s4t: "الاختبار والنشر", "s4d": "ضمان الجودة",
         s5t: "العمليات والتحسين", "s5d": "الدعم المستمر"
       }
-    }
+    },
+    capability1: {
+      title: "البنية التحتية الرقمية المرنة",
+      p: "في عصر الاتصال المستمر، يجب أن تكون مؤسستك الرقمية أكثر من مجرد وظيفية؛ يجب أن تكون مرنة. نحن نصمم حلول بنية تحتية آمنة وقابلة للتوسع وضرورية للمهمة تشكل العمود الفقري لعمليات المؤسسات الحديثة.",
+      points: ["سحابة عالية التوفر", "شبكات قابلة للتوسع", "التعافي من الكوارث", "مراقبة الأداء"]
+    },
+    capability2: {
+      title: "الأمن السيبراني والثقة الرقمية",
+      p: "الثقة الرقمية هي المرتكز الذي يرتكز عليه ابتكار المؤسسات الحديثة. تم تصميم حلول الأمن السيبراني المتكاملة لدينا لحماية بيئات المؤسسات المعقدة والصناعية والبنية التحتية الحيوية.",
+      points: ["بنية الثقة الصفرية", "أمن نظم التحكم الصناعي", "الكشف والاستجابة (MDR)", "الامتثال التنظيمي"]
+    },
+    capability3: {
+      title: "الذكاء الاصطناعي والبيانات والذكاء المؤسسي",
+      p: "البيانات هي المادة الخام للاقتصاد الرقمي، لكن قيمتها الحقيقية لا تتحقق إلا من خلال المعالجة الذكية. نحن ننشر منصات متطورة للذكاء الاصطناعي والبيانات تحول المعلومات إلى ذكاء استراتيجي.",
+      points: ["التحليلات التنبؤية", "بنية Lakehouse", "سير عمل NLP", "لوحات معلومات BI"]
+    },
+    capability4: {
+      title: "تطبيقات المؤسسات والأتمتة",
+      p: "يتم دفع الكفاءة التشغيلية من خلال التكامل السلس للمنصات الحديثة وسير العمل الذكي. نحن نقدم تطبيقات المؤسسات وحلول الأتمتة التي تبسط العمليات التجارية المعقدة.",
+      points: ["تكامل ERP", "أتمتة RPA", "سير عمل Low-code", "تكامل الأنظمة"]
+    },
+    capability5: {
+      title: "البنية التحتية الحيوية والأنظمة المتكاملة",
+      p: "أصبحت البيئة المادية للمؤسسة الحديثة لا تنفصل بشكل متزايد عن توأمها الرقمي. نحن نقدم تسليمًا شاملاً للمرافق الضرورية للمهمة، بما في ذلك مراكز البيانات ومراكز القيادة.",
+      points: ["مراكز بيانات المستوى 3/4", "أنظمة BMS/ELV المتكاملة", "مراكز SOC/NOC", "المدن الذكية/IoT"]
+    },
+    capability6: {
+      title: "الخدمات المدارة والدعم التشغيلي",
+      p: "التكنولوجيا التزام مستمر يتطلب يقظة دائمة وتحسيناً خبيراً. توفر خدماتنا المدارة دعماً ومراقبة وإدارة دورة حياة مستمرة لضمان مرونة مجموعة التكنولوجيا الخاصة بك.",
+      points: ["مراقبة 24/7", "إدارة دورة الحياة", "دعم فني مخصص", "تقييمات أمنية"]
+    },
   },
   sectors: {
     kicker: "القطاعات التي نخدمها",
@@ -483,7 +505,8 @@ const arTranslations = {
   },
   career_page: {
     kicker: "لماذا مسارات؟",
-    hero_title: "لنبنِ المستقبل معاً",
+    title: "ثقة. تحول. معاً.",
+    hero_title: "ثقة. تحول. معاً.",
     hero_sub: "كن جزءاً من الفريق الذي يبني المستقبل الرقمي.",
     hero_cta: "عرض الوظائف الشاغرة",
     why_title: "لماذا مسارات؟",
@@ -511,8 +534,8 @@ const arTranslations = {
   },
   contact_page: {
     kicker: "تواصل معنا",
-    title: "استشارات.",
-    title_accent: "رائعاً.",
+    title: "التغيير يبدأ هنا.",
+    title_accent: "",
     body: "تواصل مع مستشارينا الاستراتيجيين لبناء المستقبل الرقمي لمؤسستك.",
     website_label: "الموقع الإلكتروني",
     email_label: "البريد الإلكتروني",
@@ -527,45 +550,6 @@ const arTranslations = {
     form_sent: "تم إرسال الرسالة ✓",
     form_success: "سنتواصل معك قريباً.",
     form_error: "حدث خطأ. حاول مرة أخرى."
-  },
-  solutions: {
-    kicker: "قدراتنا",
-    page_title: "حلول متكاملة.",
-    page_sub: "تصميم الأركان الحيوية للتحول الرقمي - من البنية التحتية الذكية إلى الأمن السيبراني الاستراتيجي.",
-    capability1: {
-      title: "البنية التحتية الرقمية المرنة",
-      p: "في عصر الاتصال المستمر، يجب أن تكون مؤسستك الرقمية أكثر من مجرد وظيفية؛ يجب أن تكون مرنة. نحن نصمم حلول بنية تحتية آمنة وقابلة للتوسع وضرورية للمهمة تشكل العمود الفقري لعمليات المؤسسات الحديثة.",
-      points: ["سحابة عالية التوفر", "شبكات قابلة للتوسع", "التعافي من الكوارث", "مراقبة الأداء"]
-    },
-    capability2: {
-      title: "الأمن السيبراني والثقة الرقمية",
-      p: "الثقة الرقمية هي المرتكز الذي يرتكز عليه ابتكار المؤسسات الحديثة. تم تصميم حلول الأمن السيبراني المتكاملة لدينا لحماية بيئات المؤسسات المعقدة والصناعية والبنية التحتية الحيوية.",
-      points: ["بنية الثقة الصفرية", "أمن نظم التحكم الصناعي", "الكشف والاستجابة (MDR)", "الامتثال التنظيمي"]
-    },
-    capability3: {
-      title: "الذكاء الاصطناعي والبيانات والذكاء المؤسسي",
-      p: "البيانات هي المادة الخام للاقتصاد الرقمي، لكن قيمتها الحقيقية لا تتحقق إلا من خلال المعالجة الذكية. نحن ننشر منصات متطورة للذكاء الاصطناعي والبيانات تحول المعلومات إلى ذكاء استراتيجي.",
-      points: ["التحليلات التنبؤية", "بنية Lakehouse", "سير عمل NLP", "لوحات معلومات BI"]
-    },
-    capability4: {
-      title: "تطبيقات المؤسسات والأتمتة",
-      p: "يتم دفع الكفاءة التشغيلية من خلال التكامل السلس للمنصات الحديثة وسير العمل الذكي. نحن نقدم تطبيقات المؤسسات وحلول الأتمتة التي تبسط العمليات التجارية المعقدة.",
-      points: ["تكامل ERP", "أتمتة RPA", "سير عمل Low-code", "تكامل الأنظمة"]
-    },
-    capability5: {
-      title: "البنية التحتية الحيوية والأنظمة المتكاملة",
-      p: "أصبحت البيئة المادية للمؤسسة الحديثة لا تنفصل بشكل متزايد عن توأمها الرقمي. نحن نقدم تسليمًا شاملاً للمرافق الضرورية للمهمة، بما في ذلك مراكز البيانات ومراكز القيادة.",
-      points: ["مراكز بيانات المستوى 3/4", "أنظمة BMS/ELV المتكاملة", "مراكز SOC/NOC", "المدن الذكية/IoT"]
-    },
-    capability6: {
-      title: "الخدمات المدارة والدعم التشغيلي",
-      p: "التكنولوجيا التزام مستمر يتطلب يقظة دائمة وتحسيناً خبيراً. توفر خدماتنا المدارة دعماً ومراقبة وإدارة دورة حياة مستمرة لضمان مرونة مجموعة التكنولوجيا الخاصة بك.",
-      points: ["مراقبة 24/7", "إدارة دورة الحياة", "دعم فني مخصص", "تقييمات أمنية"]
-    },
-    link: "اعرف المزيد",
-    cta_title: "هل أنت مستعد للبدء؟",
-    cta_sub: "تحدث مع فريق الحلول لدينا حول متطلباتك المحددة.",
-    cta_btn1: "حجز استشارة",
   },
   process: {
     kicker: "المنهجية",

@@ -43,6 +43,8 @@
     "scroll": "Scroll"
   },
   "about_page": {
+    "kicker": "Who We Are",
+    "title": "Built for Complex Enterprise Environments",
     "body": "Masarat Technologies is a leading enterprise IT solutions provider. \n\nWe specialize in architecting the mission-critical pillars of digital transformation — from critical cybersecurity to intelligent infrastructure.",
     "quality_title": "Enterprise Excellence & Compliance",
     "quality_body": "Our solutions are governed by international standards and local regulatory frameworks, ensuring your institution remains compliant, secure, and resilient.",
@@ -80,7 +82,21 @@
   "solutions": {
     "kicker": "Our Capabilities",
     "page_title": "Integrated Solutions.",
+    "page_kicker": "Our Capabilities",
     "page_sub": "Architecting the mission-critical pillars of digital transformation — from intelligent infrastructure to strategic cybersecurity.",
+    "title": "Five Integrated Capabilities.",
+    "cta_title": "Ready to get started?",
+    "cta_sub": "Talk to our solutions team about your specific requirements.",
+    "domain_enterprise_en": "Enterprise",
+    "domain_enterprise_ar": "مؤسسي",
+    "domain_intelligence_en": "Intelligence",
+    "domain_intelligence_ar": "ذكاء",
+    "domain_security_en": "Security",
+    "domain_security_ar": "أمن",
+    "domain_infrastructure_en": "Smart Systems",
+    "domain_infrastructure_ar": "أنظمة ذكية",
+    "domain_critical_en": "Mission-Critical",
+    "domain_critical_ar": "حيوي",
     "capability1": {
       "title": "Resilient Digital Infrastructure",
       "p": "In an era of constant connectivity, your digital foundation must be more than just functional; it must be resilient. We architect secure, scalable, and mission-critical infrastructure solutions that form the backbone of modern enterprise operations. Our approach ensures continuity across distributed networks and complex cloud environments, minimizing downtime and maximizing performance. This foundation is designed to support not just current needs, but long-term institutional growth and operational agility.",
@@ -142,8 +158,6 @@
       ]
     },
     "link": "Know More",
-    "cta_title": "Ready to get started?",
-    "cta_sub": "Talk to our solutions team about your specific requirements.",
     "cta_btn1": "Schedule a Consultation",
     "s1title": "Enterprise Transformation & Digital Platforms",
     "s1desc": "Empowering organizations to redesign, automate, and scale their core operations.",
@@ -204,6 +218,7 @@
   "insights_page": {
     "kicker": "Knowledge Hub",
     "title": "Insights.",
+    "back": "Back",
     "body": "Strategic intelligence on cybersecurity, AI, and the future of enterprise technology.",
     "home_title": "Latest Insights.",
     "home_link": "View Knowledge Hub",
@@ -242,9 +257,25 @@
     "kicker": "Contact Us",
     "title": "Transform. Build. Succeed",
     "title_accent": "",
-    "body": "Connect with our strategic consultants to architect your institution's digital future."
+    "body": "Connect with our strategic consultants to architect your institution's digital future.",
+    "form_firstname": "First Name",
+    "form_lastname": "Last Name",
+    "form_email": "Email Address",
+    "form_company": "Company",
+    "form_message": "Message",
+    "form_submit": "Send Message",
+    "form_sending": "Sending...",
+    "form_sent": "Message Sent",
+    "form_success": "Thank you! We'll be in touch soon.",
+    "form_error": "Something went wrong. Please try again."
   },
   "services": {
+    "kicker": "Our Services",
+    "page_title": "Our Services.",
+    "page_sub": "Enterprise solutions delivered with precision and accountability.",
+    "cta_title": "Ready to Get Started?",
+    "cta_sub": "Talk to our services team about your requirements.",
+    "cta_btn1": "Schedule Consultation",
     "s1title": "Strategic Advisory",
     "s1desc": "Consulting on digital roadmaps and readiness.",
     "s2title": "System Integration",
@@ -254,7 +285,12 @@
     "s4title": "Cloud Excellence",
     "s4desc": "Hybrid and multi-cloud architecture and migration.",
     "s5title": "Security Operations",
-    "s5desc": "Continuous monitoring and threat intelligence."
+    "s5desc": "Continuous monitoring and threat intelligence.",
+    "detail": {
+      "ctabanner": "Delivered with single-point accountability and proven execution capability.",
+      "ctasub": "Talk to our services team about your project.",
+      "btn1": "Get Started"
+    }
   },
   "process": {
     "kicker": "The Methodology",

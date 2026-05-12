@@ -119,8 +119,8 @@ export default function CareerPage() {
                 <h2 className="text-4xl md:text-5xl font-bold tracking-tight font-outfit text-brand-navy dark:text-white leading-[1.1]">
                   {t("career_page.why_title")}
                 </h2>
-                <p className="text-lg text-brand-muted dark:text-white/55 leading-relaxed font-light max-w-md">
-                  {t("career_page.why_statement")}
+                <p className="text-[17px] text-[#64748B] leading-relaxed max-w-2xl mt-4 mb-8">
+                  At Masarat, you are not just filling a role — you are contributing to technology environments where reliability, security, and performance are non-negotiable. We work alongside institutions where the quality of delivery directly shapes how critical sectors operate, grow, and serve the people who depend on them.
                 </p>
                 <ul className="space-y-3 mt-2">
                   {whyBullets.map((bullet, i) => (
@@ -142,7 +142,7 @@ export default function CareerPage() {
                 style={{ height: 480 }}
               >
                 <img
-                  src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=90&w=800&auto=format&fit=crop"
+                  src="/images/team.jpg"
                   alt="Masarat team"
                   loading="lazy"
                   onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
@@ -163,7 +163,7 @@ export default function CareerPage() {
               {/* LEFT — Image */}
               <div className="relative rounded-2xl overflow-hidden shadow-xl order-2 lg:order-1" style={{ height: 520 }}>
                 <img
-                  src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?q=90&w=800&auto=format&fit=crop"
+                  src="/images/collaboration.jpg"
                   alt="Team collaboration at Masarat"
                   className="w-full h-full object-cover"
                   loading="lazy"

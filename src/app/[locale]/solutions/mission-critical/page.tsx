@@ -16,8 +16,8 @@ export default function MissionCriticalPage() {
       slug="mission-critical"
       name={isRTL ? "البنية التحتية الحيوية ومراكز البيانات" : "Mission-Critical Infrastructure & Data Centers"}
       category={isRTL ? "حيوي" : "Mission-Critical"}
-      heroImage="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=90&w=1920&auto=format&fit=crop"
-      bannerImage="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=85&w=1920&auto=format&fit=crop"
+      heroImage="/images/datacenter.jpg"
+      bannerImage="/images/datacenter.jpg"
       description={isRTL
         ? "مسارات، بالتعاون مع هيدروتيك للهندسة، تقدم قدرات متخصصة في مراكز البيانات والبيئات الحيوية — من التصميم حتى التشغيل."
         : "Masarat, together with Hydrotek Engineering, delivers specialized capabilities in data center and mission-critical environments."}
@@ -43,7 +43,7 @@ export default function MissionCriticalPage() {
       {/* Data center capabilities image */}
       <section className="relative overflow-hidden border-t border-[#E2EAF8]" style={{ height: 320 }}>
         <img
-          src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=90&w=800&auto=format&fit=crop"
+          src="/images/datacenter.jpg"
           alt="Data center"
           loading="lazy"
           onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}

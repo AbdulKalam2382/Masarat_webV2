@@ -17,7 +17,7 @@ export default function WhoWeAre() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}
       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-      className="relative py-24 bg-white dark:bg-[#0D1B2A] border-y border-brand-border dark:border-[#1E3150] overflow-hidden transition-colors duration-500"
+      className="relative py-24 bg-white dark:bg-[#0D1B2A] overflow-hidden transition-colors duration-500"
     >
       <div className="container max-w-7xl mx-auto px-6 relative z-10">
         <div className={cn("flex flex-col lg:flex-row gap-16 lg:gap-24 items-center", isRTL ? "lg:flex-row-reverse" : "")}>
@@ -44,7 +44,7 @@ export default function WhoWeAre() {
           <div className="flex-1 w-full max-w-md">
             <div className="w-full rounded-2xl overflow-hidden" style={{ height: 400 }}>
               <img
-                src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=90&w=800&auto=format&fit=crop"
+                src="/images/office.jpg"
                 alt="Modern enterprise office"
                 loading="lazy"
                 onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}

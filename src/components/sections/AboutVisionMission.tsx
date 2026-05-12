@@ -38,7 +38,7 @@ export default function AboutVisionMission() {
           className="absolute inset-0 z-0"
         >
           <Image
-            src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=90&w=1920&auto=format&fit=crop"
+            src="/images/ai.jpg"
             alt="Masarat Vision"
             fill
             className="object-cover"
@@ -93,7 +93,7 @@ export default function AboutVisionMission() {
           className="absolute inset-0 z-0"
         >
           <Image
-            src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=90&w=1920&auto=format&fit=crop"
+            src="/images/team.jpg"
             alt="Masarat Mission"
             fill
             className="object-cover"

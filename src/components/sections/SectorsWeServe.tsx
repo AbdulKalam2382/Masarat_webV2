@@ -58,7 +58,7 @@ export default function SectorsWeServe() {
   return (
     <section
       data-section-name={t("sectors.kicker")}
-      className="relative py-24 overflow-hidden"
+      className="relative py-16 overflow-hidden"
       style={{ background: "linear-gradient(135deg, #0D1B2A 0%, #0F2A4A 25%, #1A3A6B 60%, #1A56DB 100%)" }}
     >
       {/* Light rays */}
@@ -99,30 +99,24 @@ export default function SectorsWeServe() {
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.6, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
                 className={cn(
-                  "p-8 rounded-2xl border border-white/10 hover:border-brand-blue/40 transition-all duration-300",
+                  "p-5 rounded-2xl border border-white/10 hover:border-brand-blue/40 transition-all duration-300",
                   isRTL ? "text-right" : "text-left"
                 )}
                 style={{ background: 'rgba(255,255,255,0.06)' }}
               >
                 <div
-                  className="w-10 h-10 rounded-xl mb-6 flex items-center justify-center"
+                  className="w-9 h-9 rounded-xl mb-4 flex items-center justify-center"
                   style={{ background: 'rgba(26,86,219,0.15)' }}
                 >
-                  <Icon size={20} className="text-brand-blue" />
+                  <Icon size={16} className="text-brand-blue" />
                 </div>
 
-                <h3 className="text-2xl font-bold text-white tracking-tight mb-5 font-outfit">
+                <h3 className="text-[17px] font-bold text-white tracking-tight mb-3 font-outfit">
                   {isRTL ? sector.titleAR : sector.titleEN}
                 </h3>
 
-                <p className="text-[16px] text-white/60 font-light leading-relaxed mb-3">
+                <p className="text-[14px] text-white/60 font-light leading-relaxed">
                   {isRTL ? sector.p1AR : sector.p1EN}
-                </p>
-                <p className="text-[16px] text-white/60 font-light leading-relaxed mb-3">
-                  {isRTL ? sector.p2AR : sector.p2EN}
-                </p>
-                <p className="text-[16px] text-white/60 font-light leading-relaxed">
-                  {isRTL ? sector.p3AR : sector.p3EN}
                 </p>
               </motion.div>
             );

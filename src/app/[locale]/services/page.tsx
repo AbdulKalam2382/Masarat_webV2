@@ -88,11 +88,8 @@ export default function ServicesPage() {
 
         <section className="relative h-[320px] overflow-hidden my-0">
           <img
-            src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=85&w=1600&auto=format&fit=crop"
-            onError={(e) => {
-              (e.target as HTMLImageElement).src = 
-                "https://images.unsplash.com/photo-1639322537228-f710d846310a?q=85&w=1600&auto=format&fit=crop"
-            }}
+            src="/images/ai.jpg"
+            onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
             alt="Enterprise technology infrastructure"
             className="w-full h-full object-cover"
           />

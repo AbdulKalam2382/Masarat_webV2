@@ -3,9 +3,7 @@
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import Process from "@/components/sections/Process";
-import Testimonial from "@/components/sections/Testimonial";
 import Challenges from "@/components/sections/Challenges";
-import QualityCompliance from "@/components/sections/QualityCompliance";
 import AboutVisionMission from "@/components/sections/AboutVisionMission";
 import { useLanguage } from "@/lib/LanguageContext";
 import { cn } from "@/lib/utils";
@@ -52,6 +50,75 @@ export default function AboutPage() {
         {/* Reduced Girth & Opacity Transition */}
         <div className="h-12 w-full bg-gradient-to-b from-[#0D1B2A]/30 to-transparent pointer-events-none -mt-px" />
 
+        {/* TECHNOLOGY PARTNERS MARQUEE */}
+        <section className="py-20 bg-[#F8FAFF] overflow-hidden">
+          <div className="max-w-5xl mx-auto px-6 text-center mb-12">
+            <p className="text-[14px] font-bold tracking-[0.2em] uppercase text-[#1A56DB] mb-3 flex items-center justify-center gap-3">
+              <span className="w-7 h-[2px] bg-[#1A56DB] rounded-full" />
+              Technology Partners
+              <span className="w-7 h-[2px] bg-[#1A56DB] rounded-full" />
+            </p>
+            <h2 className="text-3xl font-bold text-[#0D1B2A] tracking-tight">
+              Powered by world-class technology.
+            </h2>
+          </div>
+
+          {(() => {
+            const logos = [
+              { name: "Broadcom", src: "/images/Partners/broadcom.png", large: true },
+              { name: "Broadcom CA", src: "/images/Partners/BroadcomCA.png", large: true },
+              { name: "Broadcom Symantec", src: "/images/Partners/BroadcomSymantec.webp", large: true },
+              { name: "Cloudera", src: "/images/Partners/cloudera.png" },
+              { name: "Qlik", src: "/images/Partners/qlik.png" },
+              { name: "Nozomi Networks", src: "/images/Partners/nozomi-networks.png" },
+              { name: "SUSE", src: "/images/Partners/suse.png" },
+              { name: "Huawei", src: "/images/Partners/huawei.png" },
+              { name: "Intalio", src: "/images/Partners/intalio.png" },
+              { name: "Ivanti", src: "/images/Partners/ivanti.png" },
+              { name: "Hydrotek Engineering", src: "/images/Partners/Hydrotek.png" },
+            ];
+            const row1 = logos.slice(0, 5);
+            const row2 = logos.slice(4);
+
+            const LogoPill = ({ logo }: { logo: { name: string; src: string; large?: boolean } }) => (
+              <div className={cn("flex-shrink-0 flex items-center justify-center px-8 mx-3 bg-white rounded-2xl shadow-sm border border-[#E2EAF8] hover:border-[#1A56DB]/30 hover:shadow-md transition-all duration-300", logo.large ? "h-24 min-w-[220px]" : "h-16 min-w-[160px]")}>
+                <img
+                  src={logo.src}
+                  alt={logo.name}
+                  className={cn(logo.large ? "h-full w-auto max-w-[240px]" : "h-8 w-auto max-w-[120px]", "object-contain")}
+                  onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
+                />
+              </div>
+            );
+
+            return (
+              <div className="flex flex-col gap-6">
+                {/* Row 1 — scrolls left */}
+                <div
+                  className="group flex overflow-hidden"
+                  onMouseEnter={(e) => { (e.currentTarget.querySelector('.marquee-track') as HTMLElement)?.style.setProperty('animation-play-state', 'paused'); }}
+                  onMouseLeave={(e) => { (e.currentTarget.querySelector('.marquee-track') as HTMLElement)?.style.setProperty('animation-play-state', 'running'); }}
+                >
+                  <div className="marquee-track flex animate-marquee-left">
+                    {[...row1, ...row1].map((logo, i) => <LogoPill key={i} logo={logo} />)}
+                  </div>
+                </div>
+
+                {/* Row 2 — scrolls right */}
+                <div
+                  className="group flex overflow-hidden"
+                  onMouseEnter={(e) => { (e.currentTarget.querySelector('.marquee-track') as HTMLElement)?.style.setProperty('animation-play-state', 'paused'); }}
+                  onMouseLeave={(e) => { (e.currentTarget.querySelector('.marquee-track') as HTMLElement)?.style.setProperty('animation-play-state', 'running'); }}
+                >
+                  <div className="marquee-track flex animate-marquee-right">
+                    {[...row2, ...row2].map((logo, i) => <LogoPill key={i} logo={logo} />)}
+                  </div>
+                </div>
+              </div>
+            );
+          })()}
+        </section>
+
         {/* Executive Overview — 2 column with institutional imagery */}
         <section className="py-20 bg-[#F8FAFF]">
           <div className="max-w-7xl mx-auto px-6">
@@ -67,7 +134,7 @@ export default function AboutPage() {
               </div>
               <div className="w-full rounded-2xl overflow-hidden" style={{ height: 380 }}>
                 <img
-                  src="https://images.unsplash.com/photo-1486325212027-8081e485255e?q=90&w=800&auto=format&fit=crop"
+                  src="/images/building.jpg"
                   alt="Kuwait city"
                   loading="lazy"
                   onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
@@ -94,13 +161,6 @@ export default function AboutPage() {
         </section>
 
 
-        {/* WHITE SECTION - Top border + Noise */}
-        <section className="animate-section relative py-32 bg-white border-t border-brand-blue/10 bg-noise overflow-hidden">
-          <div className="container max-w-7xl mx-auto px-6 relative z-10">
-            <QualityCompliance />
-          </div>
-        </section>
-
         {/* VISION & MISSION */}
         <AboutVisionMission />
 
@@ -112,10 +172,38 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* WHITE SECTION - Testimonial */}
-        <section className="animate-section relative py-32 bg-white border-t border-brand-blue/10 bg-noise overflow-hidden">
-          <div className="container max-w-7xl mx-auto px-6 relative z-10">
-            <Testimonial />
+        {/* CLIENT SUCCESS */}
+        <section className="relative py-24 overflow-hidden">
+          <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, #0D1B2A 0%, #0F2A4A 30%, #1A3A6B 65%, #1A56DB 100%)' }} />
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <div className="absolute" style={{ top: '-20%', left: '-10%', width: '60%', height: '140%', background: 'linear-gradient(135deg, rgba(255,255,255,0.04) 0%, transparent 50%)', transform: 'rotate(-15deg)' }} />
+            <div className="absolute" style={{ top: '-30%', right: '-5%', width: '50%', height: '130%', background: 'linear-gradient(225deg, rgba(26,86,219,0.15) 0%, transparent 60%)', transform: 'rotate(10deg)' }} />
+          </div>
+
+          <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
+            <div className="inline-flex items-center px-5 py-2 rounded-full border border-white/20 bg-white/[0.08] backdrop-blur-sm text-[11px] font-bold tracking-[0.2em] uppercase text-white/70 mb-8">
+              Client Success
+            </div>
+
+            <h2 className="text-5xl font-bold text-white tracking-tight mb-12" style={{ letterSpacing: '-0.03em' }}>
+              What our clients say.
+            </h2>
+
+            <div className="bg-white rounded-2xl p-10 text-left" style={{ boxShadow: '0 32px 80px rgba(0,0,0,0.25)' }}>
+              <div className="text-[48px] leading-none text-[#1A56DB] font-serif mb-6">&ldquo;</div>
+
+              <p className="text-[20px] text-[#0D1B2A] leading-relaxed font-light tracking-tight mb-8">
+                Masarat&apos;s integrated approach gave us a single point of accountability across our entire technology environment. What used to take months of coordination now happens as one seamless delivery.
+              </p>
+
+              <div className={cn("flex items-center justify-between pt-6 border-t border-[#E2EAF8]", isRTL ? "flex-row-reverse" : "")}>
+                <div>
+                  <div className="text-[15px] font-bold text-[#0D1B2A]">Technology Director</div>
+                  <div className="text-[13px] text-[#64748B] mt-0.5">Leading Kuwait Banking Institution</div>
+                </div>
+                <div className="text-[12px] font-bold tracking-[0.15em] uppercase text-[#0D1B2A]">Banking Sector</div>
+              </div>
+            </div>
           </div>
         </section>
       </main>

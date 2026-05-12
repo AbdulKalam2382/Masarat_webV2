@@ -14,8 +14,8 @@ export default function AiDataPage() {
       slug="ai-data"
       name={isRTL ? "الذكاء الاصطناعي والبيانات والأنظمة الذكية" : "AI, Data & Intelligent Systems"}
       category={isRTL ? "ذكاء" : "Intelligence"}
-      heroImage="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=90&w=1920&auto=format&fit=crop"
-      bannerImage="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=85&w=1920&auto=format&fit=crop"
+      heroImage="/images/ai.jpg"
+      bannerImage="/images/ai.jpg"
       description={isRTL
         ? "بناء أساس البيانات والذكاء الاصطناعي الذي يُمكّن من اتخاذ قرارات ذكية وقدرات تنبؤية وميزة تنافسية على نطاق مؤسسي."
         : "Building the data and AI foundation that enables intelligent decision-making, predictive capability, and competitive advantage at enterprise scale."}

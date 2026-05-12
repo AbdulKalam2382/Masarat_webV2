@@ -77,11 +77,49 @@ export default function SolutionsPreview() {
             "Security embedded across all solutions",
           ],
     },
+    {
+      cardType: "elv",
+      title: t("solutions.s4title"),
+      href: "/solutions/elv-smart-systems",
+      tag: isRTL ? "بنية تحتية" : "Infrastructure",
+      bullets: isRTL
+        ? [
+            "أنظمة ELV والأمن المتكاملة",
+            "أنظمة الإطفاء وسلامة الحياة",
+            "المباني الذكية وأنظمة إدارة المباني (BMS)",
+            "بنية تحتية متصلة وآمنة",
+          ]
+        : [
+            "ELV and integrated security systems",
+            "Fire and life safety systems",
+            "Smart buildings and BMS",
+            "Connected and secure physical infrastructure",
+          ],
+    },
+    {
+      cardType: "datacenter",
+      title: t("solutions.s5title"),
+      href: "/solutions/mission-critical",
+      tag: isRTL ? "حيوي" : "Critical",
+      bullets: isRTL
+        ? [
+            "تصميم وبناء وترقية مراكز البيانات",
+            "تسليم بنية تحتية متوافقة مع المستوى الثالث",
+            "ترقية البيئات الحية بأقل قدر من التوقف",
+            "استمرارية المشاريع طويلة الأمد",
+          ]
+        : [
+            "Data center design, build and upgrade",
+            "Tier III aligned infrastructure delivery",
+            "Live upgrades with minimal downtime",
+            "Long-term operational continuity",
+          ],
+    },
   ];
 
   return (
     <>
-    <section className="py-20 bg-[#F8FAFF] border-y border-[#E2EAF8]">
+    <section className="py-20 bg-[#F8FAFF]">
       <div className="max-w-5xl mx-auto px-6 text-center">
         <p className="text-[14px] font-bold tracking-[0.2em] uppercase text-[#1A56DB] mb-5 flex items-center justify-center gap-3">
           <span className="w-7 h-[2px] bg-[#1A56DB] rounded-full" />
@@ -155,15 +193,28 @@ export default function SolutionsPreview() {
           </Link>
         </div>
 
-        {/* Animated bento card grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {previewSolutions.map((solution, i) => (
+        {/* Animated bento card grid — row 1: 3 cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+          {previewSolutions.slice(0, 3).map((solution, i) => (
             <AnimatedBentoCard
               key={i}
               {...solution}
               isRTL={isRTL}
-              className="min-h-[480px]"
+              className="w-full h-full min-h-[380px]"
               index={i}
+            />
+          ))}
+        </div>
+
+        {/* Animated bento card grid — row 2: 2 cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {previewSolutions.slice(3).map((solution, i) => (
+            <AnimatedBentoCard
+              key={i + 3}
+              {...solution}
+              isRTL={isRTL}
+              className="w-full h-full min-h-[380px]"
+              index={i + 3}
             />
           ))}
         </div>

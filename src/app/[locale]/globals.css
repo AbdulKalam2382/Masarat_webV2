@@ -207,4 +207,7 @@ html.lenis {
   .border-border {
     border-color: hsl(var(--border));
   }
+  .pause-animation {
+    animation-play-state: paused !important;
+  }
 }

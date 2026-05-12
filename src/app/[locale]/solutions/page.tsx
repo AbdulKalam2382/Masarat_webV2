@@ -9,6 +9,7 @@ import { Link } from "@/i18n/routing";
 import SceneWrapper from "@/components/three/SceneWrapper";
 import AnimatedBentoCard, { CardType } from "@/components/ui/AnimatedBentoCard";
 import SolutionsPremium from "@/components/sections/SolutionsPremium";
+import SolutionsPreview from "@/components/sections/ServicesPreview";
 
 export default function SolutionsPage() {
   const { t, isRTL } = useLanguage();
@@ -130,7 +131,7 @@ export default function SolutionsPage() {
         {/* Full-width image banner */}
         <div className="relative w-full overflow-hidden" style={{ height: 220 }}>
           <img
-            src="https://images.unsplash.com/photo-1639322537228-f710d846310a?q=90&w=1920&auto=format&fit=crop"
+            src="/images/datacenter.jpg"
             alt="Solutions"
             loading="lazy"
             onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
@@ -145,43 +146,8 @@ export default function SolutionsPage() {
           </div>
         </div>
 
-        {/* Explanation section */}
-        <section className="py-20 bg-white">
-          <div className="max-w-5xl mx-auto px-6">
-            <div className="max-w-3xl mb-16">
-              <p className="text-[14px] font-bold tracking-[0.2em] uppercase text-[#1A56DB] mb-5 flex items-center gap-3">
-                <span className="w-7 h-[2px] bg-[#1A56DB] rounded-full" />
-                What We Do
-              </p>
-              <h2 className="text-5xl md:text-6xl font-bold text-[#0D1B2A] tracking-tighter leading-tight mb-8" style={{ letterSpacing: "-0.04em" }}>
-                Five integrated capabilities.<br />
-                <span className="font-light text-[#64748B]">One accountable partner.</span>
-              </h2>
-              <p className="text-[19px] text-[#64748B] leading-relaxed mb-6">
-                Masarat operates across five integrated business lines that together cover the full enterprise technology stack. Each capability is designed to work alongside the others — not in isolation — ensuring that your digital platforms, intelligent systems, security environment, physical infrastructure, and data center facilities all function as one coherent, high-performing environment.
-              </p>
-              <p className="text-[19px] text-[#64748B] leading-relaxed mb-6">
-                Whether you are modernising your enterprise operations, deploying AI at scale, strengthening your security posture, building a smart facility, or delivering a new mission-critical data center — Masarat brings a single point of accountability across every phase of the engagement, from initial assessment through to long-term operations and support.
-              </p>
-              <p className="text-[19px] text-[#64748B] leading-relaxed">
-                Through our strategic partnership with Hydrotek Engineering, we extend this accountability across both digital and physical infrastructure — eliminating the coordination gaps that typically arise when multiple vendors are involved in complex, integrated projects.
-              </p>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-8 border-t border-[#E2EAF8]">
-              {[
-                { number: "01", title: "Integrated by Design", body: "Our capabilities are built to work together. A cybersecurity engagement considers your infrastructure. An AI deployment considers your data environment. Everything connects." },
-                { number: "02", title: "Delivered with Accountability", body: "One team. One contract. One point of accountability. From the first conversation to the final handover and beyond — Masarat owns the outcome." },
-                { number: "03", title: "Institutional Expertise", body: "Our solutions are grounded in deep knowledge of the complex regulatory landscape, institutional culture, and the operational demands of its most critical sectors." },
-              ].map((item, i) => (
-                <div key={i} className="p-6 rounded-xl border border-[#E2EAF8] bg-[#F8FAFF] hover:border-[#1A56DB]/30 hover:bg-white transition-all duration-200">
-                  <span className="text-[11px] font-black tracking-[0.2em] uppercase text-[#1A56DB]/40 block mb-3">{item.number}</span>
-                  <h3 className="text-[20px] font-bold text-[#0D1B2A] tracking-tight mb-3">{item.title}</h3>
-                  <p className="text-[17px] text-[#64748B] leading-relaxed">{item.body}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        {/* Bento grid — 5 solution cards (third scroll) */}
+        <SolutionsPreview />
 
         {/* PREMIUM SOLUTIONS CAPABILITIES */}
         <SolutionsPremium />

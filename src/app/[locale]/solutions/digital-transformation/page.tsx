@@ -14,8 +14,8 @@ export default function DigitalTransformationPage() {
       slug="digital-transformation"
       name={isRTL ? "التحول المؤسسي والمنصات الرقمية" : "Enterprise Transformation & Digital Platforms"}
       category={isRTL ? "مؤسسي" : "Enterprise"}
-      heroImage="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=90&w=1920&auto=format&fit=crop"
-      bannerImage="https://images.unsplash.com/photo-1497366412874-3415097a27e7?q=85&w=1920&auto=format&fit=crop"
+      heroImage="/images/office.jpg"
+      bannerImage="/images/office.jpg"
       description={isRTL
         ? "تمكين المؤسسات من إعادة تصميم وأتمتة وتوسيع عملياتها الأساسية من خلال منصات مؤسسية متكاملة وتحول مدفوع بالعمليات."
         : "Enabling organisations to redesign, automate, and scale their core operations through integrated enterprise platforms and process-driven transformation."}
