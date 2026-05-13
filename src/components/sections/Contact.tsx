@@ -116,7 +116,7 @@ export default function Contact() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           
           {/* Left Side */}
-          <div className="flex flex-col gap-10">
+          <div className="flex flex-col gap-10 order-2 lg:order-1">
             <div className="flex flex-col gap-4">
               {contactInfo.map((info, i) => (
                 <motion.a
@@ -147,7 +147,7 @@ export default function Contact() {
             initial={{ opacity: 0, x: isRTL ? -20 : 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="bg-white dark:bg-[#10192C] border-[0.5px] border-[#E2EAF8] dark:border-[#1E3150] p-10 md:p-14 rounded-[40px] shadow-2xl relative overflow-hidden transition-colors duration-500"
+            className="bg-white dark:bg-[#10192C] border-[0.5px] border-[#E2EAF8] dark:border-[#1E3150] p-10 md:p-14 rounded-[40px] shadow-2xl relative overflow-hidden transition-colors duration-500 order-1 lg:order-2"
           >
             <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_top_right,_rgba(37,99,235,0.03)_0%,_transparent_50%)] pointer-events-none" />
             
