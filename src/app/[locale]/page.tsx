@@ -40,7 +40,7 @@ export default function Home() {
         <SectorsWeServe />
 
         {/* 9. Contact CTA Banner */}
-        <section className="relative py-24 overflow-hidden">
+        <section className="relative py-10 overflow-hidden">
           <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, #0D1B2A 0%, #0F2A4A 30%, #1A3A6B 65%, #1A56DB 100%)" }} />
           <div className="absolute inset-0 pointer-events-none overflow-hidden">
             <div className="absolute" style={{ top: "-20%", left: "-10%", width: "60%", height: "140%", background: "linear-gradient(135deg, rgba(255,255,255,0.04) 0%, transparent 50%)", transform: "rotate(-15deg)" }} />

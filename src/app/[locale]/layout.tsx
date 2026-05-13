@@ -13,6 +13,7 @@ import { routing } from "@/i18n/routing";
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { LanguageProvider } from "@/lib/LanguageContext";
+import CookieBanner from "@/components/ui/CookieBanner";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const outfit = Outfit({ subsets: ["latin"], variable: "--font-outfit" });
@@ -158,6 +159,7 @@ export default async function RootLayout({
           </ThemeProvider>
         </NextIntlClientProvider>
       </LanguageProvider>
+        <CookieBanner />
     </body>
     </html>
   );

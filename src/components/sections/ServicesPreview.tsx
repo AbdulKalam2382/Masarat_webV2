@@ -119,35 +119,12 @@ export default function SolutionsPreview() {
 
   return (
     <>
-    <section className="py-20 bg-[#F8FAFF]">
-      <div className="max-w-5xl mx-auto px-6 text-center">
-        <p className="text-[14px] font-bold tracking-[0.2em] uppercase text-[#1A56DB] mb-5 flex items-center justify-center gap-3">
-          <span className="w-7 h-[2px] bg-[#1A56DB] rounded-full" />
-          Our Capabilities
-          <span className="w-7 h-[2px] bg-[#1A56DB] rounded-full" />
-        </p>
-        <h2 className="text-4xl font-bold text-[#0D1B2A] tracking-tight mb-6 leading-tight">
-          Five integrated capabilities.<br />
-          <span className="font-light text-[#1A56DB]">One accountable partner.</span>
-        </h2>
-        <p className="text-[16px] text-[#64748B] leading-relaxed max-w-3xl mx-auto mb-4">
-          From enterprise digital transformation and AI-driven intelligence to cybersecurity, smart infrastructure, and mission-critical data center delivery — Masarat covers the full enterprise technology stack.
-        </p>
-        <p className="text-[16px] text-[#64748B] leading-relaxed max-w-3xl mx-auto mb-4">
-          Every engagement is delivered as an integrated solution — not isolated components — ensuring your technology environment works as one cohesive, high-performing system.
-        </p>
-        <p className="text-[16px] text-[#64748B] leading-relaxed max-w-3xl mx-auto">
-          In partnership with Hydrotek Engineering, we extend our delivery across both digital and physical infrastructure, providing a single point of accountability from design to long-term operations.
-        </p>
-      </div>
-    </section>
-
     <motion.section
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}
       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-      className="relative py-32 bg-white dark:bg-brand-navy overflow-hidden transition-colors duration-500"
+      className="relative py-12 bg-white dark:bg-brand-navy overflow-hidden transition-colors duration-500"
     >
       {/* Decorative background number */}
       <div
@@ -163,7 +140,7 @@ export default function SolutionsPreview() {
         {/* Section header */}
         <div
           className={cn(
-            "mb-20 flex flex-col md:flex-row md:items-end justify-between gap-12",
+            "mb-6 flex flex-col md:flex-row md:items-end justify-between gap-6",
             isRTL ? "md:flex-row-reverse" : ""
           )}
         >
@@ -200,7 +177,7 @@ export default function SolutionsPreview() {
               key={i}
               {...solution}
               isRTL={isRTL}
-              className="w-full h-full min-h-[380px]"
+              className="w-full h-full min-h-[260px]"
               index={i}
             />
           ))}
@@ -213,7 +190,7 @@ export default function SolutionsPreview() {
               key={i + 3}
               {...solution}
               isRTL={isRTL}
-              className="w-full h-full min-h-[380px]"
+              className="w-full h-full min-h-[260px]"
               index={i + 3}
             />
           ))}

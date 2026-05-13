@@ -82,9 +82,9 @@ export default function Process() {
   }, [isRTL]);
 
   return (
-    <section className="py-24 bg-white dark:bg-[#0B1221] overflow-hidden transition-colors duration-500">
+    <section className="py-10 bg-white dark:bg-[#0B1221] overflow-hidden transition-colors duration-500">
       <div className="container max-w-7xl mx-auto px-6" ref={containerRef}>
-        <div className="mb-16 relative">
+        <div className="mb-6 relative">
           <span className="text-[14px] uppercase tracking-[0.2em] font-bold text-blue-600 mb-5 block rtl:text-right">
             {t("process.kicker")}
           </span>
@@ -126,7 +126,7 @@ export default function Process() {
         </div>
 
         {/* Expanded deployment callout */}
-        <div ref={calloutRef} className="mt-12 p-8 rounded-2xl bg-[#1B3A6B] border border-[#1E4080] shadow-xl shadow-brand-blue/10">
+        <div ref={calloutRef} className="mt-5 p-8 rounded-2xl bg-[#1B3A6B] border border-[#1E4080] shadow-xl shadow-brand-blue/10">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             
             <div>

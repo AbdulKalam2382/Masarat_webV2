@@ -4,9 +4,10 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { useLanguage } from "@/lib/LanguageContext";
 import { cn } from "@/lib/utils";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import {
-  ArrowRight, Briefcase,
+  ArrowRight,
   Trophy, GraduationCap, Globe, Zap, Heart, MapPin,
   Target, Layers, Users
 } from "lucide-react";
@@ -14,6 +15,29 @@ import SceneWrapper from "@/components/three/SceneWrapper";
 
 export default function CareerPage() {
   const { t, isRTL } = useLanguage();
+  const [showQuickLinks, setShowQuickLinks] = useState(false);
+
+  useEffect(() => {
+    let timeout: NodeJS.Timeout;
+
+    const handleScroll = () => {
+      if (window.scrollY > 100) {
+        setShowQuickLinks(true);
+        clearTimeout(timeout);
+        timeout = setTimeout(() => {
+          setShowQuickLinks(false);
+        }, 3000);
+      } else {
+        setShowQuickLinks(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      clearTimeout(timeout);
+    };
+  }, []);
 
   const whyBullets = isRTL ? [
     "العمل على مشاريع عالية الأثر لأبرز المنظمات الاستراتيجية",
@@ -31,15 +55,6 @@ export default function CareerPage() {
     "Take ownership of meaningful work from day one",
   ];
 
-  const _benefitCards = [
-    { icon: Trophy,        key: "b1" },
-    { icon: GraduationCap, key: "b2" },
-    { icon: Globe,         key: "b3" },
-    { icon: Zap,           key: "b4" },
-    { icon: Heart,         key: "b5" },
-    { icon: MapPin,        key: "b6" },
-  ];
-
   const culturePillars = [
     { icon: Target,   key: "p1" },
     { icon: Layers,   key: "p2" },
@@ -54,7 +69,7 @@ export default function CareerPage() {
         {/* ═══════════════════════════════════════
             1. HERO
         ═══════════════════════════════════════ */}
-        <section className="relative min-h-screen flex items-center overflow-hidden">
+        <section className="relative min-h-[60vh] flex items-center overflow-hidden">
           <div className="absolute inset-0 z-0">
             <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, #0D1B2A 0%, #0F2A4A 25%, #1A3A6B 60%, #1A56DB 100%)' }} />
             <div className="absolute pointer-events-none" style={{ top: '-20%', left: '-10%', width: '60%', height: '140%', background: 'linear-gradient(135deg, rgba(255,255,255,0.04) 0%, transparent 50%)', transform: 'rotate(-15deg)' }} />
@@ -78,16 +93,24 @@ export default function CareerPage() {
               <p className="text-lg md:text-xl text-white/60 font-light max-w-xl leading-relaxed mb-10">
                 {t("career_page.hero_sub")}
               </p>
-              <button
-                onClick={() => document.getElementById("positions")?.scrollIntoView({ behavior: "smooth" })}
-                className={cn(
-                  "inline-flex items-center gap-3 px-9 py-4 bg-brand-blue text-white rounded-full font-bold text-sm uppercase tracking-widest hover:bg-brand-blue-soft transition-all shadow-xl shadow-brand-blue/25",
-                  isRTL && "flex-row-reverse"
-                )}
-              >
-                {t("career_page.hero_cta")}
-                <ArrowRight size={16} className={isRTL ? "rotate-180" : ""} />
-              </button>
+              <div className={cn("flex flex-col sm:flex-row items-start gap-4", isRTL && "sm:flex-row-reverse")}>
+                <button
+                  onClick={() => document.getElementById("positions")?.scrollIntoView({ behavior: "smooth" })}
+                  className={cn(
+                    "inline-flex items-center gap-3 px-9 py-4 bg-brand-blue text-white rounded-full font-bold text-sm uppercase tracking-widest hover:bg-brand-blue-soft transition-all shadow-xl shadow-brand-blue/25",
+                    isRTL && "flex-row-reverse"
+                  )}
+                >
+                  {t("career_page.hero_cta")}
+                  <ArrowRight size={16} className={isRTL ? "rotate-180" : ""} />
+                </button>
+                <a
+                  href="mailto:info@masaratkwt.com?subject=CV Submission — Masarat Technologies"
+                  className="inline-flex items-center gap-2 px-7 py-3 rounded-full border-2 border-white/30 text-white text-[14px] font-semibold hover:border-white/60 hover:bg-white/10 transition-all duration-200"
+                >
+                  Submit Your CV
+                </a>
+              </div>
             </motion.div>
           </div>
         </section>
@@ -98,11 +121,11 @@ export default function CareerPage() {
         {/* ═══════════════════════════════════════
             2. WHY WORK AT MASARAT
         ═══════════════════════════════════════ */}
-        <section className="animate-section relative py-32 bg-white dark:bg-brand-navy overflow-hidden">
+        <section id="positions" className="animate-section relative py-12 bg-white dark:bg-brand-navy overflow-hidden">
           <div className="absolute inset-0 bg-diagonal-lines pointer-events-none opacity-40 dark:opacity-20" />
           <div className="container max-w-7xl mx-auto px-6 relative z-10">
             <div className={cn(
-              "grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start",
+              "grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start",
               isRTL && "lg:flex-row-reverse"
             )}>
               {/* Left — statement */}
@@ -156,7 +179,7 @@ export default function CareerPage() {
         {/* ═══════════════════════════════════════
             3. OUR BENEFITS
         ═══════════════════════════════════════ */}
-        <section className="py-24 bg-white">
+        <section id="benefits" className="py-10 bg-white">
           <div className="max-w-6xl mx-auto px-6">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
@@ -226,7 +249,7 @@ export default function CareerPage() {
         {/* ═══════════════════════════════════════
             4. OUR WORK CULTURE
         ═══════════════════════════════════════ */}
-        <section className="animate-section relative py-32 bg-brand-navy overflow-hidden">
+        <section className="animate-section relative py-12 bg-brand-navy overflow-hidden">
           <div className="container max-w-7xl mx-auto px-6 relative z-10">
              <div className="text-center mb-20">
                 <span className="section-kicker text-brand-blue-soft mb-6 justify-center">
@@ -265,51 +288,42 @@ export default function CareerPage() {
           </div>
         </section>
 
-        {/* Reduced Girth & Opacity Transition */}
-        <div className="h-12 w-full bg-gradient-to-b from-[#0D1B2A]/30 to-transparent pointer-events-none -mt-px" />
-
-        {/* ═══════════════════════════════════════
-            5. OPEN POSITIONS
-        ═══════════════════════════════════════ */}
-        <section id="positions" className="animate-section relative py-32 bg-white dark:bg-brand-navy overflow-hidden">
-          <div className="absolute inset-0 bg-dot-grid opacity-20 pointer-events-none" />
-          
-          <div className="container max-w-4xl mx-auto px-6 relative z-10 text-center">
-            <span className="section-kicker text-brand-blue justify-center mb-6">
-              {t("career_page.positions_title")}
-            </span>
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tight font-outfit text-brand-navy dark:text-white mb-16">
-              {t("career_page.positions_title")}
-            </h2>
-
-            <div className="bg-brand-surface dark:bg-white/5 backdrop-blur-xl border border-brand-border dark:border-white/10 rounded-[2.5rem] p-12 md:p-20">
-              <div className="w-18 h-18 mx-auto mb-8">
-                <div className="w-16 h-16 rounded-full bg-brand-blue/10 flex items-center justify-center text-brand-blue mx-auto">
-                  <Briefcase size={36} />
-                </div>
-              </div>
-              <h3 className="text-2xl font-bold text-brand-navy dark:text-white mb-5 font-outfit">
-                {t("career_page.no_positions_title")}
-              </h3>
-              <p className="text-base text-brand-muted dark:text-white/50 mb-12 font-light leading-relaxed max-w-md mx-auto">
-                {t("career_page.no_positions_desc")}
-              </p>
-              <div className="flex flex-col items-center gap-4">
-                <a
-                  href={`mailto:${t("career_page.email")}`}
-                  className="px-10 py-4 bg-brand-blue text-white rounded-full font-bold text-sm uppercase tracking-widest hover:bg-brand-blue-soft transition-all shadow-xl shadow-brand-blue/20"
-                >
-                  {t("career_page.send_cv")}
-                </a>
-                <span className="text-brand-blue/70 text-sm font-medium tracking-wide">
-                  {t("career_page.email")}
-                </span>
-              </div>
-            </div>
-          </div>
-        </section>
-
       </main>
+
+      {/* Quick Links widget */}
+      <motion.div
+        initial={{ opacity: 0, x: 20 }}
+        animate={{
+          opacity: showQuickLinks ? 1 : 0,
+          x: showQuickLinks ? 0 : 20,
+        }}
+        transition={{ duration: 0.3 }}
+        className="fixed bottom-24 right-6 z-50 hidden lg:block pointer-events-none"
+        style={{ pointerEvents: showQuickLinks ? 'auto' : 'none' }}
+      >
+        <div className="bg-white dark:bg-[#0D1B2A] border border-[#E2EAF8] dark:border-white/10 rounded-2xl p-4 shadow-[0_8px_32px_rgba(13,27,42,0.12)] w-[160px]">
+          <p className="text-[10px] font-black tracking-[0.2em] uppercase text-[#94A3B8] mb-3">
+            Quick Links
+          </p>
+          <div className="flex flex-col gap-1">
+            {[
+              { label: "View Jobs", href: "#positions" },
+              { label: "Our Benefits", href: "#benefits" },
+              { label: "Open Positions", href: "#positions" },
+            ].map((link, i) => (
+              <a
+                key={i}
+                href={link.href}
+                className="text-[12px] font-semibold text-[#64748B] dark:text-[#94A3B8] hover:text-[#1A56DB] dark:hover:text-white py-1.5 px-2 rounded-lg hover:bg-[#EEF4FF] dark:hover:bg-white/5 transition-all duration-150 flex items-center gap-2"
+              >
+                <span className="w-1 h-1 rounded-full bg-[#1A56DB] flex-shrink-0" />
+                {link.label}
+              </a>
+            ))}
+          </div>
+        </div>
+      </motion.div>
+
       <Footer />
     </div>
   );

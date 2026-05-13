@@ -5,99 +5,18 @@ import Footer from "@/components/layout/Footer";
 import { useLanguage } from "@/lib/LanguageContext";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
-import { Link } from "@/i18n/routing";
 import SceneWrapper from "@/components/three/SceneWrapper";
-import AnimatedBentoCard, { CardType } from "@/components/ui/AnimatedBentoCard";
-import SolutionsPremium from "@/components/sections/SolutionsPremium";
 import SolutionsPreview from "@/components/sections/ServicesPreview";
 
 export default function SolutionsPage() {
   const { t, isRTL } = useLanguage();
-
-  const solutions: { cardType: CardType; tag: string; title: string; slug: string; bullets: string[] }[] = [
-    {
-      cardType: "ai",
-      tag: isRTL ? t("solutions.domain_intelligence_ar") : t("solutions.domain_intelligence_en"),
-      title: t("solutions.s2title"),
-      slug: "ai-data",
-      bullets: isRTL ? [
-        "استراتيجية الذكاء الاصطناعي وتقييم الجاهزية",
-        "منصات البيانات والتحليلات المتقدمة",
-        "حلول الذكاء الاصطناعي المخصصة والأتمتة",
-      ] : [
-        "AI strategy & readiness assessment",
-        "Data platforms & advanced analytics",
-        "Custom AI solutions & automation",
-      ],
-    },
-    {
-      cardType: "cyber",
-      tag: isRTL ? t("solutions.domain_security_ar") : t("solutions.domain_security_en"),
-      title: t("solutions.s3title"),
-      slug: "cybersecurity",
-      bullets: isRTL ? [
-        "الأمن السيبراني لتقنية المعلومات والتقنيات التشغيلية",
-        "حماية البنية التحتية والشبكات",
-        "المخاطر والامتثال والمراقبة",
-      ] : [
-        "IT and OT cybersecurity",
-        "Infrastructure & network protection",
-        "Risk, compliance & monitoring",
-      ],
-    },
-    {
-      cardType: "elv",
-      tag: isRTL ? t("solutions.domain_infrastructure_ar") : t("solutions.domain_infrastructure_en"),
-      title: t("solutions.s4title"),
-      slug: "elv-smart-systems",
-      bullets: isRTL ? [
-        "أنظمة ELV والأمن المتكاملة",
-        "أنظمة الإطفاء وسلامة الحياة",
-        "المباني الذكية وأنظمة إدارة المباني (BMS)",
-      ] : [
-        "ELV & integrated security systems",
-        "Fire & life safety systems",
-        "Smart buildings & BMS",
-      ],
-    },
-    {
-      cardType: "datacenter",
-      tag: isRTL ? t("solutions.domain_critical_ar") : t("solutions.domain_critical_en"),
-      title: t("solutions.s5title"),
-      slug: "mission-critical",
-      bullets: isRTL ? [
-        "تصميم وبناء وترقية مراكز البيانات",
-        "تسليم بنية تحتية متوافقة مع المستوى الثالث",
-        "ترقية البيئات الحية بأقل قدر من التوقف",
-      ] : [
-        "Data center design, build & upgrade",
-        "Tier III aligned infrastructure",
-        "Live upgrades with minimal downtime",
-      ],
-    },
-    {
-      cardType: "enterprise",
-      tag: isRTL ? t("solutions.domain_enterprise_ar") : t("solutions.domain_enterprise_en"),
-      title: t("solutions.s1title"),
-      slug: "digital-transformation",
-      bullets: isRTL ? [
-        "منصات المؤسسات للحوكمة",
-        "أتمتة العمليات ورقمنة سير العمل",
-        "تكامل الأنظمة عبر وظائف الأعمال",
-      ] : [
-        "Enterprise platforms for governance",
-        "Process automation & workflow digitization",
-        "System integration across business functions",
-      ],
-    },
-  ];
 
   return (
     <div className={cn(isRTL ? "font-cairo text-right" : "font-inter")}>
       <Navbar />
       <main>
         {/* HERO SECTION */}
-        <section className="relative min-h-screen flex items-center pt-[100px] overflow-hidden">
+        <section className="relative min-h-[65vh] flex items-center pt-[100px] pb-16 overflow-hidden">
           <div className="absolute inset-0 z-0">
             <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, #0D1B2A 0%, #0F2A4A 25%, #1A3A6B 60%, #1A56DB 100%)' }} />
             <div className="absolute pointer-events-none" style={{ top: '-20%', left: '-10%', width: '60%', height: '140%', background: 'linear-gradient(135deg, rgba(255,255,255,0.04) 0%, transparent 50%)', transform: 'rotate(-15deg)' }} />
@@ -105,7 +24,7 @@ export default function SolutionsPage() {
             <div className="relative z-[1]"><SceneWrapper scene="solutions" /></div>
           </div>
 
-          <div className="container max-w-7xl mx-auto px-6 relative z-[10]">
+          <div className="container max-w-7xl mx-auto px-6 relative z-[10] pb-16">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -115,63 +34,30 @@ export default function SolutionsPage() {
               <span className="section-kicker text-white mb-6 block">
                 {t("solutions.page_kicker")}
               </span>
-              <h1 className="text-6xl md:text-8xl font-bold tracking-tighter mb-8 font-outfit uppercase text-white leading-[0.95]">
+              <h1 className="text-4xl md:text-6xl font-bold tracking-tighter mb-6 font-outfit uppercase text-white leading-[0.95]">
                 {t("solutions.page_title")}
               </h1>
-              <p className="text-xl md:text-2xl text-white/60 font-light max-w-2xl leading-relaxed">
+              <p className="text-lg md:text-xl text-white/60 font-light max-w-2xl leading-relaxed">
                 {t("solutions.page_sub")}
               </p>
             </motion.div>
           </div>
         </section>
 
-        {/* Reduced Girth & Opacity Transition */}
+        {/* Transition */}
         <div className="h-12 w-full bg-gradient-to-b from-[#0D1B2A]/30 to-transparent pointer-events-none -mt-px" />
 
-        {/* Full-width image banner */}
-        <div className="relative w-full overflow-hidden" style={{ height: 220 }}>
-          <img
-            src="/images/datacenter.jpg"
-            alt="Solutions"
-            loading="lazy"
-            onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-[#0D1B2A]/65 flex items-center">
-            <div className="max-w-7xl mx-auto px-6 w-full">
-              <p className="text-white font-bold text-2xl md:text-3xl tracking-tight max-w-md leading-snug">
-                Integrated. Accountable. Delivered.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Bento grid — 5 solution cards (third scroll) */}
+        {/* Bento cards */}
         <SolutionsPreview />
 
-        {/* PREMIUM SOLUTIONS CAPABILITIES */}
-        <SolutionsPremium />
-
-        {/* Reduced Girth & Opacity Transition */}
-        <div className="h-12 w-full bg-gradient-to-b from-transparent to-[#0D1B2A]/20 pointer-events-none" />
-
-        {/* CTA Section */}
-        <section className="animate-section relative py-32 bg-brand-navy overflow-hidden">
-          <div className="absolute inset-0 bg-dot-grid opacity-20" />
-          <div className="container max-w-4xl mx-auto px-6 text-center relative z-10">
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tight font-outfit text-white mb-8">
-              {t("solutions.cta_title")}
-            </h2>
-            <p className="text-xl text-white/50 mb-12 font-light">
-              {t("solutions.cta_sub")}
-            </p>
-            <Link
-              href="/contact"
-              className="inline-block px-12 py-5 bg-brand-blue text-white rounded-full font-bold text-sm uppercase tracking-widest hover:shadow-2xl hover:shadow-brand-blue/40 hover:scale-105 transition-all"
-            >
-              {t("solutions.cta_btn1")}
-            </Link>
-          </div>
+        {/* CTA */}
+        <section className="py-16 text-center bg-white border-t border-[#E2EAF8]">
+          <a
+            href="/en/contact"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#1A56DB] text-white text-[15px] font-bold hover:bg-[#0D4BC4] transition-colors duration-200"
+          >
+            Schedule a Consultation
+          </a>
         </section>
       </main>
       <Footer />

@@ -230,7 +230,7 @@ export default function SolutionDetailTemplate({
       <main ref={mainRef} className="bg-white dark:bg-brand-navy overflow-hidden">
         
         {/* SECTION 1: Hero */}
-        <section ref={heroRef} className="hero-section-trigger relative min-h-screen flex items-center overflow-hidden">
+        <section ref={heroRef} className="hero-section-trigger relative min-h-[60vh] flex items-center overflow-hidden">
           <div className="absolute inset-0 z-0">
             <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, #0D1B2A 0%, #0F2A4A 25%, #1A3A6B 60%, #1A56DB 100%)" }} />
             <div className="absolute pointer-events-none" style={{ top: "-20%", left: "-10%", width: "60%", height: "140%", background: "linear-gradient(135deg, rgba(255,255,255,0.04) 0%, transparent 50%)", transform: "rotate(-15deg)" }} />
@@ -277,9 +277,9 @@ export default function SolutionDetailTemplate({
         <div className="h-12 w-full bg-gradient-to-b from-[#0D1B2A]/30 to-transparent pointer-events-none -mt-px" />
 
         {/* SECTION 2: Overview */}
-        <section className="py-20 bg-white dark:bg-brand-navy">
+        <section className="py-8 bg-white dark:bg-brand-navy">
           <div className="container max-w-7xl mx-auto px-6">
-            <div className="mb-14">
+            <div className="mb-5">
               <span className="text-[14px] font-bold tracking-[0.2em] text-[#1A56DB] uppercase mb-5 flex items-center gap-3">
                 <span className="w-7 h-[2px] bg-[#1A56DB] rounded-full" />{category}
               </span>
@@ -305,9 +305,9 @@ export default function SolutionDetailTemplate({
         </section>
 
         {/* SECTION 3: Approach */}
-        <section className="py-20 bg-[#F8FAFF] dark:bg-white/[0.02]">
+        <section className="py-8 bg-[#F8FAFF] dark:bg-white/[0.02]">
           <div className="container max-w-7xl mx-auto px-6">
-            <h2 className="text-4xl font-bold tracking-tight font-outfit text-brand-navy dark:text-white mb-14">
+            <h2 className="text-4xl font-bold tracking-tight font-outfit text-brand-navy dark:text-white mb-5">
               {t("solutions.detail.approach")}
             </h2>
 
@@ -332,9 +332,9 @@ export default function SolutionDetailTemplate({
         </section>
 
         {/* SECTION 4: How We Deliver */}
-        <section className="animate-section py-32 bg-white dark:bg-brand-navy overflow-hidden">
+        <section className="animate-section py-12 bg-white dark:bg-brand-navy overflow-hidden">
           <div className="container max-w-7xl mx-auto px-6">
-            <div className="mb-20 text-center">
+            <div className="mb-6 text-center">
               <h2 className="text-4xl md:text-5xl font-bold tracking-tight font-outfit text-brand-navy dark:text-white mb-6">
                 {t("solutions.detail.how_deliver")}
               </h2>
@@ -391,7 +391,7 @@ export default function SolutionDetailTemplate({
         <div className="h-12 w-full bg-gradient-to-b from-transparent to-[#0D1B2A]/20 pointer-events-none" />
 
         {/* SECTION 6: CTA */}
-        <section className="relative py-24 overflow-hidden text-center">
+        <section className="relative py-10 overflow-hidden text-center">
           <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, #0D1B2A 0%, #0F2A4A 30%, #1A3A6B 65%, #1A56DB 100%)" }} />
           <div className="absolute inset-0 pointer-events-none overflow-hidden">
             <div className="absolute" style={{ top: "-20%", left: "-10%", width: "60%", height: "140%", background: "linear-gradient(135deg, rgba(255,255,255,0.04) 0%, transparent 50%)", transform: "rotate(-15deg)" }} />
@@ -401,7 +401,7 @@ export default function SolutionDetailTemplate({
             <h2 className="text-4xl font-bold tracking-tight font-outfit text-white mb-4">
               {t("solutions.cta_title")}
             </h2>
-            <p className="text-[17px] text-white/60 mb-10 leading-relaxed">
+            <p className="text-[17px] text-white/60 mb-4 leading-relaxed">
               {t("solutions.cta_sub")}
             </p>
             <div className="flex items-center justify-center gap-4 flex-wrap">

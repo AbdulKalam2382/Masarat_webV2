@@ -19,7 +19,7 @@ export default function AboutPage() {
       <Navbar />
       <main>
         {/* HERO SECTION */}
-        <section className="relative min-h-screen flex items-center pt-[100px] overflow-hidden">
+        <section className="relative min-h-[50vh] flex items-center pt-[100px] overflow-hidden">
           <div className="absolute inset-0 z-0">
             <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, #0D1B2A 0%, #0F2A4A 25%, #1A3A6B 60%, #1A56DB 100%)' }} />
             <div className="absolute pointer-events-none" style={{ top: '-20%', left: '-10%', width: '60%', height: '140%', background: 'linear-gradient(135deg, rgba(255,255,255,0.04) 0%, transparent 50%)', transform: 'rotate(-15deg)' }} />
@@ -37,10 +37,10 @@ export default function AboutPage() {
               <span className="section-kicker text-brand-blue mb-6 block">
                 {t("about_page.kicker")}
               </span>
-              <h1 className="text-6xl md:text-8xl font-bold tracking-tighter mb-8 font-outfit uppercase text-white leading-[0.95]">
+              <h1 className="text-4xl md:text-6xl font-bold tracking-tighter mb-6 font-outfit uppercase text-white leading-[0.95]">
                 {t("about_page.title")}
               </h1>
-              <p className="text-xl md:text-2xl text-white/60 font-light max-w-3xl leading-relaxed whitespace-pre-line">
+              <p className="text-lg md:text-xl text-white/60 font-light max-w-3xl leading-relaxed whitespace-pre-line">
                 {t("about_page.body")}
               </p>
             </motion.div>
@@ -51,7 +51,7 @@ export default function AboutPage() {
         <div className="h-12 w-full bg-gradient-to-b from-[#0D1B2A]/30 to-transparent pointer-events-none -mt-px" />
 
         {/* TECHNOLOGY PARTNERS MARQUEE */}
-        <section className="py-20 bg-[#F8FAFF] overflow-hidden">
+        <section className="py-8 bg-[#F8FAFF] overflow-hidden">
           <div className="max-w-5xl mx-auto px-6 text-center mb-12">
             <p className="text-[14px] font-bold tracking-[0.2em] uppercase text-[#1A56DB] mb-3 flex items-center justify-center gap-3">
               <span className="w-7 h-[2px] bg-[#1A56DB] rounded-full" />
@@ -120,9 +120,9 @@ export default function AboutPage() {
         </section>
 
         {/* Executive Overview — 2 column with institutional imagery */}
-        <section className="py-20 bg-[#F8FAFF]">
+        <section className="py-8 bg-[#F8FAFF]">
           <div className="max-w-7xl mx-auto px-6">
-            <div className={cn("grid grid-cols-1 lg:grid-cols-2 gap-16 items-center", isRTL ? "lg:flex lg:flex-row-reverse" : "")}>
+            <div className={cn("grid grid-cols-1 lg:grid-cols-2 gap-8 items-center", isRTL ? "lg:flex lg:flex-row-reverse" : "")}>
               <div className={cn(isRTL ? "text-right" : "text-left")}>
                 <span className="section-kicker mb-6 block">{t("about_page.kicker")}</span>
                 <h2 className="text-3xl md:text-4xl font-bold tracking-tighter mb-6 font-outfit text-brand-navy dark:text-white">
@@ -146,7 +146,7 @@ export default function AboutPage() {
         </section>
 
         {/* LIGHT SECTION - Diagonal Lines + Ghost M */}
-        <section className="animate-section relative py-32 bg-brand-surface overflow-hidden">
+        <section className="animate-section relative py-12 bg-brand-surface overflow-hidden">
           <div className="absolute inset-0 bg-diagonal-lines pointer-events-none opacity-50" />
           <div className={cn(
             "absolute text-[200px] font-black text-brand-blue/[0.025] leading-none select-none pointer-events-none tracking-tighter",
@@ -165,7 +165,7 @@ export default function AboutPage() {
         <AboutVisionMission />
 
         {/* LIGHT SECTION - Process */}
-        <section className="animate-section relative py-32 bg-brand-surface overflow-hidden">
+        <section className="animate-section relative py-12 bg-brand-surface overflow-hidden">
           <div className="absolute inset-0 bg-diagonal-lines pointer-events-none opacity-50" />
           <div className="container max-w-7xl mx-auto px-6 relative z-10">
             <Process />
@@ -173,7 +173,7 @@ export default function AboutPage() {
         </section>
 
         {/* CLIENT SUCCESS */}
-        <section className="relative py-24 overflow-hidden">
+        <section className="relative py-10 overflow-hidden">
           <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, #0D1B2A 0%, #0F2A4A 30%, #1A3A6B 65%, #1A56DB 100%)' }} />
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             <div className="absolute" style={{ top: '-20%', left: '-10%', width: '60%', height: '140%', background: 'linear-gradient(135deg, rgba(255,255,255,0.04) 0%, transparent 50%)', transform: 'rotate(-15deg)' }} />

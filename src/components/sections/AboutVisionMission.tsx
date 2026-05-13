@@ -31,14 +31,14 @@ export default function AboutVisionMission() {
       <section 
         id="vision" 
         ref={visionRef}
-        className="relative h-screen flex items-center justify-center overflow-hidden"
+        className="relative min-h-[50vh] flex items-center justify-center overflow-hidden"
       >
         <motion.div 
           style={{ y: visionY }}
           className="absolute inset-0 z-0"
         >
           <Image
-            src="/images/ai.jpg"
+            src="/images/ai.png"
             alt="Masarat Vision"
             fill
             className="object-cover"
@@ -86,7 +86,7 @@ export default function AboutVisionMission() {
       <section 
         id="mission" 
         ref={missionRef}
-        className="relative h-screen flex items-center justify-center overflow-hidden"
+        className="relative min-h-[50vh] flex items-center justify-center overflow-hidden"
       >
         <motion.div 
           style={{ y: missionY }}

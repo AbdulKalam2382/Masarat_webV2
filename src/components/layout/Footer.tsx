@@ -2,7 +2,7 @@
 
 import { Link } from "@/i18n/routing";
 import { useLanguage } from "@/lib/LanguageContext";
-import { Linkedin, Mail, Phone, MapPin, ArrowUpRight } from "lucide-react";
+import { Linkedin, Mail, Phone, ArrowUpRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 
@@ -29,14 +29,14 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="relative bg-white dark:bg-[#0B1221] text-brand-ink dark:text-white pt-24 pb-12 overflow-hidden transition-colors duration-500">
+    <footer className="relative bg-white dark:bg-[#0B1221] text-brand-ink dark:text-white pt-10 pb-6 overflow-hidden transition-colors duration-500">
       {/* Background Decorative Element */}
       <div className="absolute top-0 left-0 w-full h-[1px] bg-[#E2EAF8] dark:bg-white/10" />
 
       <div className="container max-w-7xl mx-auto px-6 relative z-10">
         
         {/* Main Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-24">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-8">
           
           {/* Brand Column */}
           <div className="lg:col-span-4 flex flex-col gap-10">
@@ -55,7 +55,7 @@ export default function Footer() {
               {t("footer.tagline")}
             </p>
             <div className={cn("flex gap-4", isRTL && "flex-row-reverse")}>
-              <a href="https://linkedin.com/company/masaratkwt" target="_blank" rel="noopener" className="w-12 h-12 rounded-xl bg-[#F8FAFC] dark:bg-white/5 border border-[#E2EAF8] dark:border-white/10 flex items-center justify-center hover:bg-blue-600 hover:border-blue-600 transition-all group">
+              <a href="https://www.linkedin.com/company/masarat-technologies" target="_blank" rel="noopener" className="w-12 h-12 rounded-xl bg-[#F8FAFC] dark:bg-white/5 border border-[#E2EAF8] dark:border-white/10 flex items-center justify-center hover:bg-blue-600 hover:border-blue-600 transition-all group">
                 <Linkedin size={20} className="text-[#0D1B2A]/80 dark:text-white/80 group-hover:text-white group-hover:scale-110 transition-transform" />
               </a>
               <a href="https://x.com/masaratkwt" target="_blank" rel="noopener" className="w-12 h-12 rounded-xl bg-[#F8FAFC] dark:bg-white/5 border border-[#E2EAF8] dark:border-white/10 flex items-center justify-center hover:bg-blue-600 hover:border-blue-600 transition-all group">
@@ -122,21 +122,28 @@ export default function Footer() {
                   <span className="text-sm font-semibold">+965 6701 3229</span>
                 </div>
               </a>
-              <div className="flex items-center gap-4 text-[#475569] dark:text-white/70 group">
-                <div className="w-10 h-10 rounded-lg bg-[#F8FAFC] dark:bg-white/5 border border-[#E2EAF8] dark:border-white/10 flex items-center justify-center group-hover:bg-blue-600/10 group-hover:border-blue-600/30 transition-all">
-                  <MapPin size={18} className="group-hover:text-blue-600" />
-                </div>
-                <div className={cn("flex flex-col", isRTL && "text-right")}>
-                  <span className="text-xs text-[#0D1B2A]/20 dark:text-white/30 uppercase tracking-tighter">Office</span>
-                  <span className="text-sm font-semibold">Kuwait City, Kuwait</span>
-                </div>
-              </div>
+              <a
+                href="https://maps.google.com/?q=Dar+Al+Awadi+Tower+Sharq+Kuwait"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-start gap-2 text-[13px] text-[#64748B] dark:text-[#94A3B8] hover:text-[#1A56DB] dark:hover:text-white transition-colors duration-200 group"
+              >
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="flex-shrink-0 mt-0.5">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+                <span className="leading-snug">
+                  Dar Al Awadi Tower, 2nd Floor<br />
+                  Dar Al Awadi Mall, Sharq<br />
+                  Kuwait
+                </span>
+              </a>
             </div>
           </div>
         </div>
 
         {/* Tech Partners Section */}
-        <div className="border-t border-[#E2EAF8] dark:border-white/10 pt-16 pb-20">
+        <div className="border-t border-[#E2EAF8] dark:border-white/10 pt-8 pb-10">
           <div className="flex flex-col gap-10">
             <h4 className={cn("text-[11px] font-black uppercase tracking-[0.4em] text-center text-[#0D1B2A]/40 dark:text-white/50")}>
               {t("footer.partners_label")}
@@ -178,7 +185,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Strip */}
-        <div className={cn("flex flex-col md:flex-row items-center justify-between border-t border-[#E2EAF8] dark:border-white/5 pt-12 gap-8", isRTL && "md:flex-row-reverse")}>
+        <div className={cn("flex flex-col md:flex-row items-center justify-between border-t border-[#E2EAF8] dark:border-white/5 pt-6 gap-4", isRTL && "md:flex-row-reverse")}>
           <p className="text-[13px] text-[#64748B] dark:text-white/30 font-medium tracking-tight">
             {t("footer.copy")}
           </p>

@@ -16,7 +16,7 @@ export default function ContactPage() {
       <Navbar />
       <main>
         {/* HERO SECTION */}
-        <section className="relative min-h-[60vh] flex items-center pt-[100px] overflow-hidden">
+        <section className="relative min-h-[60vh] flex items-center pt-[100px] pb-16 overflow-hidden">
           <div className="absolute inset-0 z-0">
             <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, #0D1B2A 0%, #0F2A4A 25%, #1A3A6B 60%, #1A56DB 100%)' }} />
             <div className="absolute pointer-events-none" style={{ top: '-20%', left: '-10%', width: '60%', height: '140%', background: 'linear-gradient(135deg, rgba(255,255,255,0.04) 0%, transparent 50%)', transform: 'rotate(-15deg)' }} />
@@ -48,7 +48,7 @@ export default function ContactPage() {
         <div className="h-12 w-full bg-gradient-to-b from-[#0D1B2A]/30 to-transparent pointer-events-none -mt-px" />
 
         {/* CONTACT FORM SECTION */}
-        <section className="relative py-20 bg-white overflow-hidden">
+        <section className="relative py-8 bg-white overflow-hidden">
           <div className={cn(
             "absolute text-[200px] font-black text-brand-blue/[0.015] leading-none select-none pointer-events-none tracking-tighter",
             isRTL ? "left-0 bottom-0" : "right-0 bottom-0"

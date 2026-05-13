@@ -31,7 +31,7 @@ export default function WhyMasaratConsolidated() {
   ];
 
   return (
-    <section className="relative py-28 overflow-hidden">
+    <section className="relative py-10 overflow-hidden">
       {/* Background with high-end gradient */}
       <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, #0D1B2A 0%, #0F2A4A 25%, #1A3A6B 60%, #1A56DB 100%)' }} />
       
@@ -48,7 +48,7 @@ export default function WhyMasaratConsolidated() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-6"
         >
           <p className="text-[12px] font-bold tracking-[0.4em] uppercase text-white/50 mb-6 flex items-center justify-center gap-4">
             <span className="w-8 h-[1px] bg-white/20 rounded-full" />

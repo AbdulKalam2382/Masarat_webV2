@@ -17,10 +17,10 @@ export default function WhoWeAre() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}
       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-      className="relative py-24 bg-white dark:bg-[#0D1B2A] overflow-hidden transition-colors duration-500"
+      className="relative py-10 bg-white dark:bg-[#0D1B2A] overflow-hidden transition-colors duration-500"
     >
       <div className="container max-w-7xl mx-auto px-6 relative z-10">
-        <div className={cn("flex flex-col lg:flex-row gap-16 lg:gap-24 items-center", isRTL ? "lg:flex-row-reverse" : "")}>
+        <div className={cn("flex flex-col lg:flex-row gap-8 lg:gap-12 items-center", isRTL ? "lg:flex-row-reverse" : "")}>
 
           {/* Left Column */}
           <div className="flex-1 relative w-full">

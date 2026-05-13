@@ -58,7 +58,7 @@ export default function SectorsWeServe() {
   return (
     <section
       data-section-name={t("sectors.kicker")}
-      className="relative py-16 overflow-hidden"
+      className="relative py-8 overflow-hidden"
       style={{ background: "linear-gradient(135deg, #0D1B2A 0%, #0F2A4A 25%, #1A3A6B 60%, #1A56DB 100%)" }}
     >
       {/* Light rays */}
@@ -74,7 +74,7 @@ export default function SectorsWeServe() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className={cn("mb-16", isRTL ? "text-right" : "text-left")}
+          className={cn("mb-6", isRTL ? "text-right" : "text-left")}
         >
           <span className={cn("section-kicker text-brand-blue mb-4", isRTL ? "flex-row-reverse" : "")}>
             {t("sectors.kicker")}

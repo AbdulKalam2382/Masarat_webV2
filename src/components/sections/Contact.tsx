@@ -111,7 +111,7 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" className="py-24 bg-white dark:bg-[#0B1221] overflow-hidden transition-colors duration-500">
+    <section id="contact" className="py-10 bg-white dark:bg-[#0B1221] overflow-hidden transition-colors duration-500">
       <div className="container max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           

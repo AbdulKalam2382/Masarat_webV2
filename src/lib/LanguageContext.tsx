@@ -55,7 +55,7 @@ const enTranslations = {
     line1: "WE ARCHITECT",
     line2: "DIGITAL TRUST.",
     line3: "INTELLIGENTLY.",
-    sub: "AI Ops · Enterprise Intelligence · Cybersecurity · Infrastructure",
+    sub: "AI · Enterprise Intelligence · Cybersecurity · Infrastructure",
     btn1: "Explore Solutions",
     btn2: "Contact Us",
     scroll: "Scroll"
@@ -95,7 +95,7 @@ const enTranslations = {
   about: {
     kicker: "Who We Are",
     title: "Built for Complex Enterprise Environments",
-    body: "Our work is grounded in deep understanding of regulatory, operational, and institutional environments where reliability, security, and continuity are mission critical. We deliver technology solutions designed for organizations where failure is not an option.",
+    body: "We deliver mission-critical technology solutions for the region's most demanding enterprise environments, where reliability and security are non-negotiable.",
     metrics: {
       m1t: "Mission-Critical",
       m1d: "Environments we operate in",
@@ -339,7 +339,7 @@ const arTranslations = {
     line1: "نحن نبني",
     line2: "الثقة الرقمية.",
     line3: "على نطاق واسع.",
-    sub: "عمليات الذكاء الاصطناعي · الذكاء المؤسسي · الأمن السيبراني · البنية التحتية",
+    sub: "الذكاء الاصطناعي · الذكاء المؤسسي · الأمن السيبراني · البنية التحتية",
     btn1: "استكشف الحلول",
     btn2: "تواصل معنا",
     scroll: "اسحب لأسفل"
@@ -379,7 +379,7 @@ const arTranslations = {
   about: {
     kicker: "من نحن",
     title: "مصمم لبيئات المؤسسات المعقدة",
-    body: "يرتكز عملنا على فهم عميق للبيئات التنظيمية والتشغيلية والمؤسسية حيث تعتبر الموثوقية والأمن والاستمرارية مهاماً حرجة. نحن نقدم حلولاً تقنية مصممة للمؤسسات التي لا يعتبر الفشل فيها خياراً.",
+    body: "نقدم حلول تقنية حيوية للبيئات المؤسسية الأكثر تطلباً في المنطقة، حيث الموثوقية والأمن غير قابلين للتفاوض.",
     metrics: {
       m1t: "بيئات حيوية",
       m1d: "البيئات التي نعمل فيها",

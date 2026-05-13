@@ -8,13 +8,13 @@ export default function Challenges() {
   const { t, isRTL } = useLanguage();
 
   return (
-    <section className="py-24 bg-[#F0F5FF] dark:bg-[#0B1221] border-b border-brand-border dark:border-[#1E3150] transition-colors duration-500">
+    <section className="py-10 bg-[#F0F5FF] dark:bg-[#0B1221] border-b border-brand-border dark:border-[#1E3150] transition-colors duration-500">
       <div className="container max-w-7xl mx-auto px-6">
-        <h2 className={cn("text-3xl md:text-5xl font-bold tracking-tighter mb-16 font-outfit text-brand-ink dark:text-[#F5F5F7]", isRTL ? "text-right" : "text-left")}>
+        <h2 className={cn("text-3xl md:text-5xl font-bold tracking-tighter mb-6 font-outfit text-brand-ink dark:text-[#F5F5F7]", isRTL ? "text-right" : "text-left")}>
           {t("about_page.challenges_title")}
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-5">
           {[1, 2, 3].map((num) => (
             <motion.div 
               key={num}

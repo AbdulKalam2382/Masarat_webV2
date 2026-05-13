@@ -11,7 +11,7 @@ export default function VisionMission() {
   const sectionRef = useRef<HTMLElement>(null)
 
   return (
-    <section ref={sectionRef} data-section-name={isRTL ? "الرؤية" : "Vision"} className="relative py-32 overflow-hidden"
+    <section ref={sectionRef} data-section-name={isRTL ? "الرؤية" : "Vision"} className="relative py-12 overflow-hidden"
       style={{ background: "linear-gradient(135deg, #0D1B2A 0%, #0F2A4A 25%, #1A3A6B 60%, #1A56DB 100%)" }}
     >
       {/* Light rays */}
