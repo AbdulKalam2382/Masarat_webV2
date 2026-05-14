@@ -48,7 +48,7 @@ export default function Hero() {
     <section
       ref={heroRef}
       data-section-name="Hero"
-      className="hero-section-trigger relative min-h-[70vh] flex items-center justify-center bg-[#0D1B2A] overflow-hidden"
+      className="hero-section-trigger relative min-h-[100svh] flex items-center justify-center bg-[#0D1B2A] overflow-hidden py-24 sm:py-28"
     >
       {/* Institutional Skyline background */}
       <div className="absolute inset-0 z-0">
