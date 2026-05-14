@@ -72,7 +72,7 @@ export default function AboutPage() {
               { name: "Qlik", src: "/images/Partners/qlik.png" },
               { name: "Nozomi Networks", src: "/images/Partners/nozomi-networks.png" },
               { name: "SUSE", src: "/images/Partners/suse.png" },
-              { name: "Huawei", src: "/images/Partners/huawei.png" },
+              { name: "Huawei", src: "/images/Partners/Huawei-Logo.png", large: true },
               { name: "Intalio", src: "/images/Partners/intalio.png" },
               { name: "Ivanti", src: "/images/Partners/ivanti.png" },
               { name: "Hydrotek Engineering", src: "/images/Partners/Hydrotek.png" },
@@ -86,7 +86,13 @@ export default function AboutPage() {
                   src={logo.src}
                   alt={logo.name}
                   className={cn(logo.large ? "h-full w-auto max-w-[240px]" : "h-8 w-auto max-w-[120px]", "object-contain")}
-                  onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
+                  style={{ mixBlendMode: 'multiply' }}
+                  onError={(e) => {
+                    const img = e.target as HTMLImageElement;
+                    img.style.display = 'none';
+                    const p = img.parentElement;
+                    if (p) p.innerHTML = `<span style="font-size:10px;font-weight:800;letter-spacing:0.1em;color:#0D1B2A">${logo.name.toUpperCase()}</span>`;
+                  }}
                 />
               </div>
             );

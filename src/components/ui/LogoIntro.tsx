@@ -15,7 +15,7 @@ export default function LogoIntro() {
         sessionStorage.setItem('masarat_intro_seen', 'true')
         document.body.style.overflow = ''
         setShow(false)
-      }, 3000)
+      }, 1000)
 
       return () => clearTimeout(timer)
     }
@@ -35,14 +35,14 @@ export default function LogoIntro() {
         className="fixed inset-0 z-[9999] flex items-center justify-center cursor-pointer"
         style={{ background: '#FFFFFF' }}
         onClick={skipIntro}
-        exit={{ opacity: 0, transition: { duration: 0.5, ease: [0.76, 0, 0.24, 1] } }}
+        exit={{ opacity: 0, transition: { duration: 0.3, ease: [0.76, 0, 0.24, 1] } }}
       >
         <motion.img
           src="/images/Masarat Logo.png"
           alt="Masarat Technologies"
           initial={{ opacity: 0, scale: 0.85 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
           style={{ width: '320px', height: 'auto', mixBlendMode: 'multiply' }}
         />
       </motion.div>

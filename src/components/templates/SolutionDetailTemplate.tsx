@@ -141,29 +141,6 @@ export default function SolutionDetailTemplate({
         });
       }
 
-      // Cybersecurity: Scanning Beam
-      if (slug === "cybersecurity") {
-        gsap.utils.toArray<HTMLElement>("section").forEach((section) => {
-          const beam = document.createElement("div");
-          beam.className = "absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-brand-blue-soft/30 to-transparent pointer-events-none z-50";
-          section.style.position = "relative";
-          section.appendChild(beam);
-          
-          gsap.fromTo(beam, 
-            { top: "0%" }, 
-            { 
-              top: "100%", 
-              duration: 0.6,
-              scrollTrigger: {
-                trigger: section,
-                start: "top bottom",
-                end: "bottom top",
-                scrub: 0.3
-              }
-            }
-          );
-        });
-      }
 
       // ELV & Smart Systems: Scaling Icons + Hub Connections
       if (slug === "elv-smart-systems") {
@@ -251,11 +228,17 @@ export default function SolutionDetailTemplate({
                 {category}
               </span>
 
-              <h1 className="text-5xl md:text-6xl font-bold tracking-tight text-white mb-4 font-outfit leading-tight">
+              <h1 className={cn(
+                "font-bold tracking-tight text-white mb-4 font-outfit leading-tight",
+                slug === "elv-smart-systems" ? "text-5xl md:text-6xl" : "text-3xl md:text-4xl"
+              )}>
                 {name}
               </h1>
 
-              <p className="text-[17px] text-white/65 font-light mt-4 max-w-xl leading-relaxed">
+              <p className={cn(
+                "text-white/65 font-light mt-4 max-w-xl leading-relaxed",
+                slug === "elv-smart-systems" ? "text-[17px]" : "text-[15px]"
+              )}>
                 {description}
               </p>
 

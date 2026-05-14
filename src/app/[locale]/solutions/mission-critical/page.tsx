@@ -40,22 +40,6 @@ export default function MissionCriticalPage() {
         { title: "Operational Discipline", description: "Implementing rigorous SOP/MOP/EOP practices to ensure maximum availability and uptime." }
       ]}
     >
-      {/* Data center capabilities image */}
-      <section className="relative overflow-hidden border-t border-[#E2EAF8]" style={{ height: 320 }}>
-        <img
-          src="/images/datacenter.jpg"
-          alt="Data center"
-          loading="lazy"
-          onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-[#0D1B2A]/85 flex items-end p-10">
-          <p className="text-white/80 text-lg font-light max-w-2xl leading-relaxed">
-            Masarat and Hydrotek Engineering deliver Tier III certified data center environments — from design through live operations.
-          </p>
-        </div>
-      </section>
-
       {/* Proven Experience & Value to Clients */}
       <section className="py-24 border-t border-brand-border dark:border-white/5 bg-white dark:bg-brand-navy">
         <div className="container max-w-7xl mx-auto px-6">

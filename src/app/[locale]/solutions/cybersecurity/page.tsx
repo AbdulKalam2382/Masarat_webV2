@@ -39,26 +39,6 @@ export default function CybersecurityPage() {
         { title: "Security by Design", description: "Embedding security controls into the foundation of every solution we deliver." }
       ]}
     >
-      {/* Cybersecurity approach image */}
-      <section className="py-12 bg-white border-t border-[#E2EAF8]">
-        <div className="container max-w-7xl mx-auto px-6">
-          <div className="relative w-full rounded-2xl overflow-hidden" style={{ height: 320 }}>
-            <img
-              src="/images/security.jpg"
-              alt="Cybersecurity"
-              loading="lazy"
-              onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-[#0D1B2A]/60 flex items-end p-10">
-              <p className="text-white/80 text-lg font-light max-w-xl leading-relaxed">
-                Enterprise-grade security architecture designed for the most critical environments.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Capability Wheel */}
       <section className="py-20 bg-[#F8FAFF] border-t border-[#E2EAF8]">
         <div className="container max-w-5xl mx-auto px-6">

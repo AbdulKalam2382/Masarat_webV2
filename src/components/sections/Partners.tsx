@@ -22,7 +22,7 @@ const officialPartners = [
   },
   {
     name: "Huawei",
-    src: "/images/Partners/huawei.png",
+    src: "/images/Partners/Huawei-Logo.png",
     height: "22px"
   },
   {

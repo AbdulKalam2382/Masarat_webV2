@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef, useCallback } from "react";
 import { Link, usePathname } from "@/i18n/routing";
 import { useLanguage } from "@/lib/LanguageContext";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ChevronDown, Users, Target, GitMerge, Globe, Layers, Brain, Shield, Building2, Server } from "lucide-react";
+import { Menu, X, ChevronDown, Users, Target, Globe, Layers, Brain, Shield, Building2, Server } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 type DropdownKey = "about" | "solutions" | "resources" | null;
@@ -50,7 +50,6 @@ export default function Navbar() {
 
   const aboutLinks = [
     { label: t("nav.dropdowns.about.who_we_are.title"), href: "/about", icon: Users },
-    { label: t("nav.dropdowns.about.delivery_model.title"), href: "/about#delivery", icon: GitMerge },
     { label: t("nav.dropdowns.about.vision_mission.title"), href: "/about#vision", icon: Target },
     { label: t("nav.dropdowns.about.tech_partners.title"), href: "/about#partners", icon: Globe },
   ];
@@ -222,28 +221,15 @@ export default function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-40 bg-[#0D1B2A] flex flex-col md:hidden"
+            className="fixed inset-0 z-40 overflow-y-auto pt-[90px] bg-white dark:bg-[#0D1B2A] md:hidden"
           >
-            <div className="flex items-center justify-between px-6 h-14 border-b border-white/10 flex-shrink-0">
-              <div className="relative w-[130px] h-[44px]">
-                <img
-                  src="/images/Masarat Logo.png"
-                  alt="Masarat"
-                  className="w-full h-full object-contain object-left brightness-200"
-                />
-              </div>
-              <button onClick={() => setMobileOpen(false)} className="text-white p-2" aria-label="Close menu">
-                <X size={22} />
-              </button>
-            </div>
-
-            <div className="flex-1 overflow-y-auto px-6 py-8 space-y-1">
+            <div className="px-6 py-4 space-y-1">
               {(["about", "solutions"] as NonNullable<DropdownKey>[]).map((key) => (
                 <div key={key}>
                   <button
                     onClick={() => setMobileAccordion(mobileAccordion === key ? null : key)}
                     className={cn(
-                      "w-full flex items-center justify-between py-4 text-base font-semibold text-white border-b border-white/10",
+                      "w-full flex items-center justify-between py-3 text-base font-semibold text-[#0D1B2A] dark:text-white border-b border-[#E2EAF8] dark:border-white/10",
                       isRTL && "flex-row-reverse"
                     )}
                   >
@@ -255,7 +241,7 @@ export default function Navbar() {
                     <ChevronDown
                       size={16}
                       className={cn(
-                        "transition-transform duration-200 text-white/50",
+                        "transition-transform duration-200 text-[#94A3B8] dark:text-white/50",
                         mobileAccordion === key && "rotate-180"
                       )}
                     />
@@ -275,7 +261,7 @@ export default function Navbar() {
                               key={item.href}
                               href={item.href}
                               onClick={() => setMobileOpen(false)}
-                              className="block py-3 text-sm font-medium text-white/70 hover:text-white border-b border-white/5 transition-colors"
+                              className="block py-3 text-sm font-medium text-[#64748B] dark:text-white/70 hover:text-[#1A56DB] dark:hover:text-white border-b border-[#E2EAF8] dark:border-white/5 transition-colors"
                             >
                               {item.label}
                             </Link>
@@ -290,19 +276,19 @@ export default function Navbar() {
               <Link
                 href="/career"
                 onClick={() => setMobileOpen(false)}
-                className="flex items-center py-4 text-base font-semibold text-white border-b border-white/10"
+                className="flex items-center py-3 text-base font-semibold text-[#0D1B2A] dark:text-white border-b border-[#E2EAF8] dark:border-white/10"
               >
                 {t("nav.career")}
               </Link>
-            </div>
 
-            <Link
-              href="/contact"
-              onClick={() => setMobileOpen(false)}
-              className="flex items-center py-4 px-6 text-base font-semibold text-white border-b border-white/10"
-            >
-              {t("nav.contact")}
-            </Link>
+              <Link
+                href="/contact"
+                onClick={() => setMobileOpen(false)}
+                className="flex items-center py-3 text-base font-semibold text-[#0D1B2A] dark:text-white border-b border-[#E2EAF8] dark:border-white/10"
+              >
+                {t("nav.contact")}
+              </Link>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

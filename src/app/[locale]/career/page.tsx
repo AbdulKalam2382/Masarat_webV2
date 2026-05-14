@@ -12,10 +12,12 @@ import {
   Target, Layers, Users
 } from "lucide-react";
 import SceneWrapper from "@/components/three/SceneWrapper";
+import CVModal from "@/components/ui/CVModal";
 
 export default function CareerPage() {
   const { t, isRTL } = useLanguage();
   const [showQuickLinks, setShowQuickLinks] = useState(false);
+  const [cvOpen, setCvOpen] = useState(false);
 
   useEffect(() => {
     let timeout: NodeJS.Timeout;
@@ -94,8 +96,8 @@ export default function CareerPage() {
                 {t("career_page.hero_sub")}
               </p>
               <div className={cn("flex flex-col sm:flex-row items-start gap-4", isRTL && "sm:flex-row-reverse")}>
-                <button
-                  onClick={() => document.getElementById("positions")?.scrollIntoView({ behavior: "smooth" })}
+                <a
+                  href="/en/jobs"
                   className={cn(
                     "inline-flex items-center gap-3 px-9 py-4 bg-brand-blue text-white rounded-full font-bold text-sm uppercase tracking-widest hover:bg-brand-blue-soft transition-all shadow-xl shadow-brand-blue/25",
                     isRTL && "flex-row-reverse"
@@ -103,13 +105,13 @@ export default function CareerPage() {
                 >
                   {t("career_page.hero_cta")}
                   <ArrowRight size={16} className={isRTL ? "rotate-180" : ""} />
-                </button>
-                <a
-                  href="mailto:info@masaratkwt.com?subject=CV Submission — Masarat Technologies"
+                </a>
+                <button
+                  onClick={() => setCvOpen(true)}
                   className="inline-flex items-center gap-2 px-7 py-3 rounded-full border-2 border-white/30 text-white text-[14px] font-semibold hover:border-white/60 hover:bg-white/10 transition-all duration-200"
                 >
                   Submit Your CV
-                </a>
+                </button>
               </div>
             </motion.div>
           </div>
@@ -290,6 +292,8 @@ export default function CareerPage() {
 
       </main>
 
+      <CVModal isOpen={cvOpen} onClose={() => setCvOpen(false)} />
+
       {/* Quick Links widget */}
       <motion.div
         initial={{ opacity: 0, x: 20 }}
@@ -307,9 +311,9 @@ export default function CareerPage() {
           </p>
           <div className="flex flex-col gap-1">
             {[
-              { label: "View Jobs", href: "#positions" },
+              { label: "View Jobs", href: "/en/jobs" },
               { label: "Our Benefits", href: "#benefits" },
-              { label: "Open Positions", href: "#positions" },
+              { label: "Open Positions", href: "/en/jobs" },
             ].map((link, i) => (
               <a
                 key={i}

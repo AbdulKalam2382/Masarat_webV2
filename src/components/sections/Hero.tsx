@@ -20,7 +20,7 @@ export default function Hero() {
   const headlineLines = [
     { text: t("hero.line1"), weight: 300, color: "text-white" },
     { text: t("hero.line2"), weight: 700, color: "text-white" },
-    { text: t("hero.line3"), weight: 700, color: "text-brand-blue" },
+    { text: t("hero.line3"), weight: 700, color: "text-[#7DD3FC]" },
   ];
 
   const heroRef = useRef<HTMLElement>(null);

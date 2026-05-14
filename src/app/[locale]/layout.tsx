@@ -137,7 +137,7 @@ export default async function RootLayout({
                     "contactType": "customer service"
                   },
                   "sameAs": [
-                    "https://www.linkedin.com/company/masarat-technologies"
+                    "https://www.linkedin.com/company/masart/"
                   ]
                 })
               }}

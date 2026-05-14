@@ -1,51 +1,26 @@
 'use client'
 
-import { motion, useScroll, useTransform } from 'framer-motion'
-import { useRef } from 'react'
+import { motion } from 'framer-motion'
 import { useLanguage } from '@/lib/LanguageContext'
 import { cn } from '@/lib/utils'
-import Image from 'next/image'
 
 export default function AboutVisionMission() {
   const { t, isRTL } = useLanguage()
-  
-  const visionRef = useRef(null)
-  const missionRef = useRef(null)
 
-  const { scrollYProgress: visionScroll } = useScroll({
-    target: visionRef,
-    offset: ["start end", "end start"]
-  })
-
-  const { scrollYProgress: missionScroll } = useScroll({
-    target: missionRef,
-    offset: ["start end", "end start"]
-  })
-
-  const visionY = useTransform(visionScroll, [0, 1], ["0%", "30%"])
-  const missionY = useTransform(missionScroll, [0, 1], ["0%", "30%"])
+  const gradientBg = 'linear-gradient(135deg, #0D1B2A 0%, #0F2A4A 30%, #1A3A6B 65%, #1A56DB 100%)'
 
   return (
     <>
       {/* VISION SECTION */}
-      <section 
-        id="vision" 
-        ref={visionRef}
+      <section
+        id="vision"
         className="relative min-h-[50vh] flex items-center justify-center overflow-hidden"
+        style={{ background: gradientBg }}
       >
-        <motion.div 
-          style={{ y: visionY }}
-          className="absolute inset-0 z-0"
-        >
-          <Image
-            src="/images/ai.png"
-            alt="Masarat Vision"
-            fill
-            className="object-cover"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-br from-[#0D1B2A]/88 via-[#1A56DB]/40 to-transparent" />
-        </motion.div>
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute" style={{ top: '-20%', left: '-10%', width: '60%', height: '140%', background: 'linear-gradient(135deg, rgba(255,255,255,0.04) 0%, transparent 50%)', transform: 'rotate(-15deg)' }} />
+          <div className="absolute" style={{ top: '-30%', right: '-5%', width: '50%', height: '130%', background: 'linear-gradient(225deg, rgba(26,86,219,0.15) 0%, transparent 60%)', transform: 'rotate(10deg)' }} />
+        </div>
 
         <div className="container max-w-5xl mx-auto px-6 relative z-10 text-center">
           <motion.div
@@ -58,7 +33,7 @@ export default function AboutVisionMission() {
             <span className="text-[14px] font-bold tracking-[0.2em] text-brand-blue-soft uppercase">
               {t('home.vision_eyebrow')}
             </span>
-            
+
             <div className="relative">
               <span className="absolute -top-12 left-1/2 -translate-x-1/2 text-[120px] font-black text-brand-blue/20 leading-none pointer-events-none select-none">
                 &ldquo;
@@ -71,7 +46,7 @@ export default function AboutVisionMission() {
               </h2>
             </div>
 
-            <motion.div 
+            <motion.div
               initial={{ width: 0 }}
               whileInView={{ width: 80 }}
               viewport={{ once: true }}
@@ -83,23 +58,15 @@ export default function AboutVisionMission() {
       </section>
 
       {/* MISSION SECTION */}
-      <section 
-        id="mission" 
-        ref={missionRef}
+      <section
+        id="mission"
         className="relative min-h-[50vh] flex items-center justify-center overflow-hidden"
+        style={{ background: gradientBg }}
       >
-        <motion.div 
-          style={{ y: missionY }}
-          className="absolute inset-0 z-0"
-        >
-          <Image
-            src="/images/team.jpg"
-            alt="Masarat Mission"
-            fill
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0D1B2A]/90 to-[#0D1B2A]/70" />
-        </motion.div>
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute" style={{ top: '-20%', left: '-10%', width: '60%', height: '140%', background: 'linear-gradient(135deg, rgba(255,255,255,0.04) 0%, transparent 50%)', transform: 'rotate(-15deg)' }} />
+          <div className="absolute" style={{ top: '-30%', right: '-5%', width: '50%', height: '130%', background: 'linear-gradient(225deg, rgba(26,86,219,0.15) 0%, transparent 60%)', transform: 'rotate(10deg)' }} />
+        </div>
 
         <div className="container max-w-5xl mx-auto px-6 relative z-10 text-center">
           <motion.div
@@ -112,7 +79,7 @@ export default function AboutVisionMission() {
             <span className="text-[14px] font-bold tracking-[0.2em] text-brand-blue-soft uppercase">
               {t('home.mission_eyebrow')}
             </span>
-            
+
             <h2 className={cn(
               "text-3xl md:text-5xl font-light text-white leading-tight max-w-4xl mx-auto",
               isRTL ? "font-cairo" : "font-outfit"
@@ -120,7 +87,7 @@ export default function AboutVisionMission() {
               {t('home.mission_text')}
             </h2>
 
-            <motion.div 
+            <motion.div
               initial={{ width: 0 }}
               whileInView={{ width: 80 }}
               viewport={{ once: true }}

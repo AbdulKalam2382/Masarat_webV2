@@ -55,10 +55,10 @@ export default function Footer() {
               {t("footer.tagline")}
             </p>
             <div className={cn("flex gap-4", isRTL && "flex-row-reverse")}>
-              <a href="https://www.linkedin.com/company/masarat-technologies" target="_blank" rel="noopener" className="w-12 h-12 rounded-xl bg-[#F8FAFC] dark:bg-white/5 border border-[#E2EAF8] dark:border-white/10 flex items-center justify-center hover:bg-blue-600 hover:border-blue-600 transition-all group">
+              <a href="https://www.linkedin.com/company/masart/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-xl bg-[#F8FAFC] dark:bg-white/5 border border-[#E2EAF8] dark:border-white/10 flex items-center justify-center hover:bg-blue-600 hover:border-blue-600 transition-all group">
                 <Linkedin size={20} className="text-[#0D1B2A]/80 dark:text-white/80 group-hover:text-white group-hover:scale-110 transition-transform" />
               </a>
-              <a href="https://x.com/masaratkwt" target="_blank" rel="noopener" className="w-12 h-12 rounded-xl bg-[#F8FAFC] dark:bg-white/5 border border-[#E2EAF8] dark:border-white/10 flex items-center justify-center hover:bg-blue-600 hover:border-blue-600 transition-all group">
+              <a href="https://x.com/masaratkwt" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-xl bg-[#F8FAFC] dark:bg-white/5 border border-[#E2EAF8] dark:border-white/10 flex items-center justify-center hover:bg-blue-600 hover:border-blue-600 transition-all group">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" className="text-[#0D1B2A]/80 dark:text-white/80 group-hover:text-white group-hover:scale-110 transition-transform">
                   <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
                 </svg>
@@ -152,27 +152,35 @@ export default function Footer() {
               {techPartners.map((partner) => {
                 const isBroadcom = partner === "Broadcom";
                 const isBroadcomVariant = partner === "BroadcomCA" || partner === "BroadcomSymantec";
+                const isHuawei = partner === "Huawei";
                 return (
                   <div key={partner} className={cn(
                     "flex items-center justify-center group relative",
-                    isBroadcom ? "h-28 px-1" : isBroadcomVariant ? "h-20 px-4" : "h-14 px-4"
+                    isBroadcom ? "h-28 px-1" : isBroadcomVariant ? "h-20 px-4" : isHuawei ? "h-20 px-4" : "h-14 px-4"
                   )}>
                     <div className={cn(
                       "relative transition-transform duration-500 group-hover:scale-110",
-                      isBroadcom ? "h-24 w-72" : isBroadcomVariant ? "h-14 w-44" : "h-12 w-36"
+                      isBroadcom ? "h-24 w-72" : isBroadcomVariant ? "h-14 w-44" : isHuawei ? "h-16 w-52" : "h-12 w-36"
                     )}>
                       <img
                         src={
                           partner === "Hydrotek" ? "/images/Partners/Hydrotek.png" :
                           partner === "BroadcomCA" ? "/images/Partners/BroadcomCA.png" :
                           partner === "BroadcomSymantec" ? "/images/Partners/BroadcomSymantec.webp" :
+                          partner === "Huawei" ? "/images/Partners/Huawei-Logo.png" :
                           `/images/Partners/${partner.toLowerCase().replace(/\s+/g, "-")}.png`
                         }
                         alt={partner}
                         className="h-full w-full object-contain"
+                        style={partner === "Huawei" ? { mixBlendMode: 'multiply' } : undefined}
                         onError={(e) => {
+                          const img = e.target as HTMLImageElement;
                           if (partner.toLowerCase().includes('broadcom')) {
-                            (e.target as HTMLImageElement).src = '/images/Partners/broadcom.png';
+                            img.src = '/images/Partners/broadcom.png';
+                          } else {
+                            img.style.display = 'none';
+                            const p = img.parentElement;
+                            if (p) p.innerHTML = `<span style="font-size:10px;font-weight:800;letter-spacing:0.1em;color:#0D1B2A">${partner.toUpperCase()}</span>`;
                           }
                         }}
                       />
