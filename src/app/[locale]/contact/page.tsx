@@ -16,7 +16,7 @@ export default function ContactPage() {
       <Navbar />
       <main>
         {/* HERO SECTION */}
-        <section className="relative min-h-[60vh] flex items-center pt-[100px] pb-16 overflow-hidden">
+        <section className="relative min-h-screen md:min-h-[60vh] flex items-center overflow-clip">
           <div className="absolute inset-0 z-0">
             <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, #0D1B2A 0%, #0F2A4A 25%, #1A3A6B 60%, #1A56DB 100%)' }} />
             <div className="absolute pointer-events-none" style={{ top: '-20%', left: '-10%', width: '60%', height: '140%', background: 'linear-gradient(135deg, rgba(255,255,255,0.04) 0%, transparent 50%)', transform: 'rotate(-15deg)' }} />
@@ -24,7 +24,7 @@ export default function ContactPage() {
             <div className="relative z-[1]"><SceneWrapper scene="contact" /></div>
           </div>
 
-          <div className="container max-w-7xl mx-auto px-6 relative z-[10] pb-16">
+          <div className="container max-w-7xl mx-auto px-6 relative z-[10] pt-28 pb-16 md:pt-24 md:pb-12">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}

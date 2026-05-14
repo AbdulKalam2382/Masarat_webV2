@@ -207,7 +207,7 @@ export default function SolutionDetailTemplate({
       <main ref={mainRef} className="bg-white dark:bg-brand-navy overflow-hidden">
         
         {/* SECTION 1: Hero */}
-        <section ref={heroRef} className="hero-section-trigger relative min-h-[60vh] flex items-center overflow-hidden">
+        <section ref={heroRef} className="hero-section-trigger relative min-h-screen md:min-h-[60vh] flex items-center overflow-clip">
           <div className="absolute inset-0 z-0">
             <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, #0D1B2A 0%, #0F2A4A 25%, #1A3A6B 60%, #1A56DB 100%)" }} />
             <div className="absolute pointer-events-none" style={{ top: "-20%", left: "-10%", width: "60%", height: "140%", background: "linear-gradient(135deg, rgba(255,255,255,0.04) 0%, transparent 50%)", transform: "rotate(-15deg)" }} />
@@ -215,7 +215,7 @@ export default function SolutionDetailTemplate({
             <div className="relative z-[1]"><SceneWrapper scene={heroScene} /></div>
           </div>
 
-          <div className="hero-text-content container max-w-7xl mx-auto px-6 relative z-10 pt-20">
+          <div className="hero-text-content container max-w-7xl mx-auto px-6 relative z-10 pt-28 pb-16 md:pt-24 md:pb-12">
             {/* Breadcrumb */}
             <div className={cn("flex items-center gap-2 text-white/50 text-[13px] font-medium mb-4", isRTL && "flex-row-reverse")}>
               <Link href="/solutions" className="hover:text-white transition-colors">{t("nav.solutions")}</Link>
