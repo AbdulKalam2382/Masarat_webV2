@@ -37,7 +37,7 @@ export default function AboutPage() {
               <span className="section-kicker text-brand-blue mb-6 block">
                 {t("about_page.kicker")}
               </span>
-              <h1 className="text-4xl md:text-6xl font-bold tracking-tighter mb-6 font-outfit uppercase text-white leading-[0.95]">
+              <h1 className="text-4xl md:text-6xl font-bold tracking-tighter mb-6 font-outfit uppercase text-white leading-[1.1]">
                 {t("about_page.title")}
               </h1>
               <p className="text-lg md:text-xl text-white/60 font-light max-w-3xl leading-relaxed whitespace-pre-line">
