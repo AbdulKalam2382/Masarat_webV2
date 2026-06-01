@@ -19,8 +19,8 @@ export default function AboutPage() {
       <Navbar />
       <main>
         {/* HERO SECTION */}
-        <section className="relative min-h-screen md:min-h-[50vh] flex items-center overflow-clip">
-          <div className="absolute inset-0 z-0">
+        <section className="relative min-h-screen md:min-h-[50vh] flex items-center">
+          <div className="absolute inset-0 z-0 overflow-clip">
             <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, #0D1B2A 0%, #0F2A4A 25%, #1A3A6B 60%, #1A56DB 100%)' }} />
             <div className="absolute pointer-events-none" style={{ top: '-20%', left: '-10%', width: '60%', height: '140%', background: 'linear-gradient(135deg, rgba(255,255,255,0.04) 0%, transparent 50%)', transform: 'rotate(-15deg)' }} />
             <div className="absolute pointer-events-none" style={{ top: '-30%', right: '-5%', width: '50%', height: '130%', background: 'linear-gradient(225deg, rgba(26,86,219,0.15) 0%, transparent 60%)', transform: 'rotate(10deg)' }} />
@@ -37,7 +37,7 @@ export default function AboutPage() {
               <span className="section-kicker text-brand-blue mb-6 block">
                 {t("about_page.kicker")}
               </span>
-              <h1 className="text-4xl md:text-6xl font-bold tracking-tighter mb-6 font-outfit uppercase text-white leading-[1.1]">
+              <h1 className="text-4xl md:text-6xl font-bold tracking-tighter mb-6 font-outfit uppercase text-white leading-tight">
                 {t("about_page.title")}
               </h1>
               <p className="text-lg md:text-xl text-white/60 font-light max-w-3xl leading-relaxed whitespace-pre-line">
